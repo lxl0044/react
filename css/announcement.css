@@ -1,0 +1,86 @@
+.home-announcement {
+    /**/
+}
+
+.home-announcement-title {
+    height: auto;
+    line-height: 40px;
+    border: 0 none;
+    margin: 90px 0;
+}
+
+.home-announcement-title h1 {
+    margin: 0;
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.home-announcement-title p {
+    font-size: 20px;
+    font-weight: 200;
+    color: #666;
+}
+
+.home-announcement-cont {
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 200px;
+}
+
+.home-announcement-cont > div:last-child {
+    border-left: 1px solid #e5e5e5;
+    padding-left: 64px;
+}
+
+.home-announcement-details {
+    width: 50%;
+    float: left;
+}
+
+.home-announcement-details > div:first-child {
+    margin-top: 8px;
+}
+
+.home-announcement-details dl {
+    width: 456px;
+    margin-left: 16px;
+}
+
+.home-announcement-details dl dt {
+    line-height: 34px;
+}
+
+.home-announcement-details .announcement-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.home-announcement-details .announcement-time {
+    color: #999;
+}
+
+.home-announcement-details .announcement-underline {
+    width: 80px;
+    height: 2px;
+    background-color: #da161a;
+    margin: 10px 0 20px;
+}
+
+.home-announcement-details a {
+    color: #666 !important;
+}
+
+.announcement-more a {
+    display: block;
+    width: 280px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    background-color: #da161a;
+    padding: 14px 110px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px #da161a;
+}

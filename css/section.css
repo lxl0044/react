@@ -1,0 +1,230 @@
+/* banner */
+.slider {
+    overflow: hidden;
+    position: relative;
+    min-height: 900px;
+    min-width: 1200px;
+    background-size: 100% 100%;
+}
+
+.slider .reminder {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .5);
+    transition: all .5s linear;
+    overflow: hidden;
+}
+
+.slider .shrink {
+    width: 60px;
+    transition: all .5s linear;
+}
+
+.slider .reminder-box {
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #fff;
+}
+
+.slider .right-box {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #da161a;
+    cursor: pointer;
+}
+
+.slider .right-box img {
+    margin-top: 16px;
+}
+
+/* slogan */
+.slogan {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 96px;
+    border-radius: 8px;
+}
+
+.slogan .top-title {
+    height: auto;
+    line-height: 40px;
+    border: 0 none;
+    margin-bottom: 90px;
+    color: #666;
+}
+
+.slogan .top-title h1 {
+    margin: 0;
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.slogan .top-title p {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.slogan .slogan-item {
+    width: 580px;
+    height: 180px;
+    float: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 40px 0;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 40px;
+    border-radius: 4px;
+}
+
+.slogan .slogan-item:nth-child(odd) {
+    margin-right: 40px;
+}
+
+.slogan-item .icon-box {
+    width: 100px;
+    height: 100px;
+    margin: 0 30px;
+    border: 1px solid #da161a;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 110px;
+    transition: all .5s linear;
+    float: left;
+}
+
+.slogan-item:hover .icon-box {
+    border: 0 none;
+    background-color: #da161a;
+    transition: all .5s linear;
+}
+
+.slogan-item:hover i {
+    color: #fff;
+}
+
+.slogan-item:hover .slogan-title {
+    color: #da161a;
+    transition: all .5 linear;
+}
+
+.slogan-item:hover {
+    box-shadow: 0 -1px 14px rgba(0, 0, 0, .1);
+    transition: all .5s linear;
+}
+
+.slogan-item .icon {
+    font-size: 30px;
+    color: #da161a;
+    transition: all .5s linear;
+}
+
+.slogan-item .slogan-title {
+    font-size: 30px;
+    width: 60px;
+    color: #da161a;
+    transition: all .5s linear;
+    display: inline-block;
+    border-bottom: 2px solid #da161a;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.slogan-item .slogan-info p {
+    font-size: 18px;
+}
+
+.OurService {
+    width: 100%;
+    position: relative;
+}
+
+.sloganTitle {
+    font-size: 30px !important;
+    height: 80px !important;
+    border: none;
+    background-color: #fff !important;
+}
+
+.OurService p {
+    position: absolute;
+    left: 46%;
+    top: -30px;
+    color: #999999;
+}
+
+/* partner */
+
+.partner {
+    width: 100%;
+    height: 810px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+    padding-top: 90px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.partner .top-title {
+    height: auto;
+    line-height: 40px;
+    border: 0 none;
+    background-color: transparent;
+    padding: 0;
+    color: #666;
+}
+
+.partner .top-title h1 {
+    margin: 0;
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.partner .top-title p {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.partner-list {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.partnerTitle {
+    font-size: 30px !important;
+}
+
+.partner-list li {
+    width: 336px;
+    height: 127px;
+    box-sizing: border-box;
+    float: left;
+    overflow: hidden;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+
+.partner-list li img {
+    width: 100%;
+    height: 100%;
+    border: 0 none
+}
+
+.partner-list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

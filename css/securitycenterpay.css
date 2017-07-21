@@ -1,0 +1,1032 @@
+.SecurityCenterPay{
+	width: 890px;
+}
+.SecurityCenterPay-warp{
+	width: 100%;
+	background-color: #fff;
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 -1px 20px rgba(0,0,0,.1);
+}
+.SecurityCenterPay-alert{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	top: 0;
+	left: 0;
+	border-radius: 4px;
+}
+ .SecurityCenterPay-alert-box{
+	 width: 450px;
+	 height: 286px;
+	 background-color: #fff;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 margin: auto;
+	 border-radius: 4px;
+	 overflow: hidden;
+	 margin-top: 293px;
+ }
+.WithDrawCoin{
+	width: 450px;
+	height: 286px;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-top: 466px;
+}
+.PayCoin{
+	width: 450px;
+	height: 286px;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-top: 479px;
+}
+.SecurityCenterPay-alert-box .bankCardPayTopTtileIcon{
+	border-bottom: 1px solid #ccc;
+	padding: 0 10px;
+}
+.SecurityCenterPay-alert-box .bankCardPayTopTtileIcon span{
+	font-size: 16px;
+}
+.SecurityCenterPay-alert-text{
+	margin-top: 40px;
+}
+.SecurityCenterPay-alert-text p{
+	font-size: 16px;
+}
+.SecurityCenterPay-alert-btn {
+	width: 200px;
+	height: 40px;
+	background-color: #fff;
+	border-radius: 4px;
+	margin: 50px auto 0;
+	border: 1px solid #da161a;
+}
+.SecurityCenterPay-alert-btn a{
+	width: 100%;
+	height: 100%;
+	line-height: 40px;
+}
+.PaySelect ul,
+.withdraw ul{
+	width: 830px;
+	height: 86px;
+	margin: 0 auto;
+	background-color: #f6fafc;
+}
+.PaySelect ul img,
+.withdraw ul img{
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.PaySelect ul li,
+.withdraw ul li{
+	position: relative;
+}
+.PaySelect ul li:not(.withdraw-button-box),
+.withdraw ul li:not(.withdraw-button-box){
+	cursor: pointer;
+	margin: 24px 26px 0 0;
+	width: 148px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	border-radius: 4px;
+}
+.PaySelect ul li:nth-of-type(1),
+.withdraw ul li:nth-of-type(1){
+	margin-left: 20px;
+}
+/*人民币充值的样式*/
+.SecurityCenterPayCNY{
+	width: 100%;
+	margin-top: 46px;
+}
+.SecurityCenterPayCNY .ant-tabs-nav-scroll{
+	height: 46px;
+    /*line-height: 45px;*/
+}
+.PayCNYBox{
+	width: 100%;
+	border-radius: 4px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 4px;
+}
+.PayCNYBox .ant-tabs-tab-active{
+	background-color: #da161a;
+	color: #fff !important;
+}
+.PayCNYBox .ant-tabs {
+	overflow: visible;
+}
+.PayCNYBox .ant-tabs-nav .ant-tabs-tab{
+	margin-right: 0;
+	width: 160px;
+	height: 44px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 4px;
+}
+.PayCNYBox .ant-tabs-ink-bar{
+	height:0;
+}
+/*微信支付方式的样式*/
+.weChatPay{
+	width: 100%;
+	margin-top: 30px;
+}
+.weChatPayNum{
+	width: 700px;
+	margin: 0 auto;
+}
+.weChatPayNum span{
+	color: #0397f7;
+}
+.weChatPayNum span:nth-of-type(1),
+.weChatPayNum span:nth-of-type(3),
+.weChatPayNum span:nth-of-type(5){
+	font-size: 32px;
+	margin: 0 10px 0 30px;
+}
+.weChatPayNum span:nth-of-type(1){
+	margin-right: none;
+}
+.weChatPayMain{
+	width: 100%;
+	margin-top: 48px;
+}
+.weChatPayCenter{
+	width: 450px;
+	margin: 0 auto;
+	font-size: 16px;
+}
+.weChatPayInput>span:nth-of-type(1){
+	margin-right: 10px;
+}
+.weChatPayInput>span:nth-of-type(2){
+	margin-left: 10px;
+	color: #da161a;
+}
+.weChatPayInput>span:nth-of-type(3){
+	color: #da161a;
+	font-size: 20px;
+}
+.weChatPayInput>input{
+	width: 163px;
+	height: 36px;
+	padding-left: 10px;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	outline: none;
+}
+.checkInfo{
+	margin-top: 38px;
+}
+.weChatPayNickName{
+	margin: 35px 0 0 44px;
+}
+.weChatPayNickName span:nth-of-type(2){
+	margin-left: 17px;
+}
+.weChatPayName span:nth-of-type(2){
+	margin-left: 15px;
+}
+.weChatPayName,
+.weChatPayResPhone{
+	margin-top: 25px;
+}
+.weChatPayName{
+	margin-left: 77px;
+}
+.weChatPayResPhone {
+	margin-left: 62px;
+}
+.weChatPayResPhone span:nth-of-type(2){
+	margin-left: 14px;
+}
+.weChatPayResPhone span:nth-of-type(3){
+	color: #0397f7;
+	cursor: pointer;
+	margin-left: 20px;
+}
+.weChatPayResPhone input{
+	width: 140px;
+	height: 25px;
+	padding-left: 10px;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	outline: none;
+	margin-right: 20px;
+}
+.weChatPayButton,
+.cancel-button{
+	width: 200px;	
+	height: 40px;
+	border-radius: 4px;
+	overflow: hidden;
+	margin: 40px auto;
+}
+.weChatPayButton button,
+.cancel-button button{
+	width: 198px;	
+	height: 38px;
+	color: #da161a;
+	cursor: pointer;
+	background-color: #fff;
+	border: 1px solid #da161a;
+	outline: none;
+	border-radius: 4px;
+}
+.weChatPayFor{
+	width: 100%;
+}
+.weChatPayForTitle{
+	width: 100%;
+}
+.weChatPayForMoney{
+	width: 100%;
+	margin-top: 26px;
+}
+.weChatPayForCode{
+	width: 100%;
+	height: 259px;
+	margin: 36px 0 48px 0;
+}
+.weChatPayForCode div{
+	width: 259px;
+	height: 259px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.weChatPayForCode div img{
+	width: 259px;
+	height: 259px;
+}
+.weChatPaySuccess{
+	width: 100%;
+	height: 400px;
+}
+.weChatPaySuccessIcon{
+	width: 100%;
+	font-size: 34px;
+}
+.weChatPaySuccessIcon .anticon{
+	margin-right: 20px;
+}
+.weChatPaySuccessMain{
+	width: 100%;
+}
+.weChatPaySuccessMain p{
+	width: 100%;
+	text-align: center;
+}
+.weChatPaySuccessMain p:nth-of-type(1){
+	margin-top: 36px;
+}
+.weChatPaySuccessMain p:nth-of-type(2),
+.weChatPaySuccessMain p:nth-of-type(3),
+.weChatPaySuccessMain p:nth-of-type(4){
+	margin-top: 20px;
+}
+.weChatPaySuccessMain p:nth-of-type(4) span:nth-of-type(1){
+	margin-right: 10px;
+	font-size: 20px;
+}
+.weChatPayInform{
+	width: 100%;
+	background-color: red;
+}
+.weChatInformTitle{
+	margin-top: 40px;
+}
+.PayInform1{
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 20px;
+	border-top: 1px solid #dbdbdb;
+	margin-top: 40px;
+}
+.PayInform1Title,
+.PayInform1Way,
+.PayInformMoney,
+.PayInform1Safety{
+	margin-left: 40px;
+}
+.PayInform1Title{
+	margin-bottom: 28px;
+}
+.PayInformMoney,
+.PayInform1Safety{
+	margin-top: 15px;
+}
+.PayInformMoney p:nth-of-type(2){
+	margin: 10px 0 0 70px; 
+}
+.PayInformMoney span:nth-of-type(2),
+.PayInformMoney span:nth-of-type(4){
+	color: #da161a;
+}
+.PayInform1Way{
+	margin-top: 15px;
+}
+.PayInform1Title span{
+	font-size: 20px;
+}
+.PayInform1Safety p:nth-of-type(1){
+	margin: 0 0 15px 0;
+}
+.PayInform1Safety p:nth-of-type(2){
+	text-indent: 5em;
+	margin-bottom: 20px;
+}
+.pay_record{
+	width: 100%;
+	padding: 20px 20px 0 20px;
+	margin: 0 auto;
+	margin-top: 30px; 
+	background-color: #fff;
+	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: 0 -1px 20px rgba(0,0,0,.1);
+}
+.pay_record_title{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.pay_record_title>span:nth-of-type(1){
+	font-size: 20px;
+}
+.pay_record_title>span:nth-of-type(2){
+	color: #0397f7;
+	font-size: 16px;
+	cursor: pointer;
+	line-height: 32px;
+}
+.pay_record_title>span:nth-of-type(2) .anticon{
+	margin-left: 10px;
+}
+.pay_record_table{
+	margin-top: 20px;
+}
+.pay_record_table select{
+	width: 150px;
+}
+.pay_record_table_date{
+	height: 28px;
+}
+.pay_record_table_date>span:nth-of-type(1){
+	margin-right: 10px;
+}
+.pay_record_table_date>span:nth-of-type(3){
+	margin: 0 10px;
+}
+.pay_record_main{
+	width: 100%;
+	min-height: 500px;
+	margin-top: 40px;
+	position: relative;
+}
+.pay_record_main table{
+	border-collapse: collapse;
+}
+
+.pay_record_main td > a {
+	color: #0397f7 !important;
+}
+.pay_record_main tr th{
+	height: 40px;
+	border-bottom: 1px solid #da161a;
+}
+.pay_record_main tr td{
+	height: 40px;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.pay_record_main_center{
+	width: 100%;
+}
+
+.pay_record_main_center tr{
+	height: 40px;
+}
+
+.pay_record_main_center th:nth-of-type(1){
+	/*width: 200px;*/
+}
+.pay_record_page{
+	width: 100%;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 10px;
+}
+/*支付宝支付的样式和微信支付的样式一样*/
+
+
+
+
+
+/*银行卡支付的样式*/
+.bankCardPay{
+	width: 100%;
+	margin-top: 30px;
+}
+.bankCardPayNum{
+	width: 700px;
+	margin: 0 auto;
+}
+.bankCardPayNum span{
+	color: #0397f7;
+}
+.bankCardPayNum span:nth-of-type(1),
+.bankCardPayNum span:nth-of-type(3),
+.bankCardPayNum span:nth-of-type(5){
+	font-size: 32px;
+	margin: 0 10px 0 30px;
+}
+.bankCardPayMain{
+	width: 100%;
+	margin-top: 48px;
+}
+.bankCardPayCenter{
+	width: 460px;
+	margin: 0 auto;
+}
+.bankCardPayInput>span:nth-of-type(1){
+	margin-right: 10px;
+}
+.bankCardPayInput>span:nth-of-type(2){
+	margin-left: 10px;
+	color: #da161a;
+}
+.bankCardPayInput>span:nth-of-type(3){
+	color: #da161a;
+	font-size: 20px;
+}
+.bankCardPayInput>input{
+	width: 163px;
+	height: 36px;
+	padding-left: 10px;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	outline: none;
+}
+.bankCardPayName {
+	margin-top: 32px;
+}
+.bankCardPayName span:nth-of-type(1){
+	margin-right: 38px;
+}
+.bankCardPayCard{
+	margin-top: 20px;
+}
+.bankCardPayCard>span{
+	margin:20px 10px 0 0;
+}
+.PayCNYBox .ant-tabs {
+ overflow: visible;
+}
+.bankCardPayCardChange{
+	width: 296px;
+	margin-left: 122px;
+	border: 1px solid #dbdbdb;
+	position: absolute;
+	z-index: 999;
+	background-color: white;
+}
+.bankCardPayCardChangeList .anticon{
+	display: inline-block;
+}
+.bankCardPayCardChangeList{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+.bankCardPayCardChangeList .anticon{
+	display: inline-block;
+}
+.bankCardPayCardChangeList p:nth-of-type(1){
+	width: 112px;
+	cursor: pointer;
+}
+.bankCardPayCardChangeList p:nth-of-type(1) span{
+	margin-left: 10px;
+}
+.bankCardPayCardChangeList p:nth-of-type(2){
+	width: 120px;
+	cursor: pointer;
+}
+.bankCardPayCardChangeList p:nth-of-type(3){
+	width: 62px;
+	cursor: pointer;
+}
+.bankCardPayCardAdd{
+	width: 273px;
+	height: 32px;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #da161a;
+	margin: 15px auto;
+}
+.bankCardPayCardAdd button{
+	width: 273px;
+	height: 32px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: #fff;
+}
+.bankCardPayCardAddInfo{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 9999;
+	cursor: default;
+}
+.bankCardPayCardAddInfoBox{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.bankCardPayCardAddInfoBoxCenter{
+	width: 540px;
+	height: 450px;
+	background-color: #fff;
+	border-radius: 4px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	overflow: hidden;
+}
+.AddInfoBoxCenterTop{
+	width: 100%;
+	height: 5px;
+	background-color: #da161a;
+}
+.bankCardPayCardAddInfoBoxCenter .bankCardPayTopTtileIcon{
+	border-bottom: 1px solid #dbdbdb; 
+	padding: 0 10px 0 10px;
+}
+.AddInfoBoxCenterMainName{
+	margin: 45px 0 0 130px;
+}
+.AddInfoBoxCenterMainOpen{
+	margin: 26px 0 0 114px;
+}
+.AddInfoBoxCenterMainOpen select{
+	width: 245px;
+	height: 34px;
+	border: 1px solid #dbdbdb;
+	outline: none;
+	border-radius: 4px;
+}
+.AddInfoBoxCenterMainOpen span:nth-of-type(2){
+	margin-left: 54px;
+}
+.AddInfoBoxCenterMainCard{
+	margin: 18px 0 0 101px;
+}
+.AddInfoBoxCenterMainCard input{
+	width: 245px;
+	height: 34px;
+	border: 1px solid #dbdbdb;
+	outline: none;
+	border-radius: 4px;
+	padding-left: 7px;
+}
+.AddInfoBoxCenterMainCard span:nth-of-type(2){
+	margin-left: 68px;
+}
+.AddInfoBoxCenterMainLogin{
+	margin: 26px 0 0 87px;
+}
+.AddInfoBoxCenterMainButton{
+	margin: 46px 0 0 191px;
+}
+.AddInfoBoxCenterMainButton button{
+	width: 184px;
+	height: 32px;
+	background-color: #fff;
+	border: 1px solid #da161a;
+	border-radius: 4px;
+	cursor: pointer;
+	outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bankCardPayChange{
+	width: 297px;
+	height: 36px;
+	border: 1px solid #dbdbdb;
+	background-color: #fff;
+	border-radius: 4px;
+	overflow: hidden; 
+	margin-top: 10px;
+}
+.bankCardPayChange input{
+	width: 195px;
+	height: 34px;
+	border: none;
+	outline: none;
+	padding-left: 10px;
+}
+.bankCardPayChange button{
+	outline: none;
+	width: 99px;
+	height: 34px;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	background-color: #0397f7;
+}
+.bankCardPayResPhone{
+	margin-top: 25px;
+}
+.bankCardPayResPhone>span:nth-of-type(1){
+	margin-right: 67px;
+}
+.bankCardPayResPhone span:nth-of-type(2){
+	margin-right: 25px
+}
+.bankCardPayResPhone span:nth-of-type(3){
+	color: #0397f7;
+	cursor: pointer;
+}
+.bankCardPayResPhone-finish{
+	margin-right: 10px;
+}
+.bankCardPayResPhone input{
+	width: 140px;
+	height: 25px;
+	padding-left: 10px;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	outline: none;
+	margin-right: 20px;
+}
+.bankCardPayButton{
+	width: 200px;	
+	height: 40px;
+	overflow: hidden;
+	margin: 40px 0 40px 123px;
+}
+.bankCardPayButton button{
+	width: 198px;	
+	height: 38px;
+	color: #da161a;
+	cursor: pointer;
+	border-radius: 4px;
+	border: 1px solid #da161a;
+	background-color: #fff;
+	outline: none;
+}
+.bankCardPayAlert{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 9999;
+	cursor: default;
+}
+.bankCardPayCenetr{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.bankCardPayBox{
+	width: 630px;
+	height: 440px;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.bankCardPayTop{
+	width: 100%;
+	height: 5px;
+	background-color: #da161a;
+}
+.bankCardPayTopTtile{
+	width: 600px;
+	height: 535px;
+	margin: 0 auto;
+}
+.bankCardPayTopTtileIcon{
+	width: 100%;
+}
+.bankCardPayTopTtileIcon span{
+	font-size: 14px;
+	line-height: 54px;
+}
+.bankCardPayTopTtileIcon .anticon{
+	font-size: 25px;
+	cursor: pointer;
+	line-height: 55px;
+}
+.bankCardPayInfoWarp{
+	width: 588px;
+	height: 164px;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	background-color: #fff;
+	margin: 0 auto;
+	padding: 14px 0 0 12px;
+}
+.bankCardPayInfoWarp p:nth-of-type(1),
+.bankCardPayInfoWarp p:nth-of-type(2),
+.bankCardPayInfoWarp p:nth-of-type(3){
+	margin-bottom: 18px;
+}
+.bankCardPayInfoBag{
+	width: 588px;
+	height: 164px;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	background-color: #fff;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 14px 0 0 12px;
+}
+.bankCardPayInfoBag p{
+	margin-bottom: 18px;
+}
+.bankCardPayBoxBtn{
+	width: 100%;
+	margin: 20px 0 28px 8px;
+}
+.bankCardPayBoxBtn button{
+	width: 148px;
+	height: 44px;
+	background-color: #fff;
+	border: 1px solid #da161a;
+	border-radius: 4px;
+	outline: none;
+	cursor: pointer;
+}
+.bankCardPayFooter{
+	width: 100%;
+	height: 36px;
+}
+.bankCardPayFooterBox{
+	width: 588px;
+	height: 36px;
+	margin: 0 auto;
+}
+.bankCardPayFooterBox p{
+	line-height: 36px;
+}
+.bankCardPayFooterBox p:nth-of-type(1) a{
+	color: #0397f7 !important;
+}
+.bankCardPayFooterBox p:nth-of-type(2) span:nth-of-type(2),
+.bankCardPayFooterBox p:nth-of-type(2) span:nth-of-type(4){
+	color: #0397f7;
+	cursor: pointer;
+}
+.internetBank{
+	width: 100%;
+	margin-bottom: 4px;
+	box-shadow: 0 -1px 20px rgba(0,0,0,.1);
+}
+.internetBank div{
+	width: 538px;
+	height: 436px;
+	margin: 0 auto;
+}
+.internetBank div img{
+	width: 538px;
+	height: 436px;
+}
+
+
+
+
+
+
+
+
+
+
+.PayInform3{
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 40px;
+	border-top: 1px solid #e5e5e5;
+	padding-top: 20px;
+}
+.PayInform3Title,
+.PayInform3Way,
+.PayInform3Safety{
+	margin-left: 20px;
+}
+.PayInform3Way{
+	margin-top: 30px;
+}
+.PayInform3Title span{
+	font-size: 20px;
+}
+.PayInformMoneys p{
+	margin: 20px 0 0 20px;
+}
+.PayInformMoneys p:nth-of-type(2){
+	text-indent: 5em;
+}
+.PayInformMoneys p span:nth-of-type(2){
+	color: #da161a;
+}
+.PayInformFee{
+	margin: 20px 0 0 53px;
+}
+.PayInform3Safety{
+	margin-top: 20px;
+}
+.PayInform3Safety p{
+	margin: 0 0 15px 0;
+}
+.PayInform3Safety p{
+	/*text-indent: 5em;*/
+}
+.PayInform3Safety p:nth-of-type(2),
+.PayInform3Safety p:nth-of-type(3),
+.PayInform3Safety p:nth-of-type(4),
+.PayInform3Safety p:nth-of-type(5){
+	margin-left: 72px;
+}
+/*btc充值的样式的设置*/
+.btc_pay{
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 30px;
+	border-top: 1px solid #e5e5e5;
+}
+.btc_pay_box{
+	width: 670px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+.btc_pay_address{
+	width: 100%;
+	height: 50px;
+	margin: 44px 0 36px 0;
+}
+.btc_pay_address div{
+	width: 460px;
+	height: 50px;
+	border-radius: 4px;
+	border: 1px solid #dbdbdb;
+	background-color: #fff;
+	margin: 0 auto;
+	line-height: 50px;
+}
+.btc_pay_address input{
+	width: 458px;
+	height: 44px;
+	font-size: 20px;
+	outline: none;
+	border: none;
+}
+.btc_pay_copy{
+	width: 100%;
+	margin-bottom: 58px;
+}
+.btc_pay_copy div{
+	color: #0397f7;
+	cursor: pointer;
+}
+.btc_pay_code{
+	width: 100%;
+}
+.btc_pay_code div{
+	width: 160px;
+	height: 160px;
+	margin: 0 auto;
+	background-color: #fff;
+	margin-bottom: 22px;
+}
+.btc_pay_code div img{
+	width: 160px;
+	height: 160px;
+	cursor: pointer;
+}
+.btc_pay_point{
+	width: 100%;
+	padding-bottom: 44px;
+	cursor: pointer;
+}
+.btc_pay_point div{
+	margin: 0 auto;
+}
+.btc_info{
+	border-top: 1px solid #e5e5e5 !important;
+}
+.btc_info_title{
+	margin: 26px 0 26px 40px;
+}
+.btc_info_title span{
+	font-size: 20px;
+}
+.btc_info_mian{
+	padding: 0 0 30px 40px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.btc_info_mian p:not(.btc_info_mian_first){
+	margin-top: 16px;
+}
+.btc_info_mian p:nth-of-type(3){
+	margin-left: 70px;
+}
+.btc_pay_wrap{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 9999;
+	cursor: default;
+}
+.btc_pay_wrap_code{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.btc_pay_wrap_code div{
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	background-color: #fff;
+}
+.btc_pay_wrap_code div img{
+	width: 500px;
+	height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

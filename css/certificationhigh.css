@@ -1,0 +1,111 @@
+/*在这里重新定义高级认证的css样式*/
+.CertificationHigh{
+	width: 830px;
+	margin-top: 28px;
+	padding: 26px 0 40px 20px;
+	border-radius: 4px;
+	position: relative;
+	border: 1px solid #dbdbdb; 
+}
+.CertificationHigh .input-area input:not(.checkbox-sex){
+	width: 180px !important;
+	margin-left: 20px;
+}
+.CertificationHighName{
+	font-size: 20px !important;
+}
+.CertificationHigh .input-area label{
+	width: 80px;
+}
+.high-left,
+.high-right{
+	width: 400px;
+}
+.high-text{
+	margin-left: 57px;
+}
+.high-text p{
+	margin-top: 10px;
+}
+.label-img{
+	width: 234px !important;
+	display: block !important;
+	text-align: center !important;
+}
+.high-card .IDcard-box{
+	width: 226px;
+	height: 160px;
+	margin-right: 12px;
+}
+.high-warning p{
+	margin-left: 10px;
+
+}
+.input-area .checkbox {
+	overflow: visible;
+	margin: -20px 0 -20px -115px;
+}
+
+.input-area .checkbox label {
+	width: 500px;
+	font-size: 12px;
+	text-align: left;
+}
+.input-area .checkbox span {
+	margin-left: 15px;
+	vertical-align: middle;
+	font-size: 14px;
+	color: #999;
+}
+.CertificationHigh .input-area button{
+	margin: 40px 0 0 184px !important;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 4px;
+	background-color: #fff;
+	border: none;
+	outline: none;
+	border: 1px solid #da161a;
+	cursor: pointer;
+}
+.CertificationHigh-tier{
+	cursor: pointer;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.CertificationHigh .input-area .input-box span{
+	margin-left: 18px;
+}
+.CertificationHigh .IDcard-box span{
+	margin-left: 0 !important;
+}
+.high-status-btn{
+	outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+.MessageMain{
+	width: 1200px;
+	border-radius: 8px;
+	margin: 30px auto;
+	background-color:white;
+	overflow: hidden;
+}
+.MessageCenter{
+	padding: 20px 30px 30px;
+	box-sizing: border-box;
+}
+.MessageCenter>h4{
+	height: 60px;
+	width: 1140px;
+	margin: 0 auto;
+	line-height: 60px;
+	color: #5d5d5d;
+	font-size: 18px;
+}
+.MessageTitle h4{
+	font-size: 18px;
+	font-weight: bold;
+}
+.MessageTitle h6{
+	margin-top: 25px;
+	font-size: 12px;
+	color: #5d5d5d;
+}
+.MessageTitleLeft h6{
+	float: left;
+}
+.MessageTitleLeft {
+	margin: 30px 0 20px;
+}
+.MessageTitleLeft .devide {
+	margin: 0 11px;	
+}
+.MessageTitleLeft .article-time {
+	margin-left: 20px;
+}
+.MessageTitleLeft ul li {
+	float: left;
+}
+.MessageTitleLeft span{
+	float: right;
+	line-height: 26px;
+	font-size: 14px;
+}
+.MessageTitleLeft span i {
+	font-size: 24px;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
+.MessageInfoPic,
+.MessageInfoPic img{
+	width: 1140px;
+	height: 500px;
+	border-radius: 8px;
+}
+.MessageInfoText{
+	margin-top: 10px;
+	text-indent: 2em;
+}
+
+
+
+
+
+
+

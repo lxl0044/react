@@ -1,0 +1,154 @@
+.delegation {
+	width: 100%;
+	background-color: #fff;
+}
+
+.delegation-box {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.delegation-cont {
+	width: 100%;
+	background-color: #f6fafc;
+	overflow: hidden;
+	box-shadow: inset 0 2px 10px rgba(0,0,0,.1);
+}
+
+.delegation-box .ant-steps-title, .delegation-box .ant-steps-head{
+	background-color: #fff;
+}
+
+.delegation-details .ant-tabs-ink-bar {
+	width: 184px !important;
+}
+
+.delegation-details {
+	width: 1200px;
+    margin: 50px auto 100px;
+    background-color: #fff;
+    padding: 50px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    border-radius: 4px;
+    min-height: 740px;
+	position: relative;
+}
+
+.delegation-details .ant-tabs-nav-container {
+	font-size: 16px;
+}
+
+.delegation-details .ant-tabs-tab > span {
+	display: block;
+	line-height: 30px;
+	overflow: hidden;
+}
+
+.delegation-details .ant-tabs-tab > span img {
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+
+
+.delegation-details .ant-tabs-tab > span span {
+	display: block;
+	float: left;
+}
+
+.delegation-info {
+	margin-top: 24px;
+}
+
+.delegation-info-top > a {
+	display: block;
+	width: 76px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	float: right;
+	border: 1px solid #0397f7;
+	color: #0397f7 !important;
+	border-radius: 4px;
+}
+
+.delegation-info-top > a i {
+	margin-right: 6px;
+}
+
+.delegation-info-top label {
+	margin-right: 8px;
+}
+
+.delegation-info-top .ant-select-selection--single {
+	height: 32px;
+}
+
+.delegation-info-top .ant-select-selection__rendered {
+	line-height: 32px;
+}
+
+.delegation-info-top .delegation-time {
+	margin: 0 40px;
+}
+
+.delegation-time .ant-input {
+	height: 32px;
+}
+
+.delegation-time .split {
+	margin: 0 6px;
+}
+
+.delegation-info-top .deal-status {
+	margin-left: 12px;
+}
+
+.delegation-info-table {
+	margin-top: 40px;
+}
+.delegation-info-table td:nth-of-type(5) span{
+	padding-right: 42px;
+}
+
+.delegation-info-table table {
+	width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.delegation-info-table table a {
+	color: #0397f7 !important;
+}
+
+.delegation-info-table thead {
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #da161a;
+}
+
+.delegation-info-table tbody tr {
+	height: 80px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

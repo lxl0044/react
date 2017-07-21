@@ -1,0 +1,67 @@
+/* 顶部tips */
+.dealcenter-warp {
+	width: 100%;
+	background-color: #fff;
+}
+.dealcenter .dealcenter-top {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.dealcenter-top .dealcenter-top-box {
+	height: 0;
+	overflow: hidden;
+	transition: all .5s ease-in-out;
+}
+
+.dealcenter-tips {
+	font-size: 20px;
+	margin-top: 60px;
+	margin-bottom: 40px;
+}
+
+.dealcenter-tips span.warn {
+	font-size: 38px;
+	margin-right: 10px;
+}
+
+.dealcenter-tips a {
+	font-size: 20px;
+	color: #149ef8 !important;
+}
+.dealcenter-top .steps {
+	margin-bottom: 15px;
+}
+
+.dealcenter-top .arrow-top i {
+	width: 36px;
+    height: 36px;
+    font-size: 30px;
+    line-height: 36px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #149ef8;
+    border: 1px solid #ccc;
+    border-bottom: 0 none;
+    cursor: pointer;
+}
+
+.dealcenter-top-box .ant-steps .ant-steps-head-inner {
+	width: 46px;
+	height: 46px;
+	line-height: 46px;
+	font-size: 18px;
+}
+
+.dealcenter-top-box .ant-steps-head-inner > .ant-steps-icon.anticon {
+	font-size: 18px;
+}
+
+.dealcenter-top-box .ant-steps .ant-steps-head, .dealcenter-top-box .ant-steps .ant-steps-main {
+	vertical-align: middle;
+}
+
+.dealcenter-top-box .ant-steps .ant-steps-tail {
+	top: 22px;
+}

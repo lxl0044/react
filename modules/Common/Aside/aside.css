@@ -1,0 +1,253 @@
+.header-aside {
+	position: fixed;
+	width: 300px;
+	min-height: 600px;
+	height: 100%;
+	top: 0;
+	right: -300px;
+	background-color: #f3f3f3;
+	overflow: auto;
+	z-index: 3;
+	transition: all .5s ease-in-out;
+}
+
+.header-aside.pull-left {
+	right: 0;
+}
+
+.aside-top {
+	width: 100%;
+	height: 94px;
+	line-height: 94px;
+	background-color: #3d3d3d;
+}
+
+.aside-top .toggle-aside {
+	width: 46px;
+	color: #fff;
+	background-color: #da161a;
+	font-size: 46px;
+	cursor: pointer;
+}
+
+.aside-top .remove-notice a {
+	font-size: 16px;
+	margin-right: 18px;
+}
+
+.remove-notice img {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.header-aside .aside-notice {
+	width: 100%;
+	height: 254px;
+	background-color: #fafbfc;
+	box-sizing: border-box;
+	padding: 22px 20px 0 20px;
+	overflow: auto;
+}
+
+.header-aside .aside-notice div + div {
+	margin: 10px 0;
+}
+
+.aside-notice .notice-item {
+	width: 260px;
+	padding: 16px 18px 16px 10px;
+	color: #666;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.header-aside .price-settings {
+	width: 100%;
+	text-align: center;
+}
+
+.price-settings button:first-child {
+	margin-top: 50px;
+}
+
+.price-settings button {
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 4px;
+	border: 1px solid #da161a;
+	background-color: #fff;
+	color: #da161a;
+	margin-bottom: 30px;
+	outline: none;
+	cursor: pointer;
+}
+
+.header-aside .aside-remind {
+	width: 100%;
+	position: absolute;
+	background-color: #fff;
+	bottom: 0;
+}
+
+.aside-remind .price-remind {
+	height: 0;
+	transition: all .5s ease-in-out;
+	overflow: hidden;
+}
+
+.aside-remind .price-remind.popup {
+	height: 300px;
+}
+
+.price-remind .price-remind-top, .setting-record .setting-record-top {
+	color: #333;
+	height: 70px;
+	line-height: 70px;
+	padding: 0 20px 0 6px;
+}
+
+.price-remind .price-remind-top i,  .setting-record .setting-record-top i {
+	float: right;
+	color: #0397f7;
+	line-height: 70px;
+	cursor: pointer;
+}
+
+.price-remind .price-remind-cont {
+	padding: 0 20px;
+	color: #666;
+}
+
+.price-remind-cont > div > label {
+	margin-right: 30px;
+	vertical-align: middle;
+}
+
+.price-remind-cont .current-coin, .price-remind-cont .remind-type {
+	margin: 16px 0;
+}
+
+.price-remind-cont .input-box input, .record-item-operate .input-box input {
+	width: 124px;
+	height: 34px;
+	line-height: 34px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	text-indent: 1em;
+	font-size: 14px;
+}
+
+.price-remind-cont .remind-type {
+	line-height: 200%;
+}
+
+.price-remind-cont > button {
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	border-radius: 4px;
+	border: 1px solid #da161a;
+	outline: none;
+	color: #da161a;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.aside-remind .setting-record {
+	height: 0;
+	transition: all .5s ease-in-out;
+	overflow: hidden;
+	color: #333;
+}
+
+.aside-remind .setting-record.popup {
+	height: 330px;
+}
+
+.setting-record-cont {
+	width: 100%;
+	height: 260px;
+	overflow: auto;
+
+}
+
+.setting-record-item .record-item-info {
+	height: 44px;
+	line-height: 44px;
+	border-top: 1px solid #e5e5e5;
+	padding: 0 20px;
+	cursor: pointer;
+}
+
+.record-item-info span.green {
+	margin: 0 14px 0 12px;
+}
+
+.record-item-info span.warn {
+	margin-right: 16px;
+}
+
+.record-item-info i {
+	cursor: pointer;
+}
+
+.record-item-operate {
+	height: 0;
+	padding: 2px 20px 0;
+	overflow: hidden;
+	transition: all .5s ease-in-out;
+}
+
+.setting-record-item.spread .record-item-operate {
+	height: 106px;
+}
+
+.record-item-operate > button {
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	border-radius: 4px;
+	border: 1px solid #da161a;
+	outline: none;
+	color: #da161a;
+	background-color: #fff;
+	cursor: pointer;
+	margin: 14px 0 22px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

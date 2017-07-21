@@ -1,0 +1,325 @@
+body,
+h3,
+h4,
+h5,
+h6,
+ul,
+dl,
+dt,
+dd,
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+html {
+    min-width: 1400px;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    background-color: #f8f8f8 !important;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+a:focus {
+    text-decoration: none !important;
+}
+
+li {
+    list-style: none;
+}
+em, i{
+    font-style: normal;
+}
+
+/* 公共样式 */
+.fl {
+    float: left !important;
+}
+
+.fr {
+    float: right !important;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none !important;
+}
+
+.ofh {
+    overflow: hidden !important;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.font-small {
+    font-size: 14px !important;
+}
+
+.no-border {
+    border: 0 none !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+.font-weight{
+    font-weight: bold;
+}
+ul,ol{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: 2;
+}
+
+.top-title {
+    width: 100%;
+    height: 62px;
+    line-height: 62px;
+    background-color: #fff;
+    font-size: 18px;
+    color: #da161a;
+    box-sizing: border-box;
+    padding-left: 30px;
+    border-bottom: 1px solid #da161a;
+}
+
+.alert-box-title {
+    width: 100%;
+    height: 62px;
+    color: #444;
+    line-height: 62px;
+    background-color: #fafafa;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.alert-box-title .anticon {
+    line-height: 62px;
+    font-size: 30px !important;
+    color: #dbdbdb;
+    cursor: pointer;
+}
+
+.page-tool {
+    z-index: 1;
+    position: fixed;
+    right: 0px;
+    bottom: 50px;
+    height: 90px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.page-tool .message {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    text-align: right;
+    background-color: #da161a;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+    transition: all .3s linear;
+}
+
+.page-tool .message:hover {
+    width: 100px;
+    opacity: 1;
+}
+
+.page-tool .message:hover a {
+    left: 6px;
+}
+
+.page-tool .message a {
+    position: absolute;
+    left: -55px;
+    top: 13px;
+    color: #fff;
+    transition: all .3s linear;
+}
+.page-tool .message:nth-child(2) a {
+    left: -90px;
+    font-size: 14px;
+}
+
+.page-tool .message:nth-child(2):hover a {
+    left: 15px;
+}
+
+.page-tool .message:nth-child(2):hover {
+    width: 140px;
+}
+.page-tool .message:nth-child(3):hover a {
+    left: 20px;
+}
+.page-tool .message:nth-child(3):hover {
+    width: 240px;
+}
+.page-tool .message:nth-child(3) a {
+    left: -174px;
+    font-size: 14px;
+}
+.page-tool .message i {
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+.page-tool .message:nth-child(3) a{
+    top: 6px;
+}
+.page-tool .message:nth-child(3) em{
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+}
+.page-tool .message em{
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 16px;
+    right: 9px;
+}
+.slogan-top {
+    font-size: 14px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fffaeb;
+    color: #da161a;
+}
+
+.ant-back-top {
+    right: 10px;
+    bottom: 46px;
+}
+
+.ant-back-top-content {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #da161a !important;
+    opacity: 0.5;
+    transition: all .5s linear;
+}
+.page-tool .ant-back-top-icon{
+    margin-top: 14px;
+}
+
+.ant-back-top-content:hover {
+    transition: all .5s linear;
+    opacity: 1;
+}
+
+.success {
+    color: #00a854 !important;
+}
+
+.warn {
+    color: #da161a !important;
+}
+
+.green {
+    color: #00ba04 !important;
+}
+.blue{
+    color: #0397f7 !important;
+}
+.warn-border{
+    border: 1px solid #da161a !important;
+}
+.warn-square{
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid red;
+    border-bottom: 10px solid red;
+    border-left: 10px solid transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.ant-message {
+    font-size: 18px !important;
+    top: 30px !important;
+}
+
+.ant-message-notice-content {
+    padding: 20px !important;
+}
+
+.ant-message .anticon {
+    font-size: 20px !important;
+}
+
+.footerColor{
+    color: #ccc !important;
+}
+.footerBackgroundColor{
+   background-color: #605f5f !important;
+}
+.changeBackgroundColor{
+    background-color: #f7f8f8 !important;
+}
+.inlineBlock{
+    display: inline-block;
+}
+

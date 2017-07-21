@@ -1,0 +1,1185 @@
+/*安全中心FAQ*/
+.SecurityCenter {
+    width: 100%;
+}
+
+.SecurityCenterMainBox {
+    width: 1200px;
+    margin: 30px auto;
+}
+
+.SecurityCenterMain {
+    width: 890px;
+}
+
+.SecurityCenter {
+    width: 100%;
+}
+
+.SecurityCenterFaq {
+    width: 890px;
+}
+
+.FaqTaps {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+.FaqTaps .MyIntegralPages{
+    width: 77%;
+    position: absolute;
+    bottom: 10px;
+}
+.FaqTaps .ant-tabs-nav-scroll {
+    margin-top: 35px;
+    height: 46px;
+    line-height: 45px;
+}
+
+.FaqTaps .ant-tabs-tab-active {
+    background-color: #da161a;
+    color: #fff !important;
+    border-radius: 4px;
+}
+
+.FaqTaps .ant-tabs-nav .ant-tabs-tab {
+    margin-right: 0;
+    width: 96px;
+    text-align: center;
+    height: 44px;
+    line-height: 30px;
+}
+
+.FaqTaps .ant-tabs-ink-bar {
+    height: 0;
+}
+
+.FaqTap {
+    box-sizing: border-box;
+}
+
+.Problem {
+    width: 80%;
+    margin: 0 auto;
+    height: 740px;
+}
+
+.FaqTitle {
+    width: 750px;
+    height: 60px;
+}
+
+.TabsTabLi {
+    margin: 15px 0;
+}
+
+.TabsTabLi a:nth-of-type(1) {
+    margin-right: 15px;
+}
+
+.TabsTabLi a {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.TabsTabLi p {
+    line-height: 20px;
+}
+
+.TabsTabLi p {
+    margin-top: 5px;
+}
+
+.TabsTabLi p:nth-of-type(1) {
+    margin-top: 15px;
+}
+
+/*下拉菜单*/
+.SecurityCenterMenu {
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+
+.SecurityCenterMenu a {
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.SecurityCenterMenu .ant-menu-item {
+    text-align: center;
+    padding-left: 0px !important;
+}
+
+.SecurityCenterMenu > ul .ant-menu {
+    background-color: #fafbfc;
+}
+
+.SecurityCenterMenu > ul > li > div {
+    font-weight: 500;
+    padding-left: 10px !important;
+}
+
+.SecurityCenterMenu ul li ul li {
+    padding: 0 !important;
+    height: 58px !important;
+    line-height: 58px !important;
+}
+
+.SecurityCenterMenu .ant-menu-submenu-title {
+    height: 58px !important;
+    line-height: 58px !important;
+}
+
+/*tab切换*/
+.ant-menu-inline .ant-menu-submenu-title, .ant-menu-item {
+    font-size: 16px !important;
+    height: 60px;
+}
+
+.SecurityCenterMenu > ul .ant-menu li {
+    width: 300px;
+    margin-left: -12px;
+    border-radius: 4px;
+}
+
+/*安全设置*/
+
+.security-setting {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+
+.security-setting .setting-items {
+    padding: 0 30px;
+    background-color: #fff;
+}
+
+.setting-items .anticon {
+    font-size: 20px;
+}
+
+.setting-items .setting-title {
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.setting-items ul li {
+    padding: 20px 0;
+}
+
+.setting-items ul li + li {
+    border-top: 1px solid #dbdbdb;
+}
+
+.setting-items li a {
+    font-size: 16px;
+    color: #5079d9 !important;
+}
+
+.setting-items .alert-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    cursor: default;
+}
+
+.setting-items .alert-box {
+    width: 700px;
+    margin: 200px auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.alert-box .alert-cont {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.alert-cont .input-area {
+    height: 40px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.input-area button {
+    width: 300px;
+    height: 40px;
+    margin-left: 100px;
+    line-height: 40px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #da161a;
+    border: 0 none;
+    outline: none;
+    cursor: pointer;
+}
+
+.input-area label {
+    width: 90px;
+    height: 40px;
+    color: #444;
+    line-height: 40px;
+    font-size: 16px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.input-area .input-box {
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.input-area .input-box input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-sexBox {
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.input-sexBox input {
+    margin-left: 10px;
+}
+
+.input-area .input-box input.wrong {
+    border-color: #da161a;
+}
+
+.input-area .input-box span {
+    color: #da161a;
+}
+
+.input-area .thin-box {
+    width: 180px;
+}
+
+.input-area .select-box {
+    width: 180px;
+    vertical-align: top;
+}
+
+.select-box select {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #000;
+    outline: none;
+    border: 0 none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.input-area .box-holder {
+    width: 100px;
+    height: 40px;
+    margin-left: 20px;
+    color: #000;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 18px;
+}
+
+.box-holder button {
+    width: 100%;
+    margin-left: 0;
+    /*margin-top: -6px;*/
+}
+
+.input-area .yzcode {
+    vertical-align: top;
+}
+
+.input-area .yzcode img {
+    width: 100%;
+    height: 100%;
+}
+
+.input-box input {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-indent: 10px;
+    border: 0 none;
+    outline: none;
+    vertical-align: top;
+}
+
+.ant-modal-title {
+    font-size: 18px !important;
+    font-weight: normal !important;
+}
+
+.input-box .ant-cascader-picker {
+    width: 100% !important;
+}
+
+.login-history {
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+
+.login-history .login-type {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.login-type .underline {
+    width: 100%;
+    height: 1px;
+    background-color: #da161a;
+    margin-top: 12px;
+}
+
+.login-history .login-cont {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.login-type ul li {
+    float: left;
+    padding: 22px 28px 10px 28px;
+}
+
+.login-type li a {
+    font-size: 18px;
+    color: #666 !important;
+}
+
+.login-type li a.active {
+    color: #da161a !important;
+}
+
+.login-table {
+    padding: 0 30px;
+}
+
+.login-table table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse
+}
+
+.login-table thead tr {
+    height: 40px;
+    font-size: 16px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.login-table table td {
+    font-size: 14px;
+}
+
+.ant-cascader-picker > span {
+    color: #ccc !important;
+}
+
+/* 实名认证 */
+.certification {
+    width: 890px;
+    border-radius: 8px;
+    border: 1px solid #f8f8f8;
+    background-color: #fff;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+
+.certification .ant-tabs-tab-active {
+    background-color: #da161a;
+    color: #fff !important;
+}
+
+.certification .ant-tabs-nav .ant-tabs-tab {
+    margin-right: 0;
+    width: 160px;
+    height: 44px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.certification .ant-tabs-bar {
+    margin-top: 35px;
+}
+
+.certification .ant-tabs-ink-bar {
+    height: 0;
+}
+
+.certification .ant-tabs-nav-scroll {
+    height: 46px;
+    margin-top: 20px;
+    line-height: 45px;
+}
+
+.certification-box {
+    padding: 22px 34px;
+}
+
+.certification-box .hint {
+    margin-bottom: 34px;
+}
+
+.certification-box .input-area {
+    margin: 20px 0;
+}
+
+.certification-box .IDcard-box {
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px
+}
+
+.certification-box .IDcard-box span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.certification-box .IDcard-box > span {
+    padding: 10px;
+}
+
+.certification-box .IDcard > div {
+    width: 100%;
+    height: 100%;
+}
+
+.certification-box .IDcard img {
+    width: 100%;
+    height: 100%;
+}
+
+.IDcard-box .anticon {
+    font-size: 30px;
+}
+
+.input-area span {
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+.input-area .checkbox {
+    overflow: visible;
+    margin: -20px 0 -20px -10px;
+}
+
+.input-area .checkbox label {
+    width: 500px;
+    font-size: 12px;
+    text-align: left;
+}
+
+.input-area .checkbox span {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* 认证信息 */
+.certification-info {
+    padding-left: 20px;
+    margin: 36px 0;
+}
+
+.certification-info > div {
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+}
+
+.certification-info .info-type {
+    width: 80px;
+    color: #999;
+    text-align: right;
+}
+
+.status-main .info-status {
+    margin-left: 290px;
+}
+
+.info-status button {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+    outline: none;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+}
+
+.info-status button.success {
+    color: #00a854;
+    border-color: #00a854;
+}
+
+.info-status button.warn {
+    color: #da161a;
+    border-color: #da161a;
+}
+
+.card-example-box {
+    width: 93%;
+    height: 270px;
+    margin-left: 10px;
+}
+
+.card-example-box img {
+    width: 227px;
+}
+
+.card-example-box span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.card-example-box > div:nth-of-type(1) > span:nth-of-type(1) {
+    width: 227px;
+    line-height: 42px;
+}
+
+.card-example-box > div:nth-of-type(1) > span:nth-of-type(2) {
+    width: 227px;
+    line-height: 42px;
+    margin-left: 21px;
+}
+
+.card-example-box > div:nth-of-type(1) > span:nth-of-type(3) {
+    width: 256px;
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+.card-example-box > div:nth-of-type(1) > span:nth-of-type(3) {
+
+}
+
+.card-example-box > div:nth-of-type(2) > img:nth-of-type(2) {
+    margin-left: 21px;
+}
+
+.card-example-box > div:nth-of-type(2) > img:nth-of-type(3) {
+    margin-left: 24px;
+    width: 227px;
+}
+
+.card-example-box > div:nth-of-type(2) {
+    margin-top: 20px;
+    position: relative;
+}
+
+.card-example-box > div:nth-of-type(2) .anticon {
+    font-size: 18px;
+}
+
+.card-example-box > div:nth-of-type(2) .anticon:nth-of-type(1) {
+    position: absolute;
+    top: 143px;
+    left: 216px;
+}
+
+.card-example-box > div:nth-of-type(2) .anticon:nth-of-type(2) {
+    position: absolute;
+    top: 143px;
+    left: 463px;
+}
+
+.card-example-box > div:nth-of-type(2) .anticon:nth-of-type(3) {
+    position: absolute;
+    top: 143px;
+    right: 20px;
+}
+
+.serve-time {
+    margin: 0 0 30px 13px;
+}
+
+/* 问题反馈 */
+.SecurityCenterFeedback {
+    width: 890px;
+    min-height: 500px;
+    float: right;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+
+.FeedbackTitle {
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.FdTitle_1,
+.FdTitle_2 {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+}
+
+.FdTitle_1 {
+    font-size: 18px;
+    color: #000000;
+}
+
+.FdTitle_2 {
+    font-size: 16px;
+    color: #da161a;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #da161a;
+    cursor: pointer;
+}
+
+.FeedbackTaps .ant-tabs-ink-bar {
+    height: 0;
+}
+
+.FeedbackTaps .ant-tabs-tab-active {
+    background-color: #da161a;
+    color: #fff !important;
+}
+
+.FeedbackTaps .ant-tabs-nav .ant-tabs-tab {
+    margin-right: 0;
+    width: 160px;
+    height: 44px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.ant-tabs-ink-bar {
+    background-color: #da161a !important;
+}
+
+.TapsTableList {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.TabsTabLi > td:nth-of-type(6),
+.TabsTabLi > td:nth-of-type(7) {
+    cursor: pointer;
+}
+
+.TabsTabLi > td:nth-of-type(3) {
+    width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    height: 90px;
+    line-height: 90px;
+}
+
+.FdAlertBox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    cursor: default;
+}
+
+.FdAlertBoxRoom {
+    width: 700px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 100px auto;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+.FdAlertBoxRoom > .clearfix > span {
+    font-size: 18px;
+    line-height: 60px;
+    margin-left: 30px;
+    border-radius: 8px;
+}
+
+/*上传*/
+.FdUpload_Pl {
+    width: 100%;
+    height: 110px;
+    border: 1px solid #fff;
+}
+
+.FdUpload_Pl_1 {
+    width: 382px;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+.FdUpload_Pl_1 span {
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.FdUpload_Pl_1 div {
+    width: 300px;
+    height: 80px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.FdUpload_Pl_1_text {
+    height: 80px;
+    border: none;
+    outline: none;
+}
+
+.FdUpload_Pic {
+    width: 100%;
+    height: 180px;
+    border: 1px solid #fff;
+}
+
+.FdUpload_Pic_1 {
+    width: 382px;
+    height: 160px;
+    margin: 18px auto;
+    font-size: 18px;
+}
+
+.FdUpload_Pic_1 span {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.FdUpload_Pic_1_Up {
+    width: 300px;
+    height: 140px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 120px;
+    padding: 20px;
+}
+
+.FdUpload_Pic_1_Up > span {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.FdUpload_Pic_1_Up > span > div {
+    width: 100%;
+    height: 100%;
+    display: block !important;
+}
+
+.FdUpload_Pic_1_Up > span img {
+    width: 100%;
+    height: 100%;
+}
+
+.FdUpload_Pic_1_Up .anticon {
+    font-size: 32px;
+    color: #dbdbdb;
+    cursor: pointer;
+}
+
+.FdTypeBox {
+    width: 460px;
+    margin-left: 158px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.FdTypeBox span {
+    margin: 25px 8px 0 0;
+    font-size: 18px;
+}
+
+.FdTypeList {
+    width: 380px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FdTypeList li {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0 0 0 10px;
+    border: 1px solid red;
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.FdTypeList li:nth-of-type(1) {
+    margin-bottom: 10px;
+}
+
+.FdTypeList li:nth-of-type(4) {
+    margin-left: 10px;
+}
+
+.FdInfoName,
+.FdInfoPhone {
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+.FdInfoNameIpt,
+.FdInfoPhoneIpt {
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+}
+
+.FdInfoBox li:nth-of-type(1) {
+    margin-left: 194px;
+}
+
+.FdInfoNameIpt,
+.FdInfoPhoneIpt {
+    margin: 20px 0 0 10px;
+}
+
+.FdInfoBox li:nth-of-type(2) {
+    margin-left: 163px;
+}
+
+.FdInfoNameIpt input,
+.FdInfoPhoneIpt input {
+    width: 298px;
+    height: 38px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.FdSubmit button {
+    width: 300px;
+    height: 40px;
+    background-color: #da161a;
+    border: none;
+    outline: none;
+    margin: 20px 0 0 237px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*添加分页功能*/
+.PagePaging {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.PagesNum {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/*通知样式设置*/
+.SecurityCenterInform {
+    width: 890px;
+    min-height: 500px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+    padding-bottom: 20px;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+
+.InformTitle {
+    width: 750px;
+    height: 60px;
+}
+
+.InformTable {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.InformTable tr {
+    height: 40px;
+    font-size: 14px;
+}
+
+.InformTable tr td:nth-of-type(1) {
+    width: 200px;
+}
+
+.InformTable tr td:nth-of-type(2) {
+    width: 250px;
+}
+
+.InformTable tr td:nth-of-type(3),
+.InformTable tr td:nth-of-type(4) {
+    width: 120px;
+}
+
+.InformTable tr td .anticon {
+    cursor: pointer;
+}
+
+.ant-pagination-item a,
+.ant-pagination-prev a,
+.ant-pagination-next a {
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.TextIndent {
+    padding: 0 60px 0 120px;
+    text-indent: 2em;
+}
+
+/*设置分页的位置*/
+.InformPages {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* 菜单栏颜色调整 */
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #da161a !important;
+    box-shadow: 0 0 10px rgba(240, 55, 67, .7);
+}
+
+.ant-menu-item-selected a {
+    color: #fff !important;
+}
+
+.ant-menu-item:after {
+    border-color: #da161a !important;
+}
+
+.SecurityCenter .ant-pagination {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+/*设置点击查看之后的样式*/
+.FeedbackLook {
+    width: 890px;
+    /*background-color: #ededed;*/
+}
+
+.FeedbackLookBox {
+    width: 890px;
+    height: 390px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.FeedbackLookCenter {
+    width: 96%;
+    margin: 0 auto;
+    height: 328px;
+}
+
+.FeedbackLookCenter > div {
+    margin-top: 20px;
+}
+
+.FeedbackLookCenter > div > span {
+    font-size: 16px;
+    color: #666666;
+    width: 120px;
+}
+
+.FeedbackLookCenter > div > p:not(.LookTime) {
+    width: 734px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.UpPic {
+    width: 160px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #666666;
+}
+
+.UpPic img {
+    width: 158px;
+    height: 88px;
+}
+
+.LookTimeBox,
+.LookTime {
+    width: 100%;
+}
+
+.FeedbackLookChat {
+    width: 890px;
+    height: 320px;
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.FeedbackLookChatRoom {
+    width: 100%;
+    height: 258px;
+    overflow-y: auto;
+}
+
+.FeedbackLookChatService span,
+.FeedbackLookChatClient span {
+    font-size: 16px;
+    color: #666666;
+    margin-left: 28px;
+}
+
+.FeedbackLookChatService p,
+.FeedbackLookChatClient p {
+    width: 830px;
+    margin: 10px auto;
+    word-wrap: break-word;
+}
+
+.FeedbackLookChatService div,
+.FeedbackLookChatClient div {
+    width: 93%;
+    margin-bottom: 10px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.FeedbackLookSay {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    margin-top: 30px;
+    border-radius: 8px;
+    border-top: 1px solid #666666;
+}
+
+.FeedbackLookSayBox {
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.FeedbackLookSayBox textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    outline: none;
+}
+
+.FeedbackLookSayAsk {
+    margin: 30px 88px 0 0;
+}
+
+.FeedbackLookSayAsk button {
+    width: 100px;
+    height: 35px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #da161a;
+}
+
+.InformPagesText {
+    font-size: 20px;
+    color: #cac9c9;
+    margin-top: 150px;
+}
+
+.SecurityCenterMenu .ant-menu-submenu-title {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.ResDealPwdButton {
+    width: 180px !important;
+    margin-left: -8px !important;
+}
+
+.DealPwdLock {
+    font-size: 22px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

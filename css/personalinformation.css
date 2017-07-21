@@ -1,0 +1,381 @@
+.PersonalInformation{
+	width: 890px;
+}
+.PersonalInformationInfo{
+	width: 100%;
+}
+.PersonalInformationInfo>.top-title{
+	background-color: #f8f8f8;
+}
+.InformationInfoBox{
+	width: 100%;
+}
+.InformationInfoMain{
+	width: 835px;
+	margin: 0 auto;
+	padding: 40px 0 0 0;
+}
+.InformationInfoList1{
+	width: 500px;
+}
+.PersonalInformationInfo-warp{
+	width: 100%;
+	background-color: #fff;
+	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: 0 -1px 20px rgba(0,0,0,.1);
+}
+.InformationInfoList1>h2,
+.InformationInfoList1>.anticon,
+.InformationInfoList1 p:nth-of-type(1){
+	display: inline-block;
+}
+.InformationInfoList1>h2,
+.InformationInfoList1>.anticon {
+	vertical-align: middle;
+}
+.InformationInfoList1>.anticon{
+	font-size: 20px;
+	cursor: pointer;
+	color: #da161a;
+	margin:2px 0 0 15px;
+}
+.InformationInfoList1>span .anticon{
+	font-size: 20px;
+	cursor: pointer;
+	color: #da161a;
+	vertical-align: middle;
+	margin:2px 0 0 15px;
+}
+.InformationInfoList1>p:nth-of-type(1){
+	margin-left: 45px;
+}
+.InformationInfoList1 input{
+	height: 31px;
+	width: 90px;
+	padding-left: 5px;
+	border-radius: 4px;
+	border: 1px solid #999;
+	outline: none;
+	vertical-align: middle;
+}
+.ant-popover-arrow{
+	top: 5px !important;
+}
+.InformationInfoList1 p:nth-of-type(2){
+	margin: 40px 0 30px 0;
+}
+.InformationInfoList1 p:nth-of-type(1) span{
+	line-height: 30px;
+}
+.InformationInfoList1>p:nth-of-type(1)>.anticon{
+	font-size: 20px;
+	cursor: pointer;
+	color: #0397f7;
+	vertical-align: middle;
+	margin: 0 0 0 15px;
+}
+.InformationInfoList2{
+	width: 335px;
+}
+.InformationInfoList2 li{
+	position: relative;
+}
+.InformationInfoList2 li:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-color: #da161a;
+	left: -20px;
+	top: 7px;
+	border-radius: 50%;
+}
+
+
+.InformationInfoList2 li:not(.InfoList2-first){
+	margin-top: 35px;
+}
+.InformationInfoIcon{
+	width: 835px;
+	margin: 30px auto 0;
+	padding-bottom: 30px;
+}
+.InformationInfoIcon .anticon{
+	font-size: 20px;
+	color: #999;
+}
+.InformationInfoIcon .anticon:nth-of-type(2),
+.InformationInfoIcon .anticon:nth-of-type(3),
+.InformationInfoIcon .anticon:nth-of-type(4){
+	margin-left: 15px; 
+}
+.InformationInfoIcon .anticon:nth-of-type(5){
+	cursor: pointer;
+}
+.InformationInfoIcon>div:nth-of-type(1)>a{
+	margin-left: 15px;
+}
+.InformationInfoIcon span{
+	cursor: pointer;
+	font-size: 14px;
+	color: #0397f7;
+	margin-right: 40px;
+}
+.InformationInfoCenter{
+	width: 100%;
+	height: 300px;
+	margin-top: 30px;
+}
+.InformationInfoCenter>div{
+	width: 430px;
+	height: 300px;
+	border-radius: 4px;
+	background-color: #fff;
+	box-shadow: 0 -1px 20px rgba(0,0,0,.1);
+}
+.InfoCenterList1 p{
+	height: 140px;
+	padding: 30px 0 0 20px;
+}
+.InfoCenterList1 p:nth-of-type(1){
+	width: 270px;
+}
+.InfoCenterList1 p:nth-of-type(2){
+	width: 145px;
+}
+.InfoCenterList1 p span:nth-of-type(1){
+	font-size: 18px;
+}
+.InfoCenterList1 p span:nth-of-type(2){
+	font-size: 34px;
+	margin-top: 20px;
+}
+.InfoCenterList2{
+	overflow: hidden;
+}
+.InfoCenterList2 p{
+	margin-left: 20px;
+}
+.InfoCenterList2 p:nth-of-type(1){
+	margin-top: 34px;
+}
+/*.InfoCenterList1 p span{
+	font-size: 16px;
+}
+
+.InfoCenterList1 p,
+.InfoCenterList2 p{
+	margin-left: 20px;
+}
+.InfoCenterList1 p:nth-of-type(1),
+.InfoCenterList2 p:nth-of-type(1){
+	margin-top: 34px;
+}
+.InfoCenterList1 p:nth-of-type(2),
+.InfoCenterList1 p:nth-of-type(3){
+	margin-top: 25px;
+}
+.InfoCenterList1 p span:nth-of-type(2){
+	margin-left: 50px;
+}*/
+.InfoCenterList1>button{
+	width: 100px;
+	height: 40px;
+	outline: none;
+	border:1px solid #dbdbdb;
+	background-color: #fff;
+	font-size: 16px;
+	color: #dbdbdb;
+	border-radius: 4px;
+	margin: 20px 0 0 20px;
+	cursor: pointer;
+}
+.CenterList1Button{
+	width: 377px;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.CenterList1Button button{
+	width: 140px;
+	height: 40px;
+	font-size: 16px;
+	background-color: #fff;
+	outline: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.CenterList1Button a:nth-of-type(1) button{
+	color: #da161a;
+	border: 1px solid #da161a;
+}
+.CenterList1Button a:nth-of-type(2) button{
+	color: #0397f7;
+	border: 1px solid #0397f7;
+}
+{
+	margin-left: 20px;
+}
+.InfoCenterList2 p:nth-of-type(1) span{
+	font-size: 16px;
+	margin-left: 20px;
+}
+.InfoCenterList2 .anticon{
+	font-size: 30px;
+	color: #da161a;
+	vertical-align: middle;
+}
+.CenterList2Info{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	margin-top: 28px;
+}
+.CenterList2Info>span{
+	height: 25px;
+	font-size: 14px;
+	color: #999;
+	text-align: center;
+}
+.CenterList2Info>span:nth-of-type(1){
+	width: 128px;
+}
+.CenterList2Info>span:nth-of-type(2){
+	width: 72px;
+}
+.CenterList2Info>span:nth-of-type(3){
+	 width: 134px;
+ }
+
+.CenterList2Main{
+	width: 400px;
+	height: 183px;
+	margin: 0 auto;
+	overflow-y: auto; 
+	border-top: 1px solid #da161a;
+}
+.CenterList2MainBox>span{
+	width: 100px;
+	height: 46px;
+	line-height: 40px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.AccountDetail{
+	width: 100%;
+	margin-top: 30px;
+	background-color: #fff;
+	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: 0 -1px 20px rgba(0,0,0,.1);
+}
+.AccountDetailTitle{
+	width: 100%;
+	height: 60px;
+	line-height: 70px;
+	font-size: 18px;
+	color: #da161a;
+}
+.DetailTitleList1>span{
+	padding-left: 26px;
+}
+.DetailTitleList2>span{
+	padding-right: 26px;
+}
+.DetailTitleList2 .anticon{
+	cursor: pointer;
+}
+.DetailTitleList2 span{
+	cursor: pointer;
+	color: #0397f7;
+}
+.AccountDetailMain{
+	width: 840px;
+	margin: 0 auto;
+	border-top: 1px solid #da161a;
+}
+.AccountDetailMainButton{
+	display: inline-block;
+	margin-left: 20px;
+}
+.AccountDetailMainButton button{
+	width: 84px;
+    height: 28px;
+    border: 1px solid #0397f7;
+    color: #0397f7;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.AccountDetailMainBtn{
+	width: 100%;
+	margin-top: 20px;
+}
+.AccountDetailMainBtn>span:nth-of-type(1){
+	margin-right: 10px;
+}
+.AccountDetailMainBtn>span:nth-of-type(3){
+	margin: 0 10px;
+}
+.AccountDetailMainBtn .ant-radio-group{
+	margin: 0 0 20px 20px;
+}
+.AccountDetailMainSelect label{
+	margin-right: 10px;
+}
+.AccountDetailMainSelect>div:nth-of-type(2){
+	margin-left: 20px;
+}
+.AccountDetailTable{
+	width: 100%;
+	margin-top: 10px;
+	min-height: 500px;
+	position: relative;
+}
+.DetailTable{
+	width: 100%;
+}
+.DetailTable table{
+	border-collapse: collapse;
+}
+.DetailTable tr th{
+	height: 40px;
+	border-bottom: 1px solid #da161a;
+}
+.DetailTable tr td{
+	height: 40px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.DetailTablePage{
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+.reset-pwd {
+	width: 1200px;
+	height: 600px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 100px;
+	background-color: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.reset-pwd .reset-box {
+	padding: 0 28px;
+}
+
+.reset-box .ant-steps {
+	padding: 15px 55px;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.form-box {
+	margin-top: 40px;
+}
+
+.form-box .input-body {
+	width: 386px;
+	margin: 20px auto;
+	font-size: 16px;
+}
+
+.form-box label {
+	display: inline-block;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+	font-size: 16px;
+	vertical-align: top;
+}
+
+.reset-box .input-box {
+	width: 300px;
+	height: 40px;
+	display: inline-block;
+	margin-left: 5px;
+	border-radius: 8px;
+	overflow: hidden;
+	border: 1px solid #dbdbdb;
+}
+
+.reset-box .yzcode-input {
+	width: 180px;
+	background-color: red;
+}
+.yzCodeInfo{
+	color: #da161a;
+	line-height: 38px;
+}
+.reset-box .input-box input {
+	border: 0 none;
+	outline: none;
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	text-indent: 10px;
+}
+
+.form-box .yzcode {
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	vertical-align: top;
+	background-color: #ededed;
+	margin-left: 20px;
+}
+
+.form-box .yzcode img {
+	width: 100%;
+	height: 100%;
+}
+
+.reset-box .input-body a {
+	width: 300px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: #da161a;
+	border-radius: 8px;
+	color: #fff !important;
+	display: inline-block;
+}
+
+
+.form-box .verify-box {
+	width: 600px;
+	height: 80px;
+	background-color: #ededed;
+	margin: 20px auto;
+	border-radius: 8px;
+	box-sizing: border-box;
+	padding: 14px 30px;
+}
+
+.verify-box dt, dd {
+	font-size: 16px;
+}
+
+.verify-box dd {
+	margin-top: 10px;
+}
+
+.verify-box button {
+	width: 120px;
+	height: 40px;
+	font-size: 14px;
+	color: #fff;
+	background-color: #da161a;
+	border: 0 none;
+	outline: none;
+	border-radius: 8px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.verify-box .underline {
+	width: 100%;
+	height: 1px;
+	background-color: #ccc;
+	margin: 10px 0;
+}
+
+.form-box .tips {
+	font-size: 24px;
+	color: #00a854;
+	text-align: center;
+}
+
+.input-body a {
+	color: #da161a !important;
+}
+.resetPwdInfoBox,
+.NewOldPwd{
+	width: 93%;
+	height: 20px;
+	color: #da161a;
+	font-size: 16px;
+}
+.NewOldPwd{
+	width: 100%;
+}
+.NewOldPwd span{
+	width: 363px;
+	margin: 0 0 0 463px;
+}

@@ -1,0 +1,50 @@
+/*在这里重新定义初级认证的css样式*/
+.CertificationPrimary{
+	width: 830px;
+	padding: 26px 0 40px 20px;
+	border-radius: 4px;
+	border: 1px solid #dbdbdb; 
+}
+.CertificationPrimaryName{
+	font-size: 20px;
+}
+.CertificationPrimary .input-area{
+	width: 400px;
+}
+.CertificationPrimary .input-box{
+	width: 180px;
+}
+.CertificationPrimary .input-area:nth-of-type(1){
+	width: 100%;
+}
+.CertificationPrimary .input-area:nth-of-type(2){
+	height: 40px;
+}
+.primary-left{
+	width: 400px;
+	height: 142px;
+}
+.primary-right{
+	width: 400px;
+	height: 142px;
+}
+.primary-right .input-area:nth-of-type(2){
+	margin-top: 38px !important;
+}
+.CertificationPrimary .input-area:nth-of-type(1){
+}
+.CertificationPrimaryBtn{
+	margin: 20px 0 0 302px;
+}
+.CertificationPrimaryBtn button{
+	width: 200px;
+	height: 40px;
+	border: 1px solid #da161a;
+	border-radius: 4px;
+	background-color: #fff;
+	outline: none;
+	cursor: pointer;
+}
+.CertificationPrimaryLose{
+	margin: 0 0 20px 9px;
+}

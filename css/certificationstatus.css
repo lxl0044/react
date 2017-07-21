@@ -1,0 +1,32 @@
+
+.status-main .certification-info{
+	margin: 22px 0 !important; 
+}
+.certification-info .country{
+	margin-left: 240px;	
+}
+.certification-info .name{
+	margin-left: 240px;
+}
+.certification-info .card{
+	margin-left: 268px;
+}
+.status-lose{
+	width: 232px;
+	margin: 0 auto;
+}
+.status-lose p{
+	margin-top: 5px;
+}
+.status-btn{
+	margin: 20px 0 0 300px;
+}
+.status-btn button{
+	width: 200px;
+	height: 40px;
+	margin: 0 auto;
+	border: 1px solid #da161a;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: #fff;
+}

@@ -1,0 +1,113 @@
+.dealcenter .chat {
+	width: 100%;
+	height: 586px;
+}
+
+.dealcenter-chat-body {
+	width: 766px;
+	margin: 0 auto;
+}
+
+.dealcenter-chat-box {
+	width: 100%;
+	height: 458px;
+	border-bottom: 1px solid #e5e5e5;
+	overflow: auto;
+}
+
+.dealcenter-chat-cont {
+	width: 100%;
+	font-size: 16px;
+	padding-left: 26px;
+}
+
+.dealcenter-chat-cont li {
+	margin: 9px 0;
+}
+
+.dealcenter-chat-cont .msg-user {
+	font-weight: 600;
+	color: #0397f7;
+}
+
+.dealcenter-chat-cont span {
+	display: inline-block;
+}
+
+.dealcenter-chat-cont .msg-content {
+	height: 36px;
+	line-height: 36px;
+	padding: 0 18px;
+	border-radius: 18px;
+	box-shadow: rgba(0,0,0,.3);
+	background-color: #fff;
+}
+
+.dealcenter-chat-cont .msg-content.self {
+	background-color: #0397f7;
+	color: #fff;
+}
+
+.dealcenter-chat-body .chat-area {
+	box-sizing: border-box;
+	padding: 35px 0 0 26px;
+	position: relative;
+}
+
+.chat-area .emoji-placeholder {
+	position: absolute;
+	bottom: 66px;
+}
+
+.chat-area .emoji-box {
+	position: absolute;
+	width: 390px;
+	height: 165px;
+	overflow: hidden;
+	bottom: 102px;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.chat-area span {
+	cursor: pointer;
+	font-size: 20px;
+	margin-right: 3px;
+}
+
+.chat-area textarea {
+	width: 514px;
+	height: 65px;
+	resize: none;
+	outline: none;
+	padding: 10px 0 0 10px;
+	border-radius: 4px;
+	display: block;
+	float: left;
+	border-color: #ccc;
+	background-color: transparent;
+}
+
+.chat-area button {
+	width: 120px;
+	height: 44px;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: transparent;
+	color: #da161a;
+	border: 1px solid #da161a;
+	text-align: center;
+	line-height: 44px;
+	outline: none;
+	display: block;
+	float: left;
+	margin: 10px 0 0 74px;
+	transition: all .3s ease-in-out;
+}
+
+.chat-area button:hover {
+	transition: all .3s ease-in-out;
+	background-color: #fff;
+}

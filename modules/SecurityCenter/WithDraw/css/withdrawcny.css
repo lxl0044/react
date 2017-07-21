@@ -1,0 +1,228 @@
+
+.WithdrawCNYMain{
+	margin: 28px 0 0 20px;
+	padding-bottom: 20px;
+}
+.WithdrawCNYMain p{
+	margin-top: 10px;
+}
+.WithdrawCNYPay{
+	width: 91%;
+	margin: 0 auto;
+	margin-top: 30px;
+	overflow: hidden;
+	padding: 48px 0 34px 0;
+	border: 1px solid #e5e5e5;
+}
+.WithdrawCNYInfo{
+	margin-left: 40px;
+}
+.WithdrawCNYInfo p:nth-of-type(2){
+	margin-left: 14px;
+}
+.WithdrawCNYInfo p:nth-of-type(3){
+	margin-left: 42px;
+}
+.WithdrawCNYInfo p:nth-of-type(4){
+	margin-left: 113px;
+}
+.WithdrawCNYInfo p:nth-of-type(5){
+	margin-left: 43px;
+}
+.WithdrawCNYInfo p:nth-of-type(6),
+.WithdrawCNYInfo p:nth-of-type(7){
+	margin-left: 114px;
+}
+.WithdrawCNYInfo p:nth-of-type(8){
+	margin-left: 42px;
+	width: 709px;;
+}
+.WithdrawCNYInfo-PayInform1{
+	padding-top: 20px;
+}
+.WithdrawCNYPay-input{
+	width: 160px;
+	height: 34px;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	padding-left: 10px;
+	outline: none;
+}
+.WithdrawCNYPay-number{
+	margin: 0 0 0 226px;
+}
+.WithdrawCNYPay-text{
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 34px;
+}
+.WithdrawCNYPay-big-text{
+	font-size: 20px !important;
+}
+.WithdrawCNYPay-little{
+	font-size: 12px;
+}
+.WithdrawCNYPay-address{
+	margin: 30px 0 0 194px;
+}
+.WithdrawCNYPay-address-box{
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	width: 298px;
+	height: 34px;
+	overflow: hidden;
+}
+.WithdrawCNYPay-address-box input{
+	border: none;
+	outline: none;
+	width: 196px;
+	height: 32px;
+	padding-left: 10px;
+}
+.WithdrawCNYPay-address-box button{
+	width: 100px;
+	height: 34px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: #0397f7;
+	color: #fff;
+}
+.WithdrawCNYPay-add-address{
+	width: 298px;
+	margin-left: 322px;
+	position: absolute;
+	z-index: 99;
+	border: 1px solid #dbdbdb;
+	background-color: #fff;
+	border-radius: 4px;
+	padding-bottom: 15px;
+}
+.WithdrawCNYPay-yzCode-box{
+	width: 95px;
+	height: 35px;
+	margin-left: 20px;
+}
+.WithdrawCNYPay-yzCode-box img{
+	cursor: pointer;
+	width: 95px;
+	height: 34px;
+}
+.WithdrawCNYPay-fee{
+	margin: 16px 0 0 226px;
+}
+.WithdrawCNYPay-num {
+	margin: 16px 0 0 194px;
+}
+.WithdrawCNYPay-num>span:nth-of-type(2){
+	margin-left: 20px;
+}
+.WithdrawCNYPay-num p{
+	margin: 6px 0 0 127px;
+}
+.WithdrawCNYPay-num .ant-input-number{
+	width: 160px;
+    height: 34px;
+    line-height: 34px;
+}
+.WithdrawCNYPay-p-gray span:nth-of-type(2){
+	margin: 0 2px 0 2px !important;
+}
+.WithdrawCNYPay-low-high{
+	color: #999 !important;
+}
+.WithdrawCNYPay-gray{
+	color: #999 !important;
+}
+.WithdrawCNYPay-pwd{
+	margin: 16px 0 0 242px;
+}
+.WithdrawCNYPay-yzCode{
+	margin: 16px 0 0 226px;
+}
+.WithdrawCNYPay-phoneCode{
+	margin: 16px 0 0 226px;
+}
+.WithdrawCNYPay-phoneCode span:nth-of-type(2){
+	color: #0397f7;
+	margin-left: 20px;
+	cursor: pointer;
+}
+.WithdrawCNYPay-button{
+	margin: 34px 0 0 318px;
+}
+.WithdrawCNYPay-button button{
+	width: 200px;
+	height: 40px;
+	cursor: pointer;
+	outline: none;
+	background-color: #fff;
+	border: 1px solid #da161a;
+	border-radius: 4px;
+}
+.WithdrawCNYPay-add-address-box-mian{
+	margin-top: 10px;
+	height: 30px;
+}
+.WithdrawCNYPay-add-address-box-mian p:nth-of-type(1){
+	width: 56px;
+}
+.WithdrawCNYPay-add-address-box-mian p:nth-of-type(2){
+	width: 190px;
+}
+.WithdrawCNYPay-add-address-box-mian p:nth-of-type(3){
+	width: 50px;
+	cursor: pointer;
+}
+.WithdrawCNYPay-add-address-box-button{
+	width: 100%;
+	margin-top: 15px;
+}
+.WithdrawCNYPay-add-address-box-button button{
+	width: 240px;
+	height: 32px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 4px;
+	outline: none;
+	display: block;
+	border: 1px solid #da161a;
+	cursor: pointer;
+}
+.pay_record_main_center td:nth-of-type(5){
+	width: 155px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
