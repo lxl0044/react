@@ -17,7 +17,7 @@ class DealCenter extends React.Component {
 				<div className="dealcenter-wrapper">
 					<img src={comming} alt=""/>
 				</div>
-				<Tips />
+				{/*<Tips />*/}
 				<div className="dealcenter-online" style={{backgroundImage: `url(${img}charts_bg.png)`}}>
 					<img src={klineHolder} alt="" style={{width: '1200px', margin: '0 auto', display: 'block'}}/>
 				</div>

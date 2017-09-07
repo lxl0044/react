@@ -12,6 +12,9 @@ export const removeClass = function (el, cls) {
 export const addClass = function (el, cls) {
     if (!hasClass(el, cls)) el.className += " " + cls
 }
+export const addMarketClass = function (el, cls) {
+    if (!hasClass(el, cls)) el.className += cls
+}
 
 export const toggleClass = (el, cls) => {
     if (hasClass(el, cls)) {
@@ -117,7 +120,44 @@ export const getBeforeDate = function (n) {
  * @param price 需要被格式化的数值 10.0000
  * @param number 需要保留的小数点位数
  */
-export const formatNumber = function (number, index) {
+function toThousands(num) {
+    var num = (num || 0).toString(), result = '';
+    while (num.length > 3) {
+        result = ',' + num.slice(-3) + result;
+        num = num.slice(0, num.length - 3);
+    }
+    if (num) { result = num + result; }
+    return result;
+}
+
+export const formatNumber = function (number, num) {
+    if(number === '敬请期待') return '敬请期待'
+    if(!number) return '0.00'
+    let index = parseInt(num);
+    if (/\./.test(`${number}`)) {
+        let arr = `${number}`.split('.'), result = toThousands(arr[0])
+        if (arr[1].length >= index) {
+            return number = `${result}.` + `${arr[1]}`.slice(0, index)
+        }
+
+        let prics = arr[1]
+        for (let i = 0; i < index - arr[1].length; i++) {
+            prics += '0'
+        }
+        return number = `${result}.${prics}`
+    }
+    let result = toThousands(number)
+    number = `${result}.`
+    for (let j = 0; j < index; j++) {
+        number += '0'
+    }
+    return number
+}
+
+export const initNumber = function (number, num) {
+    if(number === '敬请期待') return '敬请期待'
+    if(!number) return '0.00'
+    let index = parseInt(num);
     if (/\./.test(`${number}`)) {
         let arr = `${number}`.split('.')
         if (arr[1].length >= index) {
@@ -145,13 +185,15 @@ export const formatNumber = function (number, index) {
  * @returns {string} 格式化的事件
  */
 export const formatDate = function (time, str) {
-    let N,M,D,h,m,s,date
-    N = new Date(time).getFullYear()
-    M = new Date(time).getMonth() + 1
-    D = new Date(time).getDay()
-    h = new Date(time).getHours()
-    m = new Date(time).getMinutes()
-    s = new Date(time).getSeconds()
+    if(!time) return
+    let N,M,D,h,m,s,date;
+    let dateFormat = time.split('-').join('/')
+    N = new Date(dateFormat).getFullYear()
+    M = new Date(dateFormat).getMonth() + 1
+    D = new Date(dateFormat).getDay()
+    h = new Date(dateFormat).getHours()
+    m = new Date(dateFormat).getMinutes()
+    s = new Date(dateFormat).getSeconds()
     switch (str) {
         case 'YYYY-MM-DD':
             return date = `${N}-${M >= 10 ? M : '0' + M}-${D >= 10 ? D : '0' + D}`

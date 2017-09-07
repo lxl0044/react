@@ -4,7 +4,8 @@ import {
     getBankTypeList,
     addBankCard,
     deleteBankCard,
-    bankTransferAccounts
+    bankTransferAccounts,
+    authConfig
 } from '../../Redux/Action/PayAction'
 import {Icon, message} from 'antd';
 import BankCardPayAlert from './BankCardPayAlert'
@@ -67,16 +68,20 @@ export default class BankCardPay extends React.Component {
         let sum = money + "." + point
         if (!money) return message.error("请输入充值金额")
         if (!reg.test(money)) return message.error("输入内容错误")
-        if (sum < amountLowLimit) return message.error("充值金额最少" + amountLowLimit)
-        if (sum > amountHighLimit) return message.error("充值金额最大不超过" + amountHighLimit)
+        if (money < amountLowLimit) return message.error("充值金额最少" + amountLowLimit)
+        if (money > amountHighLimit) return message.error("充值金额最大不超过" + amountHighLimit)
         if (!number) return message.error("请绑定银行卡")
         const {dispatch} = this.props
-
+        let parms = {
+            rechargeType: 3,
+            actionId: 1,
+            currencyId: 1
+        }
+        dispatch(authConfig(dispatch,parms))
         let payButton = this.refs.payButton
         payButton.setAttribute('disabled', 'disabled')
-        payButton.style.backgroundColor = '#ccc';
-        payButton.style.border = "1px solid #ccc"
-
+        payButton.style.backgroundColor = '#da161a';
+        payButton.style.border = "1px solid #da161a"
         let info = {
             amount: sum,
             cardId: id,
@@ -175,8 +180,8 @@ export default class BankCardPay extends React.Component {
             bankCustomerName: name
         }
         getBtn.setAttribute('disabled', 'disabled')
-        getBtn.style.backgroundColor = '#ccc';
-        getBtn.style.border = "1px solid #ccc"
+        getBtn.style.backgroundColor = '#c61014';
+        getBtn.style.border = "1px solid #c61014"
         dispatch(addBankCard(dispatch, info, getBtn))
     }
 
@@ -248,7 +253,7 @@ export default class BankCardPay extends React.Component {
                             {item}
                             {/*<Icon className={isIconShow == 0 ? "green hide" : "green show"} type="check-circle"/>*/}
                             <div className="bankCardPayCardAdd">
-                                <button className="warn" onClick={this.addCard.bind(this)}>添加银行卡</button>
+                                <button onClick={this.addCard.bind(this)}>添加银行卡</button>
                             </div>
                         </div>
                         <div
@@ -286,7 +291,7 @@ export default class BankCardPay extends React.Component {
                                             <span>{phone}</span>
                                         </div>
                                         <div className="AddInfoBoxCenterMainButton">
-                                            <button className="warn" ref="getBtn"
+                                            <button ref="getBtn"
                                                     onClick={this.sureCardFunc.bind(this)}>确定
                                             </button>
                                         </div>

@@ -1,0 +1,121 @@
+/* header */
+.header {
+	width: 100%;
+	height: 66px;
+	background-color: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	color: #fff;
+}
+.header .header-box {
+	width: 1200px;
+	height: 66px;
+	margin: 0 auto;
+}
+.header-box .logo {
+	width: 156px;
+	height: 56px;
+	margin-top: 10px;
+	text-indent: -9999px;
+	background: url(../images/logo.png) no-repeat;
+}
+.header-box>a:nth-of-type(2){
+	font-size: 20px;
+	margin: 16px 50px 0 -20px;
+	border-left: 1px solid #ccc;
+	padding-left: 14px;
+	height: 33px;
+	color: #777777;
+	font-weight: 400;
+	line-height: 33px;
+}
+.header-box li {
+	float: left;
+	font-size: 14px;
+	margin: 0 20px;
+	line-height: 66px;
+	position: relative;
+}
+.header-box li:nth-of-type(1){
+	margin-left: 110px;
+}
+.header-box .underline {
+	width: 100%;
+	margin-top: 6px;
+	height: 2px;
+	background-color: #da161a;
+	display: none;
+}
+.header-box li a {
+	font-weight: 400;
+	display: block;
+	color: #333;
+}
+.header-box li span:hover {
+	border-bottom: 2px solid #da161a;
+	padding-bottom: 5px;
+}
+.header-box li.selected .underline {
+	display: block;
+	position: absolute;
+	bottom: 18px;
+}
+.header .user-box {
+	width: 330px;
+	text-align: center;
+	line-height: 66px;
+}
+.user-box a {
+	width: 56px;
+	height: 26px;
+	border-radius: 4px;
+	border: 1px solid #da161a;
+	background-color: #da161a;
+	line-height: 26px;
+	text-align: center;
+	display: inline-block;
+	margin: 0 10px;
+	transition: all .3s linear;
+}
+.user-info > dl {
+	width: 350px;
+	height: 66px;
+}
+.user-info > dl > dd {
+	padding: 10px 0;
+	font-size: 12px;
+}
+.user-info > dl > dd:first-child {
+	padding: 0;
+	line-height: 66px;
+	margin-right: 20px;
+}
+.user-info > dl > dd:last-child{
+	margin-top: 10px;
+}
+.user-info dd:last-child a {
+	width: 56px;
+	height: 26px;
+	border-radius: 4px;
+	border: 1px solid #da161a;
+	background-color: #da161a;
+	line-height: 26px;
+	text-align: center;
+	display: inline-block;
+	transition: all .3s linear;
+}
+.userUid{
+	cursor: default;
+}
+.user-info dd:first-child > a {
+	margin: 0 14px;
+	color: #000 !important;
+}
+.user-info dd a.username {
+	display: inline-block;
+	width: 60px;
+	overflow: hidden;
+	color: #000 !important;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

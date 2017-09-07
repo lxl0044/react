@@ -1,0 +1,265 @@
+.instationTrunCoin{
+    width: 890px;
+}
+.instationTrunCoin>div:nth-of-type(1){
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+.instationTrunCoin-box{
+    width: 100%;
+    background-color: #fff;
+    padding: 100px 0 76px 0;
+}
+.instationTrunCoin-box input{
+    width: 162px;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    outline: none;
+    padding-left: 10px;
+}
+.instationTrunCoin-box-selectCoin>span{
+    margin-right: 20px;
+}
+.instationTrunCoin-box-selectCoin .ant-select-selection--single{
+    height: 34px;
+}
+.instationTrunCoin-box-selectCoin .ant-select-selection__rendered{
+    line-height: 32px;
+}
+.instationTrunCoin-box-balance{
+    margin: 20px 0 0 247px;
+}
+.instationTrunCoin-box-balance p span:nth-of-type(1){
+    margin-right: 20px;
+}
+.instationTrunCoin-box-balance p span:nth-of-type(2){
+    font-size: 18px;
+}
+.instationTrunCoin-box-balance p span:nth-of-type(3){
+    color: #999;
+}
+.instationTrunCoin-box-uid{
+    margin: 20px 0 0 217px;
+}
+.instationTrunCoin-box-uid p{
+    margin-right: 20px;
+    line-height: 34px;
+}
+.instationTrunCoin-box-uname{
+    margin: 20px 0 0 214px;
+}
+.instationTrunCoin-box-uname p{
+    margin-right: 19px;
+    line-height: 34px;
+}
+.instationTrunCoin-box-num{
+    margin: 20px 0 0 247px;
+}
+.instationTrunCoin-box-num p{
+    margin-right: 20px;
+    line-height: 34px;
+}
+.instationTrunCoin-box-num div span{
+    color: #999;
+}
+.instationTrunCoin-box-num input {
+    margin-right: 30px;
+}
+.instationTrunCoin-box-text{
+    margin: 5px 0 0 247px;
+    color: #999;
+}
+.instationTrunCoin-box-text>p:nth-of-type(1){
+    margin-right: 20px;
+}
+.instationTrunCoin-box-hint{
+    margin-left: 339px;
+}
+.instationTrunCoin-box-dealCoin{
+    margin: 20px 0 0 247px;
+}
+.instationTrunCoin-box-dealCoin span{
+    margin-right: 20px;
+}
+.instationTrunCoin-box-imgCoin{
+    margin: 20px 0 0 234px;
+}
+.instationTrunCoin-box-imgCoin span{
+    margin-right: 20px;
+    line-height: 34px;
+}
+.instationTrunCoin-box-imgCoin>div{
+    width: 94px;
+    height: 34px;
+    margin-left: 30px;
+}
+.instationTrunCoin-box-imgCoin>div img{
+    width: 94px;
+    height: 34px;
+    cursor: pointer;
+}
+.instationTrunCoin-box-phoneCoin{
+    margin: 20px 0 0 234px;
+}
+.instationTrunCoin-box-phoneCoin span{
+    margin-right: 20px;
+    line-height: 34px;
+}
+.instationTrunCoin-box-phoneCoin button{
+    margin-left: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #0397f7;
+    background-color: #fff;
+}
+.instationTrunCoin-box-turn {
+    margin-left: 338px;
+}
+.instationTrunCoin-box-turn button{
+    width: 200px;
+    height: 40px;
+    margin-top: 34px;
+    outline: none;
+    border: none;
+    background-color: #da161a;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.instationTrunCoin-box-turn button:active{
+    background-color: #c61014;
+}
+.InstationTrunCoinTabs{
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, .1);
+}
+.InstationTrunCoinTable-table{
+    padding: 0 20px 0 20px;
+}
+.InstationTrunCoinTable-table-wrap{
+    width: 100%;
+}
+.InstationTrunCoinTable-table-wrap>div>span:nth-of-type(1){
+    margin-right: 10px;
+}
+.InstationTrunCoinTable-table-wrap>div>span:nth-of-type(3){
+    margin: 0 10px;
+}
+.InstationTrunCoinTable-table-main{
+    width: 100%;
+    min-height: 500px;
+    margin-top: 40px;
+    position: relative;
+}
+.InstationTrunCoinTable-table-main table{
+    border-collapse: collapse;
+    width: 100%
+}
+.InstationTrunCoinTable-table-main table tr{
+    height: 40px;
+}
+.InstationTrunCoinTable-table-main table tr th{
+    border-bottom: 1px solid #da161a;
+}
+.InstationTrunCoinTable-table-main table tr td{
+    border-bottom: 1px solid #dbdbdb;
+}
+.InstationTrunCoinTable-table-main table tr th:nth-of-type(1){
+    width: 230px;
+}
+.InstationTrunCoinTable-table-main table tr th:nth-of-type(3){
+    width: 192px;
+    text-align: right;
+    padding-right: 65px
+}
+.InstationTrunCoinTable-table-main tbody tr td:nth-of-type(3){
+    text-align: right;
+    padding-right: 65px
+}
+.InstationTrunCoinTable-table-main tbody tr td:last-child span{
+    cursor: pointer;
+}
+.InstationTrunCoinTabs .ant-tabs-tab{
+    font-size: 16px;
+    padding: 20px;
+}
+.InstationTrunCoinTabs .ant-tabs-ink-bar-animated{
+    height: 1px;
+}
+.InstationTrunCoinTabs .ant-tabs-nav .ant-tabs-tab-active{
+    color: #da161a;
+}
+.InstationTrunCoinTabs .ant-tabs-bar{
+    margin-bottom:20px;
+}
+.instationTrunCoin-box-selectCoin{
+    background-color: #fff;
+    position: relative;
+}
+.instationTrunCoin-show{
+    height: 98px;
+    font-size: 16px;
+    line-height: 98px;
+    padding-left: 30px;
+}
+.instationTrunCoin-show img{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.instationTrunCoin-list{
+    position: absolute;
+    width: 830px;
+    height: 86px;
+    overflow: hidden;
+    left: 30px;
+    background-color: #f6fafc
+}
+.instationTrunCoin-list ul{
+    height: 100%;
+    width: 760px;
+}
+.instationTrunCoin-list ul li{
+    cursor: pointer;
+    margin: 24px 26px 0 0;
+    width: 148px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    position: relative;
+}
+.instationTrunCoin-list ul img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle
+}
+.instationTrunCoin-list ul li:nth-of-type(4n+1){
+    margin-left: 45px;
+}
+.instationTrunCoin-list button{
+    outline: none;
+    border: none;
+    margin-top: 32px !important;
+    width: 70px !important;
+    color: #0397f7;
+    cursor: pointer;
+    background-color: transparent;
+}
+.instationTrunCoin-list button span{
+    margin: 0 5px 0 10px;
+}
+
+
+
+
+
+
+
+

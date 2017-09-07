@@ -6,11 +6,7 @@ import {requestUserInfoInWithDraw, queryCoinInfo} from '../../Redux/Action/WithD
 import TopTitle from '../../Common/TopTitle';
 import './css/withdraw12ct.css'
 import './css/withdrawcny.css'
-import Withdraw12CTPay from './Withdraw12CT/Withdraw12CTPay'
-import Withdraw12CTInfo from './Withdraw12CT/Withdraw12CTInfo'
-import Withdraw12CTTable from './Withdraw12CT/Withdraw12CTTable'
 import WithdrawCNYPay from './WithdrawCNY/WithdrawCNYPay'
-import WithdrawCNYInfo from './WithdrawCNY/WithdrawCNYInfo'
 import WithdrawCNYTable from './WithdrawCNY/WithdrawCNYTable'
 import CNYwithdraw from '../../../images/CNY-withdraw.png'
 import CTwithdraw from '../../../images/12ct-withdraw.png'
@@ -118,8 +114,7 @@ class SecurityCenterWithdraw extends React.Component {
                             {/*</li>*/}
                         {/*</ul>*/}
                     {/*</div>*/}
-                    {this.state.value == 1 ? <WithdrawCNYPay { ...this.props }/> : this.state.value == 2 ?
-                        <Withdraw12CTPay { ...this.props }/> : ''}
+                    <WithdrawCNYPay { ...this.props }/>
                     <div
                         className={isAuth == 0 || isValidatePass == 0 || !withdraw ? "show SecurityCenterPay-alert" : "hide SecurityCenterPay-alert"}>
                         <div
@@ -143,17 +138,17 @@ class SecurityCenterWithdraw extends React.Component {
                                 {isAuth == 0 || isValidatePass == 0 ? <Link className="warn show text-center"
                                                                             to={isAuth == 0 ? "/personal/certification" : "/personal/settings"}>{isAuth == 0 ? "进行实名认证" : "进行交易密码设置"}</Link>
                                     : <Link style={{margin: "0"}} onClick={this.closePayCoin.bind(this)}
-                                            className="warn show text-center">我了解了</Link>}
+                                            className="warn show text-center">我已了解</Link>}
                             </div> : <div className="SecurityCenterPay-alert-btn" style={{margin: "0 auto"}}>
                                 {isAuth == 0 || isValidatePass == 0 ? <Link className="warn show text-center"
                                                                             to={isAuth == 0 ? "/personal/certification" : "/personal/settings"}>{isAuth == 0 ? "进行实名认证" : "进行交易密码设置"}</Link>
-                                    : <Link to='personal/securitycenterwithdraw' style={{margin: "0"}} onClick={this.closePayCoin.bind(this)}
-                                            className="warn show text-center">我了解了</Link>}
+                                    : <Link to='/personal/securitycenterwithdraw' style={{margin: "0"}} onClick={this.closePayCoin.bind(this)}
+                                            className="warn show text-center">我已了解</Link>}
                             </div>}
                         </div>
                     </div>
                 </div>
-                {this.state.value == 1 ? <WithdrawCNYTable { ...this.props }/> : this.state.value == 2 ? <Withdraw12CTTable { ...this.props }/> : ''}
+                <WithdrawCNYTable { ...this.props }/>
             </div>
         )
     }

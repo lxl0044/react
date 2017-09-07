@@ -11,6 +11,11 @@ module.exports = {
         library: "[name]"
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
         new webpack.DllPlugin({
             path: 'manifest.json',
             name: '[name]',
@@ -18,6 +23,5 @@ module.exports = {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin()
-
     ]
 };

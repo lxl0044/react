@@ -284,7 +284,6 @@
     line-height: 40px;
     color: #000;
     outline: none;
-    border: 0 none;
     background-color: #fff;
     border: 1px solid #ccc;
 }
@@ -408,7 +407,6 @@
     background-color: #da161a;
     color: #fff !important;
 }
-
 .certification .ant-tabs-nav .ant-tabs-tab {
     margin-right: 0;
     width: 160px;
@@ -416,6 +414,7 @@
     line-height: 30px;
     text-align: center;
     border-radius: 4px;
+    padding: 8px 12px;
 }
 
 .certification .ant-tabs-bar {
@@ -652,13 +651,16 @@
 
 .FdTitle_2 {
     font-size: 16px;
-    color: #da161a;
-    background-color: #fff;
+    color: #fff;
     border-radius: 4px;
     border: 1px solid #da161a;
+    background-color: #da161a;
     cursor: pointer;
 }
-
+.FdTitle_2:active{
+    border: 1px solid #c61014;
+    background-color: #c61014;
+}
 .FeedbackTaps .ant-tabs-ink-bar {
     height: 0;
 }
@@ -732,13 +734,12 @@
 /*上传*/
 .FdUpload_Pl {
     width: 100%;
-    height: 110px;
     border: 1px solid #fff;
 }
 
 .FdUpload_Pl_1 {
     width: 382px;
-    margin: 20px auto;
+    margin: 10px auto 0;
     font-size: 18px;
 }
 
@@ -763,14 +764,12 @@
 
 .FdUpload_Pic {
     width: 100%;
-    height: 180px;
     border: 1px solid #fff;
 }
 
 .FdUpload_Pic_1 {
     width: 382px;
-    height: 160px;
-    margin: 18px auto;
+    margin: 10px auto;
     font-size: 18px;
 }
 
@@ -781,13 +780,13 @@
 
 .FdUpload_Pic_1_Up {
     width: 300px;
-    height: 140px;
+    height: 120px;
     border: 1px solid #dbdbdb;
     border-radius: 4px;
     margin-left: 10px;
     text-align: center;
     line-height: 120px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .FdUpload_Pic_1_Up > span {
@@ -815,13 +814,13 @@
 
 .FdTypeBox {
     width: 460px;
-    margin-left: 158px;
+    margin-left: 148px;
     display: flex;
     justify-content: space-between;
 }
 
 .FdTypeBox span {
-    margin: 25px 8px 0 0;
+    margin: 15px 8px 0 0;
     font-size: 18px;
 }
 
@@ -837,11 +836,10 @@
     line-height: 40px;
     border-radius: 4px;
     font-size: 16px;
-    margin: 0 0 0 10px;
+    margin: 10px 0 0 10px;
     border: 1px solid red;
     background-color: #fff;
     cursor: pointer;
-    margin-top: 20px;
 }
 
 .FdTypeList li:nth-of-type(1) {
@@ -854,7 +852,7 @@
 
 .FdInfoName,
 .FdInfoPhone {
-    margin-top: 25px;
+    margin-top: 15px;
     font-size: 16px;
 }
 
@@ -872,7 +870,7 @@
 
 .FdInfoNameIpt,
 .FdInfoPhoneIpt {
-    margin: 20px 0 0 10px;
+    margin: 10px 0 0 10px;
 }
 
 .FdInfoBox li:nth-of-type(2) {
@@ -894,13 +892,15 @@
     background-color: #da161a;
     border: none;
     outline: none;
-    margin: 20px 0 0 237px;
+    margin: 10px 0 0 237px;
     border-radius: 4px;
     font-size: 18px;
     color: #fff;
     cursor: pointer;
 }
-
+.FdSubmit button:active{
+    background-color: #c61014;
+}
 /*添加分页功能*/
 .PagePaging {
     text-align: center;

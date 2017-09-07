@@ -2,7 +2,6 @@
     width: 100%;
     margin: 0 auto;
     padding: 50px 0 50px;
-    margin-top: 70px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, .3);
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
@@ -18,9 +17,8 @@
 }
 
 .RealTimeMarket .top-title h1 {
-    margin: 0;
-    font-size: 50px;
-    margin-bottom: 30px;
+    margin: 0 0 8px 0;
+    font-size: 40px;
     font-weight: 300;
 }
 
@@ -53,6 +51,20 @@
 .RealTimeMarketIcon-top ul li:last-child {
     margin-left: 10px;
     cursor: pointer;
+}
+.RealTimeMarketIcon-top>span{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.RealTimeMarketIcon-top>span .anticon{
+    font-size: 25px;
+    color: #da161a;
+    margin-right: 5px;
+    border-radius: 50%;
+    vertical-align: sub;
 }
 
 .RealTimeMarketIcon-cont {
@@ -136,7 +148,7 @@
 
 .RealTimeMarketInfo {
     width: 100%;
-    height: 740px;
+    height: 580px;
     margin: 0 auto;
 }
 
@@ -144,7 +156,6 @@
     width: 1200px;
     margin: 0 auto;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     padding-bottom: 20px;
 }
 
@@ -154,24 +165,268 @@
 }
 
 .homecharts-data-details ul li {
-    width: 274px;
+    width: 226px;
     height: 50px;
     line-height: 50px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
     background-color: #eef4f8;
-    margin: 20px 0 0 20px;
+    margin: 20px 0 0 12px;
     padding-left: 1em;
     float: left;
     color: #445a6a;
 }
 
 .homecharts-data-details li span:last-child {
-    font-size: 20px;
+    font-size: 16px;
 }
-
 
 .homecharts-charts {
-    height: 514px;
+    height: 360px;
 }
+.RealTimeMarket-map{
+    width: 1200px;
+}
+.RealTimeMarket-map-title{
+    width: 100%;
+}
+.RealTimeMarket-map-title ul{
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+}
+.RealTimeMarket-map-title ul li{
+    float: left;
+    height: 66px;
+    line-height: 66px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+.RealTimeMarket-map-title ul li:first-child{
+    width: 15.1%;
+    height: 66px;
+    background-color: #fff;
+}
+.RealTimeMarket-map-title ul li:nth-of-type(2){
+    width: 4.2%;
+    height: 66px;
+    background-color: #fff;
+}
+.RealTimeMarket-map-title ul li:nth-of-type(3){
+    width: 9.5%;
+}
+.RealTimeMarket-map-title ul li:nth-of-type(4){
+    width: 9.7%;
+}
+.RealTimeMarket-map-title ul li:nth-of-type(5){
+    width: 9.6%;
+}
+.RealTimeMarket-map-title ul li:nth-of-type(6){
+    width: 11.3%;
+}
+.RealTimeMarket-map-title ul li:nth-of-type(7){
+    width: 12.1%;
+}
+.RealTimeMarket-map-title ul li:nth-of-type(8){
+    width: 13%;
+}
+.RealTimeMarket-map-title ul li:nth-of-type(9){
+    width: 12%;
+}
+.RealTimeMarket-map-title ul li:last-child{
+    width: 3.5%;
+    height: 66px;
+    background-color: #fff;
+}
+.RealTimeMarket-map-center{
+    width: 100%;
+    height: 514px;
+    overflow-y: auto;
+}
+.RealTimeMarket-map-center ul{
+    width: 100%;
+    min-height: 66px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.RealTimeMarket-map-center ul li{
+    float: left;
+    height: 66px;
+    line-height: 66px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+.RealTimeMarket-map-center ul li:first-child{
+    width: 15.1%;
+    height: 66px;
+    text-align: left;
+    padding-left: 30px;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(2){
+    width: 4.2%;
+    height: 66px;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(3){
+    width: 9.5%;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(4){
+    width: 9.7%;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(5){
+    width: 9.6%;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(6){
+    width: 11.3%;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(7){
+    width: 12.1%;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(8){
+    width: 13%;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(9){
+    width: 12%;
+    padding-top: 14px;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(10){
+    width: 3.5%;
+    height: 66px;
+}
+.RealTimeMarket-map-center ul li:first-child img{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(2) img{
+    cursor: pointer;
+    margin-top: 18px;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(10) .anticon{
+    font-size: 25px;
+    cursor: pointer;
+    color: #da161a;
+}
+.RealTimeMarket-map-center ul li:nth-of-type(9) p{
+    height: 40px;
+    border: 1px solid #e5e5e5;
+}
+.RealTimeMarket-map-center ul>div{
+    width: 1084px;
+    margin: 0 auto;
+}
+.RealTimeMarket-map-center ul>div>p{
+    float: left;
+    width: 250px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 4px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background-color: #0e77ca;
+}
+.RealTimeMarket-map-center ul>div>p:first-child{
+    background-color: #68bdf0;
+}
+.RealTimeMarket-map-center ul>div>p:nth-of-type(2){
+    background-color: #f7bb62;
+}
+.RealTimeMarket-map-center ul>div>p:nth-of-type(3){
+    background-color: #a2d442;
+}
+.RealTimeMarket-map-center ul>div>p:last-child{
+    background-color: #f3708f;
+}
+.RealTimeMarket-wrap{
+    width: 1200px;
+    height: 580px;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+}
+.RealTimeMarket-wrap-box{
+    width: 2400px;
+}
+.RealTimeMarket-wrap-box>div:nth-of-type(1){
+    float: left;
+}
+.RealTimeMarket-wrap-box>div:nth-of-type(2){
+    width: 1200px;
+    float: left;
+}
+
+/* 箭头闪烁 */
+.RealTimeMarket span.blink {
+    animation: blink .5s linear infinite;
+    -moz-animation: blink .5s linear infinite;
+    -webkit-animation: blink .5s linear infinite;
+    -o-animation: blink .5s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

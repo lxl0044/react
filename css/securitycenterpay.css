@@ -58,7 +58,6 @@
 	margin: auto;
 	border-radius: 4px;
 	overflow: hidden;
-	margin-top: 479px;
 }
 .SecurityCenterPay-alert-box .bankCardPayTopTtileIcon{
 	border-bottom: 1px solid #ccc;
@@ -86,13 +85,30 @@
 	height: 100%;
 	line-height: 40px;
 }
-.PaySelect ul,
-.withdraw ul{
+.PaySelect{
+	position: relative;
+}
+.pay-coin-more-wrap,
+.withdraw-coin-more-wrap{
+	position: absolute;
 	width: 830px;
 	height: 86px;
-	margin: 0 auto;
+	overflow: hidden;
+	left: 30px;
 	background-color: #f6fafc;
 }
+.pay-coin-more-wrap button,
+.withdraw-coin-more-wrap button{
+	outline: none;
+	border: none;
+	background-color: transparent;
+}
+.PaySelect ul,
+.withdraw ul{
+	height: 100%;
+	width: 760px;
+}
+
 .PaySelect ul img,
 .withdraw ul img{
 	width: 30px;
@@ -113,9 +129,9 @@
 	padding: 5px;
 	border-radius: 4px;
 }
-.PaySelect ul li:nth-of-type(1),
-.withdraw ul li:nth-of-type(1){
-	margin-left: 20px;
+.PaySelect ul li:nth-of-type(4n+1),
+.withdraw ul li:nth-of-type(4n+1){
+	margin-left: 45px;
 }
 /*人民币充值的样式*/
 .SecurityCenterPayCNY{
@@ -251,12 +267,20 @@
 .cancel-button button{
 	width: 198px;	
 	height: 38px;
-	color: #da161a;
+	color: #fff;
 	cursor: pointer;
-	background-color: #fff;
+	background-color: #da161a;
 	border: 1px solid #da161a;
 	outline: none;
 	border-radius: 4px;
+}
+.weChatPayButton button:active{
+	background-color: #c61014;
+	border: 1px solid #c61014;
+}
+.cancel-button button:active{
+	background-color: #c61014;
+	border: 1px solid #c61014;
 }
 .weChatPayFor{
 	width: 100%;
@@ -430,10 +454,6 @@
 .pay_record_main_center tr{
 	height: 40px;
 }
-
-.pay_record_main_center th:nth-of-type(1){
-	/*width: 200px;*/
-}
 .pay_record_page{
 	width: 100%;
 	margin: 0 auto;
@@ -543,18 +563,22 @@
 .bankCardPayCardAdd{
 	width: 273px;
 	height: 32px;
-	border-radius: 4px;
 	overflow: hidden;
-	border: 1px solid #da161a;
 	margin: 15px auto;
 }
 .bankCardPayCardAdd button{
-	width: 273px;
-	height: 32px;
+	width: 271px;
+	height: 30px;
 	outline: none;
-	border: none;
 	cursor: pointer;
-	background-color: #fff;
+	background-color: #da161a;
+	color: #fff;
+	border-radius: 4px;
+	border: 1px solid #da161a;
+}
+.bankCardPayCardAdd button:active{
+	border: 1px solid #c61014;
+	background-color: #c61014;
 }
 .bankCardPayCardAddInfo{
 	position: fixed;
@@ -632,11 +656,16 @@
 .AddInfoBoxCenterMainButton button{
 	width: 184px;
 	height: 32px;
-	background-color: #fff;
+	background-color: #da161a;
 	border: 1px solid #da161a;
+	color: #fff;
 	border-radius: 4px;
 	cursor: pointer;
 	outline: none;
+}
+.AddInfoBoxCenterMainButton button:active{
+	background-color: #c61014;
+	border: 1px solid #c61014;
 }
 
 
@@ -710,12 +739,16 @@
 .bankCardPayButton button{
 	width: 198px;	
 	height: 38px;
-	color: #da161a;
+	color: #fff;
 	cursor: pointer;
 	border-radius: 4px;
 	border: 1px solid #da161a;
-	background-color: #fff;
+	background-color: #da161a;
 	outline: none;
+}
+.bankCardPayButton button:active{
+	border: 1px solid #c61014;
+	background-color: #c61014;
 }
 .bankCardPayAlert{
 	position: fixed;
@@ -780,6 +813,24 @@
 .bankCardPayInfoWarp p:nth-of-type(2),
 .bankCardPayInfoWarp p:nth-of-type(3){
 	margin-bottom: 18px;
+}
+.bankCardPayInfoWarp input{
+	border: none;
+	outline: none;
+}
+.bankCardPayInfoWarp button{
+	border: none;
+	outline: none;
+	background-color: #0397f7;
+	color: #fff;
+	width: 50px;
+	height: 24px;
+	border-radius: 4px;
+	font-size: 12px;
+	cursor: pointer;
+}
+.bankCardPayInfoWarp button:active{
+	background-color: #017fd1;
 }
 .bankCardPayInfoBag{
 	width: 588px;
@@ -861,7 +912,7 @@
 .PayInform3Title,
 .PayInform3Way,
 .PayInform3Safety{
-	margin-left: 20px;
+	margin-left: 40px;
 }
 .PayInform3Way{
 	margin-top: 30px;
@@ -869,14 +920,14 @@
 .PayInform3Title span{
 	font-size: 20px;
 }
+.PayInformMoneys{
+	margin-left: 20px;
+}
 .PayInformMoneys p{
 	margin: 20px 0 0 20px;
 }
 .PayInformMoneys p:nth-of-type(2){
 	text-indent: 5em;
-}
-.PayInformMoneys p span:nth-of-type(2){
-	color: #da161a;
 }
 .PayInformFee{
 	margin: 20px 0 0 53px;
@@ -899,14 +950,13 @@
 /*btc充值的样式的设置*/
 .btc_pay{
 	width: 100%;
-	margin: 0 auto;
-	margin-top: 30px;
+	margin: 130px auto 0;
 	border-top: 1px solid #e5e5e5;
 }
 .btc_pay_box{
 	width: 670px;
 	margin: 0 auto;
-	padding-top: 40px;
+	padding-top: 30px;
 }
 .btc_pay_address{
 	width: 100%;
@@ -925,7 +975,7 @@
 .btc_pay_address input{
 	width: 458px;
 	height: 44px;
-	font-size: 20px;
+	font-size: 18px;
 	outline: none;
 	border: none;
 }
@@ -943,9 +993,8 @@
 .btc_pay_code div{
 	width: 160px;
 	height: 160px;
-	margin: 0 auto;
+	margin: 0 auto 22px;
 	background-color: #fff;
-	margin-bottom: 22px;
 }
 .btc_pay_code div img{
 	width: 160px;
@@ -976,7 +1025,10 @@
 .btc_info_mian p:not(.btc_info_mian_first){
 	margin-top: 16px;
 }
-.btc_info_mian p:nth-of-type(3){
+.btc_info_mian p:nth-of-type(1){
+	margin: 0 0 10px 14px;
+}
+.btc_info_mian p:nth-of-type(4){
 	margin-left: 70px;
 }
 .btc_pay_wrap{
@@ -1009,7 +1061,74 @@
 	width: 500px;
 	height: 500px;
 }
-
+.AgencyPay{
+	width: 100%;
+}
+.AgencyPay-info{
+	width: 830px;
+	height: 86px;
+	background-color: #fefaef;
+	border: 1px solid #fde4a1;
+	border-radius: 4px;
+	margin: 10px auto 0;
+	padding-top: 20px;
+}
+.AgencyPay-icon {
+	margin-top: 30px;
+}
+.AgencyPay-icon img{
+	margin: 0 10px;
+}
+.AgencyPay-icon span{
+	height: 30px;
+	display: inline-block;
+	vertical-align: bottom;
+}
+.AgencyPay-relation{
+	width: 100%;
+	height: 300px;
+	margin-top: 70px;
+}
+.AgencyPay-relation ul{
+	width: 100%;
+}
+.AgencyPay-relation li{
+	width: 208px;
+	height: 70px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	float: left;
+	margin: 40px 60px 0 0;
+}
+.AgencyPay-relation li:hover{
+	border: 1px solid #da161a;
+}
+.AgencyPay-relation li:hover span{
+	color: #da161a;
+}
+.AgencyPay-relation li:nth-of-type(3){
+	margin-right: 0;
+}
+.AgencyPay-relation li:nth-of-type(1),
+.AgencyPay-relation li:nth-of-type(4){
+	margin-left: 70px;
+}
+.AgencyPay-relation li a{
+	width: 208px;
+	height: 70px;
+	display: table-cell;
+	position: relative;
+	color: #000 !important;
+}
+.AgencyPay-relation li img{
+	position: absolute;
+	top: 5px;
+	left: -30px;
+}
+.AgencyPay-relation li p{
+	margin-top: 14px;
+	padding-left: 40px;
+}
 
 
 

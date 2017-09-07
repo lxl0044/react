@@ -11,6 +11,7 @@
 
 .dealcenter-top .dealcenter-top-box {
 	height: 0;
+	width: 100%;
 	overflow: hidden;
 	transition: all .5s ease-in-out;
 }

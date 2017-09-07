@@ -11,6 +11,9 @@ import dealcenterRealtime from './DealCenterForRealTimeReducer'
 import PropertyDetails from './PropertyDetailsReducer'
 import PayCoin from './PayCoinReducer'
 import WithDrawCoin from './WithDrawCoinReducer'
+import CurrencyIntroduce from './CurrencyIntroduceReducer'
+import InstationTrunCoinInfo from './InstationTrunCoinReducer'
+import Intro from './CoinIntroduceReducer'
 
 
 const reducer = combineReducers({
@@ -25,6 +28,9 @@ const reducer = combineReducers({
     	PropertyDetails,
     	PayCoin,
     	WithDrawCoin,
+    	CurrencyIntroduce,
+    	InstationTrunCoinInfo,
+    	Intro,
 		routing
 	})
 

@@ -46,15 +46,17 @@ const init = {
     },
 	coinInfo: {
 		img: 'img_holder.png',
-        address: ''
+        address: '',
+		coinFee:0,
+        msgCode:''
 	},
     rechargeCNYList: {
 		lists: [],
 		total: 0,
 		startTime: moment(getBeforeDate(1), dateFormat),
 		endTime: moment(getBeforeDate(), dateFormat),
-        rechargeType: 1,
-        status: 2
+        rechargeType: 3,
+        status: 1
 	},
     companyInfo: {
         companyName: '',
@@ -78,7 +80,8 @@ const init = {
         	amountHighLimit: '',
         	 amountLowLimit: ''
         }
-    }
+    },
+    changePayCurrent:1
 }
 
 const Pay = (state = init, action) => {
@@ -209,6 +212,12 @@ const Pay = (state = init, action) => {
             return {
                 ...state,
                 authConfig: action.authConfig
+            }
+        // 查询用户权限配置
+        case 'CHANGE_PAY_PAGE_CURRENT':
+            return {
+                ...state,
+                changePayCurrent: action.changePayCurrent
             }
 		default:
 			return state

@@ -48,7 +48,7 @@ function closePwdEnabled(jyPwdEnabled) {
         jyPwdEnabled:jyPwdEnabled === "1" ? true :false
     }
 }
-export const isResPwdWord = (dispatch) => {
+export const isResPwdWord = () => {
     return dispatch => {
         axios.post('/user/selectFdPwdEnabled')
             .then(function (res) {
@@ -56,7 +56,29 @@ export const isResPwdWord = (dispatch) => {
                 if (res.data.status === 200) {
                     return dispatch(closePwdEnabled(open))
                 }
-            }.bind(this))
+            })
+    }
+}
+
+// 用户邀请信息
+
+function receiveInviteDetails(invite) {
+    return {
+        type: 'USER_INVITE_DETAILS',
+        invite
+    }
+}
+
+export const requestUserInviteDetails = (info) => {
+    return dispatch => {
+        axios.post('/user/getInvitedInfo',qs.stringify({
+            ...info
+        }))
+            .then(function (res) {
+                if (res.data.status === 200) {
+                    return dispatch(receiveInviteDetails(res.data.attachment))
+                }
+            })
     }
 }
 

@@ -329,7 +329,7 @@ export default class SecurityCenterFeedback extends React.Component {
                                 </div>
                             </li>
                             <li className="FdUpload_Pic">
-                                <div className="FdUpload_Pic_1">
+                                <div className="FdUpload_Pic_1 clearfix">
                                     <span className="fl">上传截图</span>
                                     <div className="FdUpload_Pic_1_Up fl">
                                         <Upload

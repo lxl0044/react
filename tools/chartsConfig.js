@@ -110,6 +110,113 @@ export const HomeChartsOptions = (data) => {
     }
 }
 
+// introduce chart config
+export const introduceChart = (data) => {
+    return {
+        grid: {
+            left: '0%',
+            right: '-10%',
+            bottom: -20,
+            top: 20,
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: data.time,
+                show: false,
+                min: 'dataMin',
+                max: 'dataMax',
+                // splitNumber: 20,
+                // axisLine: {
+                //     show: false
+                // },
+                // axisTick: {
+                //     show: false
+                // },
+                // axisLabel: {
+                //     interval: 10,
+                //     textStyle: {
+                //         color: 'rgba(88, 105, 119, .5)',
+                //         fontSize: 12
+                //     },
+                //     margin: 26
+                // },
+                // splitLine: {
+                //     show: true,
+                //     lineStyle: {
+                //         type: 'dashed'
+                //     }
+                // }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                position: 'right',
+                show: false,
+                // axisLine: {
+                //     show: false
+                // },
+                scale: true,
+                // axisTick: {
+                //     show: false
+                // },
+                // axisLabel: {
+                //     textStyle: {
+                //         color: 'rgba(88, 105, 119, .5)',
+                //         fontSize: 16
+                //     },
+                //     margin: 70
+                // },
+                // splitLine: {
+                //     lineStyle: {
+                //         type: 'dashed'
+                //     }
+                // }
+            }
+        ],
+        series: [
+            {
+                name: '实时行情',
+                type: 'line',
+                symbol: 'none',
+                areaStyle: {
+                    normal: {
+                        // color: {
+                        //     type: 'linear',
+                        //     x: 0,
+                        //     y: 0,
+                        //     x2: 0,
+                        //     y2: 1,
+                        //     colorStops: [{
+                        //         offset: 0, color: '#d0413c' // 0% 处的颜色
+                        //     }, {
+                        //         offset: 1, color: '#e97b77' // 100% 处的颜色
+                        //     }],
+                        //     globalCoord: false // 缺省为 false
+                        // },
+                        color: '#e97b77',
+                        opacity: '0.3'
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        color: '#da161a'
+                    }
+                },
+                data: data.current,
+                // markLine: {
+                //     data: [
+                //         {yAxis: Math.max.apply(Math, data.current), name: '最新成交价格'}
+                //     ]
+                // }
+            }
+        ]
+    }
+}
+
 // kline config
 export const KlineOptions = (data, type) => {
     let options = {
@@ -477,3 +584,36 @@ function chooseColor(params, datas) {
 //     }
 //     return arr
 // }
+/* ----------首页行情显示图，所有的显示----------*/
+
+export const HomePriceTrendChartOptions = (data) => {
+    return {
+        grid: {
+            left: '5%',
+            top: 6,
+            right: '5%',
+            bottom: 6
+        },
+        xAxis: {
+            type: 'category',
+            show: false,
+            splitLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            show: false,
+            scale: true,
+            splitLine: {
+                show: false
+            }
+        },
+        series: [{
+            type: 'line',
+            showSymbol: false,
+            hoverAnimation: false,
+            data: data
+        }]
+    };
+}

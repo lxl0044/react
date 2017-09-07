@@ -66,7 +66,7 @@ export const payForWeiChat = (dispatch, amount, el,payForWeiChat) => {
             currencyId: 1
         }))
             .then(function (res) {
-                payForWeiChat.style.backgroundColor = '#fff';
+                payForWeiChat.style.backgroundColor = '#da161a';
                 payForWeiChat.style.border = "1px solid #da161a"
                 payForWeiChat.removeAttribute('disabled', 'disabled')
                 if (res.data.status === 200) {
@@ -130,7 +130,7 @@ export const payForAlipay = (dispatch, amount, el,payForAlipay) => {
             currencyId: 1
         }))
             .then(function (res) {
-                payForAlipay.style.backgroundColor = '#fff';
+                payForAlipay.style.backgroundColor = '#da161a';
                 payForAlipay.style.border = "1px solid #da161a"
                 payForAlipay.removeAttribute('disabled', 'disabled')
                 if (res.data.status === 200) {
@@ -241,7 +241,7 @@ export const addBankCard = (dispatch, info,getBtn) => {
             ...info
         }))
             .then(function (res) {
-                getBtn.style.backgroundColor = '#fff';
+                getBtn.style.backgroundColor = '#da161a';
                 getBtn.style.border = "1px solid #da161a"
                 getBtn.removeAttribute('disabled', 'disabled')
                 if (res.data.status === 200) {
@@ -290,7 +290,7 @@ export const bankTransferAccounts = (dispatch, info,getBtn) => {
             currencyId: 1
         }))
             .then(function (res) {
-                getBtn.style.backgroundColor = '#fff';
+                getBtn.style.backgroundColor = '#da161a';
                 getBtn.style.border = "1px solid #da161a"
                 getBtn.removeAttribute('disabled', 'disabled')
                 if (res.data.status === 200) {
@@ -316,7 +316,7 @@ export const bankTransferAccounts = (dispatch, info,getBtn) => {
             })
     }
 }
-// ----------------------------查询当前币种地址及二维码----------------------------------//
+// ----------------------------提币：查询当前币种地址及二维码----------------------------------//
 function cionInfoResult(info) {
     return {
         type: 'CURRENT_COIN_INFO',
@@ -326,13 +326,16 @@ function cionInfoResult(info) {
 export const getCurrentCionInfo = (dispatch, info) => {
     return dispatch => {
         axios.post('/coin/selectUserAddress', qs.stringify({
+            walletType: 1,
             ...info
         }))
             .then(function (res) {
                 if (res.data.status === 200) {
                     let info = {
                         address: res.data.attachment.address,
-                        img: res.data.attachment.image
+                        img: res.data.attachment.image,
+                        coinFee:res.data.attachment.fee,
+                        msgCode:res.data.attachment.msgCode
                     }
                     return dispatch(cionInfoResult(info))
                 }
@@ -379,3 +382,17 @@ export const queryRechargeRecord = (dispatch, params) => {
             })
     }
 }
+
+//----------------------------------------------------
+function changePayTablePages(page) {
+    return {
+        type: 'CHANGE_PAY_PAGE_CURRENT',
+        changePayCurrent: page
+    }
+}
+export const changePayPages = (page) => {
+    return dispatch => {
+        dispatch(changePayTablePages(page))
+    }
+}
+

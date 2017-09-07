@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {userInfoInSecurityCenter, resetUname} from '../../Redux/Action/SecurityCenterAction'
+import {userInfoInSecurityCenter, resetUname, requestUserInviteDetails } from '../../Redux/Action/SecurityCenterAction'
 import TopTitle from '../../Common/TopTitle';
 import {Icon, message, Popover} from 'antd';
 import {Link} from 'react-router'
-import PersonalInformationPageInfo from './PersonalInformationPageInfo'
+import InviteCode from './InviteCode'
 import axios from 'axios'
 import qs from 'qs'
 const text = <span>认证等级</span>;
@@ -45,8 +45,6 @@ class PersonalInformation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [],
-            allMoney: '',
             time: '',
             host: ''
         }
@@ -85,15 +83,12 @@ class PersonalInformation extends React.Component {
     //渲染数据
     componentDidMount() {
         const {dispatch} = this.props
+        let info = {
+            size:21,
+            page:1
+        }
         dispatch(userInfoInSecurityCenter())
-        //资产详细
-        axios.post('/coin/customerCoinAccount')
-            .then(function (res) {
-                this.setState({
-                    data: res.data.attachment.coinList,
-                    allMoney: res.data.attachment.allMoney
-                })
-            }.bind(this))
+        dispatch(requestUserInviteDetails(info))
         // 登录历史
         axios.post('/user/myLogins', qs.stringify({
             type: 2,
@@ -112,14 +107,6 @@ class PersonalInformation extends React.Component {
     render() {
         const {time, host} = this.state
         const {uname, isAuth, email, phone, isValidatePass, isValidateEmail, score, change} = this.props
-        let item = this.state.data.map((cur, index) => {
-            return <div className="CenterList2MainBox clearfix" key={index.toString()}>
-                <span className="fl text-center">{cur.currencyName}</span>
-                <span className="fl text-center">{cur.amount}</span>
-                <span className="fl text-center">{cur.freezeAmount}</span>
-                <span className="fl text-center">{cur.cashAmount}</span>
-            </div>
-        })
         return (
             <div className="PersonalInformation fr clearfix">
                 <div className="PersonalInformationInfo fl">
@@ -178,42 +165,7 @@ class PersonalInformation extends React.Component {
                             </div>
                         </div>
                     </div>
-                    {/*<div className="InformationInfoBox clearfix">*/}
-                        {/*<div className="InformationInfoCenter clearfix">*/}
-                            {/*<div className="InfoCenterList1 fl clearfix">*/}
-                                {/*<p className="fl">*/}
-                                    {/*<span className="show">CNY余额：</span>*/}
-                                    {/*<span className="show">￥{this.state.allMoney}</span>*/}
-                                {/*</p>*/}
-                                {/*<p className="fl">*/}
-                                    {/*<span className="show">总积分：</span>*/}
-                                    {/*<span className="show">{score}</span>*/}
-                                {/*</p>*/}
-                                {/*<button onClick={this.clickFunc.bind(this)}>红利钱包</button>*/}
-                                {/*<div className="CenterList1Button clearfix">*/}
-                                    {/*<Link to="/personal/securitycenterpay">*/}
-                                        {/*<button className="fl">充值</button>*/}
-                                    {/*</Link>*/}
-                                    {/*<Link to="/personal/securitycenterwithdraw">*/}
-                                        {/*<button className="fr">提现</button>*/}
-                                    {/*</Link>*/}
-                                {/*</div>*/}
-                            {/*</div>*/}
-                            {/*<div className="InfoCenterList2 fr">*/}
-                                {/*<p><Icon type="pie-chart"/><span>资产详情</span></p>*/}
-                                {/*<div className="CenterList2Info clearfix">*/}
-                                    {/*<span className="fl">币种</span>*/}
-                                    {/*<span className="fl">总资产</span>*/}
-                                    {/*<span className="fl">冻结资产</span>*/}
-                                    {/*<span className="fl">可用资产</span>*/}
-                                {/*</div>*/}
-                                {/*<div className="CenterList2Main">*/}
-                                    {/*{item}*/}
-                                {/*</div>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                        {/*<PersonalInformationPageInfo/>*/}
-                    {/*</div>*/}
+                    <InviteCode { ...this.props }/>
                 </div>
             </div>
         )

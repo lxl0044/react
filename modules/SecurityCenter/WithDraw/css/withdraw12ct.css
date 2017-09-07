@@ -71,7 +71,7 @@
 }
 .Withdraw12CTPay{
 	width: 91%;
-	margin: 30px auto 0;
+	margin: 130px auto 0;
 	border: 1px solid #e5e5e5;
 	padding: 48px 0 34px 0;
 	border-radius: 4px;
@@ -91,6 +91,20 @@
 }
 .withdraw-number{
 	margin: 0 0 0 186px;
+}
+.withdraw-heading{
+	margin: 20px 0 0 186px;
+}
+.withdraw-heading span{
+	font-size: 16px;
+}
+.withdraw-heading input{
+	width: 160px;
+	height: 34px;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	padding-left: 10px;
+	outline: none;
 }
 .withdraw-text{
 	font-size: 16px;
@@ -115,7 +129,7 @@
 	outline: none;
 	width: 326px;
 	height: 32px;
-	padding-left: 10px;
+	padding-left: 3px;
 }
 .withdraw-address-box button{
 	width: 92px;
@@ -134,6 +148,7 @@
 	background-color: #fff;
 	border-radius: 4px;
 	padding-bottom: 20px;
+	z-index: 1;
 }
 .withdraw-yzCode-box{
 	width: 95px;
@@ -183,9 +198,14 @@
 	height: 40px;
 	cursor: pointer;
 	outline: none;
-	background-color: #fff;
+	background-color: #da161a;
 	border: 1px solid #da161a;
+	color: #fff;
 	border-radius: 4px;
+}
+.withdraw-button button:active{
+	background-color: #c61014;
+	border: 1px solid #c61014;
 }
 .withdraw-add-address-box-mian{
 	margin-top: 10px;
@@ -215,10 +235,15 @@
 	display: block;
 	margin: 0 auto;
 	outline: none;
-	background-color: #fff;
+	background-color: #da161a;
 	border-radius: 4px;
+	color: #fff;
 	border: 1px solid #da161a;
 	cursor: pointer;
+}
+.withdraw-add-address-box-button button:active{
+	background-color: #c61014;
+	border: 1px solid #c61014;
 }
 .Withdraw12CTAlert{
 	position: fixed;
@@ -292,12 +317,17 @@
 .withdraw-address-alert-button button{
 	width: 184px;
 	height: 32px;
-	background-color: #fff;
+	background-color: #da161a;
 	border: 1px solid #da161a;
+	color: #fff;
 	border-radius: 4px;
 	outline: none;
 	cursor: pointer;
-}	
+}
+.withdraw-address-alert-button button:active{
+	background-color: #c61014;
+	border: 1px solid #c61014;
+}
 .withdraw-address-alert-hint{
 	margin-left: 70px !important;
 }

@@ -11,25 +11,13 @@ function formatDate(time) {
     return `${h >= 10 ? h : '0' + h}:${m >= 10 ? m : '0' + m}:${s >= 10 ? s : '0' + s }`
 }
 
-function compareAmount(data) {
-    if (!data.length) return data
-    data.forEach(function (item, index, arr) {
-        if (index === arr.length - 1 || !item.current) return
-        if (item.current - arr[index + 1].current >= 0) {
-            item.style = 'green'
-        } else if (item.current - arr[index + 1].current < 0) {
-            item.style = 'warn'
-        }
-    })
-    return data
-}
-
 const LastestDealPriceItem = (props) => {
-    const list = compareAmount(props.tradingData).map(function (item, index) {
-        return <ul key={`trading${index}`}>
+    const { pointPrice, pointNum } = props.cates.current
+    const list = props.tradingData.map(function (item, index) {
+        return <ul key={`trading${index}`} className="clearfix">
             <li>{formatDate(item.time)}</li>
-            <li className={item.style}>{formatNumber(item.current, 2)}</li>
-            <li>{formatNumber(item.amount, 4)}</li>
+            <li className={item.buyOrSell === 1 ? 'green' : 'warn'}>{formatNumber(item.current, pointPrice)}</li>
+            <li>{formatNumber(item.amount, pointNum)}</li>
         </ul>
     })
     return (

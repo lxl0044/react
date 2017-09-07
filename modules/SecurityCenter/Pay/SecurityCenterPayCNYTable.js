@@ -1,11 +1,11 @@
 import React from 'react';
-import {Icon, DatePicker, Pagination} from 'antd';
+import {Icon, DatePicker, Pagination,Select} from 'antd';
 import {getBeforeDate} from '../../../tools/utils'
-import {queryRechargeRecord} from '../../Redux/Action/PayAction'
+import {queryRechargeRecord,changePayPages} from '../../Redux/Action/PayAction'
 
 import axios from 'axios'
 import qs from 'qs'
-
+const Option = Select.Option;
 // 保存当前时间
 let beginTime = getBeforeDate(1),//保存开始时间
     createTimeEnd = getBeforeDate();//保存结束时间
@@ -20,21 +20,27 @@ export default class SecurityCenterPayCNYTable extends React.Component {
             amount: '',//汇款金额
             bankCardNo: '',//银行账户
             bankDeposit: '',//开户行
-            bankTypeName: ''//
+            bankTypeName: '',//
+            note:'',//附言
+            value:0//select选择框默认值
         }
     }
 
     // 当查看完成状态
-    onChangeValue(e) {
+    onChangeValue(value) {
         const {dispatch} = this.props
         const {rechargeType, startTime, endTime} = this.props.rechargeCNYList
+        this.setState({
+            value:value
+        })
         let params = {
             start: 1,
-            status: e.target.value,
+            status:value,
             screateTimeBegin: startTime._i,
             createTimeEnd: endTime._i,
             rechargeType: rechargeType
         }
+        dispatch(changePayPages(1))
         dispatch(queryRechargeRecord(dispatch, params))
     }
 
@@ -45,7 +51,7 @@ export default class SecurityCenterPayCNYTable extends React.Component {
         //处理开始时间格式传送给后台
         beginTime = startTime
         let params = {
-            status: 0,
+            status: this.state.value,
             start: 1,
             size: 10,
             screateTimeBegin: startTime,
@@ -63,7 +69,7 @@ export default class SecurityCenterPayCNYTable extends React.Component {
         const {rechargeType, status, startTime} = this.props.rechargeCNYList
 
         let params = {
-            status: 0,
+            status: this.state.value,
             start: 1,
             size: 10,
             screateTimeBegin: beginTime,
@@ -78,13 +84,14 @@ export default class SecurityCenterPayCNYTable extends React.Component {
         const {dispatch} = this.props
         const {rechargeType, status} = this.props.rechargeCNYList
         let params = {
-            status: 0,
+            status: this.state.value,
             start: page,
             size: 10,
             screateTimeBegin: beginTime,
             createTimeEnd: createTimeEnd,
             rechargeType: rechargeType
         }
+        dispatch(changePayPages(page))
         dispatch(queryRechargeRecord(dispatch, params))
     }
 
@@ -117,7 +124,20 @@ export default class SecurityCenterPayCNYTable extends React.Component {
         })
     }
 
-
+    //复制银行账号
+    copyBankCard () {
+        let bankCard = this.refs.bankCard
+        bankCard.focus();
+        bankCard.setSelectionRange(0, bankCard.value.length);
+        document.execCommand("Copy", true)
+    }
+    //复制户名
+    copyBankName () {
+        let bankName = this.refs.bankName
+        bankName.focus();
+        bankName.setSelectionRange(0, bankName.value.length);
+        document.execCommand("Copy", true)
+    }
     previewHandler(id) {
         const {lists} = this.props.rechargeCNYList
         lists.map((cur, index) => {
@@ -175,15 +195,16 @@ export default class SecurityCenterPayCNYTable extends React.Component {
             screateTimeBegin: beginTime,
             createTimeEnd: createTimeEnd,
             //修改这里是为了隐藏微信和支付宝支付，以后再改成1
-            rechargeType: 1
+            rechargeType: 3
         }
         const {dispatch} = this.props
         dispatch(queryRechargeRecord(dispatch, params))
+        dispatch(changePayPages(1))
     }
 
     render() {
-        const {lists, total, startTime, endTime} = this.props.rechargeCNYList
-
+        const {changePayCurrent} = this.props
+        const {lists, total, startTime, endTime,status} = this.props.rechargeCNYList
         let item = lists.map((cur, index) => {
             return <tr key={index.toString()}>
                 <td>{cur.creatTime}</td>
@@ -204,6 +225,10 @@ export default class SecurityCenterPayCNYTable extends React.Component {
                         <span className="fr" onClick={this.showFunc.bind(this)}>展开<Icon type="up"/></span>}</span>
                 </div>
                 <div className={this.state.show ? "pay_record_table clearfix show" : "pay_record_table clearfix hide"}>
+                    <Select className="fl" value={ `${status}` } style={{width: 124}} onChange={this.onChangeValue.bind(this)}>
+                        <Option value="0">未完成</Option>
+                        <Option value="2">完成</Option>
+                    </Select>
                     <div className="inlineBlock pay_record_table_date fr">
                         <span>起止日期</span>
                         <DatePicker onChange={this.startTime.bind(this)} allowClear={false} value={startTime} format={'YYYY-MM-DD'}/>
@@ -227,7 +252,7 @@ export default class SecurityCenterPayCNYTable extends React.Component {
                         </table>
                         <div
                             className={total === 0 ? "pay_record_page text-center hide" : "pay_record_page text-center"}>
-                            <Pagination defaultCurrent={1} total={parseInt(total)}
+                            <Pagination current={changePayCurrent} total={parseInt(total)}
                                         onChange={this.onChange.bind(this)}/>
                         </div>
                         <p className={total === 0 ? "show InformPagesText text-center" : "hide InformPagesText text-center"}>
@@ -245,13 +270,10 @@ export default class SecurityCenterPayCNYTable extends React.Component {
                                     type="close-circle-o" onClick={this.closePreview.bind(this)}/></span>
                                 </div>
                                 <div className="bankCardPayInfoWarp show">
-                                    <p>请将充值金额转账至以下账户</p>
-                                    <p><span>银行账户：</span><span className="font-weight">{this.state.bankCardNo}</span>
-                                    </p>
-                                    <p><span>开户行：</span><span className="font-weight">{this.state.bankDeposit}</span>
-                                    </p>
-                                    <p><span>户名：</span><span className="font-weight">{this.state.CardAccountName}</span>
-                                    </p>
+                                    <p>请将充值金额转账至以下账户<span className="warn">（暂不支持支付宝及其他三方支付，否则将导致无法入账）</span></p>
+                                    <p><span>银行账户：</span><input className="font-weight" style={{width:"200px"}} value={this.state.bankCardNo} ref="bankCard"></input><button onClick={this.copyBankCard.bind(this)}>复制</button></p>
+                                    <p><span>开户行：</span><span className="font-weight">{this.state.bankDeposit}</span></p>
+                                    <p><span>户名：</span><input className="font-weight" style={{width:"250px"}} value={this.state.CardAccountName} ref="bankName"></input><button onClick={this.copyBankName.bind(this)}>复制</button></p>
                                 </div>
                                 <div className="bankCardPayInfoBag show">
                                     <p className="font-weight">汇聚信息</p>

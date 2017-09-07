@@ -2,16 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux'
 import LastestDealWaiting from './LastestDealWaiting'
 import LastestDealPrice from './LastestDealPrice'
-import { dealCenterDelegateDetails, dealCenterLastestTrading } from '../../Redux/Action/DealCenterAction'
+import { dealCenterDelegateDetails, dealCenterLastestTrading, dealCenterOffTrading, offDelegateDetails } from '../../Redux/Action/DealCenterAction'
 import { img } from '../../host'
 
 class TradingDetails extends React.Component {
 
 	componentDidMount () {
 		const { dispatch } = this.props
+		const currencyId = sessionStorage.getItem('currencyId') || '2'
 
-		dispatch(dealCenterDelegateDetails(dispatch, '2'))
-		dispatch(dealCenterLastestTrading(dispatch, '2'))
+		dispatch(dealCenterDelegateDetails(dispatch, currencyId))
+		dispatch(dealCenterLastestTrading(dispatch, currencyId))
+	}
+
+	componentWillUnmount () {
+		const { dispatch } = this.props
+		dispatch(dealCenterOffTrading())
+		dispatch(offDelegateDetails())
 	}
 
 

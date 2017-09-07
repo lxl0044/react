@@ -49,14 +49,14 @@ export default class AnnouncementPreview extends React.Component {
         const { title, publishTime } = this.state
         return (
             <div className="announcement-preivew">
-                <a href="javascript:;" onClick={() => { window.history.back() }}>
+                <Link to="/information/announcement">
                     <Icon type="arrow-left" />
                     返回上一页
-                </a>
+                </Link>
                 <div className="announcement-preivew-details">
                     <div className="preview-title">
                         <h2>{title}</h2>
-                        <div className="preview-title-time">{`时间：${formatDate(publishTime, 'YYYY-MM-DD hh-mm-ss')}`}</div>
+                        <div className="preview-title-time">时间&nbsp;{publishTime}</div>
                     </div>
                     <div className="pewview-cont" ref="cont">
 

@@ -2,7 +2,10 @@ import axios from 'axios'
 import qs from 'qs'
 import {message} from 'antd'
 import {customerCoinAccount} from './CommonAction'
-import {getDate} from '../../../tools/utils'
+import {getDate,getBeforeDate} from '../../../tools/utils'
+import moment from 'moment'
+const dateFormat = 'YYYY-MM-DD';
+
 function receiveUserInfoInWithDraw(data) {
     return {
         type: 'USERINFO_IN_WithDraw',
@@ -74,6 +77,8 @@ export const deldeteCoinAddress = (dispatch, info) => {
             .then(function (res) {
                 if (res.data.status === 200) {
                     dispatch(queryCoinInfo(dispatch, {currencyId: info.currencyId}))
+                } else{
+                    message.error(res.data.message)
                 }
             })
     }
@@ -86,7 +91,7 @@ function resStateCT(money) {
     }
 }
 // 提交订单
-export const submitWithDrawOrder = (dispatch, info,moneyCT,dealPassword,yzCode,phoneM,getWithdrawCT) => {
+export const submitWithDrawOrder = (dispatch, info,moneyCT,dealPassword,yzCode,phoneM,getWithdrawCT,currencyId) => {
     return dispatch => {
         axios.post('/coin/takeCoin', qs.stringify({
             ...info
@@ -94,14 +99,14 @@ export const submitWithDrawOrder = (dispatch, info,moneyCT,dealPassword,yzCode,p
             .then(function (res) {
                 //提币
                 let infoCTRecord = {
-                    status: 0,//1未完成2完成
+                    status: 1,//1未完成2完成
                     start: 1,
                     size: 10,
-                    currentyId:2,
-                    beginTime: getDate("Y-M-D H:M:S:0"),
-                    endTime: getDate("Y-M-D H:M:S:1")
+                    currentyId:currencyId,
+                    beginTime: getBeforeDate(1),
+                    endTime: getBeforeDate()
                 }
-                getWithdrawCT.style.backgroundColor = '#fff';
+                getWithdrawCT.style.backgroundColor = '#da161a';
                 getWithdrawCT.style.border = "1px solid #da161a"
                 getWithdrawCT.removeAttribute('disabled', 'disabled')
                 if (res.data.status === 200) {
@@ -113,7 +118,7 @@ export const submitWithDrawOrder = (dispatch, info,moneyCT,dealPassword,yzCode,p
                     //改变冲币中的手续费
                     dispatch(resStateCT(0))
                     //币种余额
-                    dispatch(queryCoinInfo(dispatch, {currencyId: 2}))
+                    dispatch(queryCoinInfo(dispatch, {currencyId: currencyId}))
                     //资产显示
                     dispatch(customerCoinAccount())
                     //提币记录
@@ -155,13 +160,13 @@ export const submitWithDrawOrderCNY = (dispatch, info, resMoney, resDealPwd, res
             .then(function (res) {
                 //提现
                 let infoCNYRecord = {
-                    status: 0,//1未完成2完成
+                    status: 1,//1未完成2完成
                     start: 1,
                     size: 10,
-                    screateTimeBegin: getDate("Y-M-D H:M:S:0"),
-                    createTimeEnd: getDate("Y-M-D H:M:S:1")
+                    screateTimeBegin: getBeforeDate(1),
+                    createTimeEnd: getBeforeDate()
                 }
-                getWithdraw.style.backgroundColor = '#fff';
+                getWithdraw.style.backgroundColor = '#da161a';
                 getWithdraw.style.border = "1px solid #da161a"
                 getWithdraw.removeAttribute('disabled', 'disabled')
                 if (res.data.status == 200) {
@@ -247,29 +252,78 @@ function WithDrawCTRecord(CTRecordTable) {
         CTRecordTable: CTRecordTable
     }
 }
+let prev = 2
 export const WithDrawCTRecordTable = (dispatch, info) => {
     return dispatch => {
         axios.post('/coin/selectTakeList', qs.stringify({
             ...info
         }))
             .then(function (res) {
+                let startTime,endTime
+                if (prev === info.currentyId) {
+                    startTime = moment(info.beginTime, dateFormat)
+                    endTime = moment(info.endTime, dateFormat)
+                } else {
+                    prev = info.currentyId
+                    startTime = moment(getBeforeDate(1), dateFormat)
+                    endTime = moment(getBeforeDate(), dateFormat)
+                }
                 if (res.data.status === 200) {
                     //判断返回的数据的条数
-                    if (res.data.attachment.list.length === 0) {
-                        return dispatch(WithDrawCTRecord({
-                            isPage: res.data.attachment.list.length,
-                            total:res.data.attachment.total,
-                            data: res.data.attachment.list
-                        }))
-                    } else {
-                        //不等于0就进入这里
-                        return dispatch(WithDrawCTRecord({
-                            isPage: res.data.attachment.list.length,
-                            total:res.data.attachment.total,
-                            data: res.data.attachment.list
-                        }))
-                    }
+                    return dispatch(WithDrawCTRecord({
+                        isPage: res.data.attachment.list.length,
+                        total:res.data.attachment.total,
+                        data: res.data.attachment.list,
+                        startTime:startTime,
+                        endTime:endTime,
+                        status:info.status
+                    }))
                 }
             })
     }
 }
+//-----------------------撤销提现订单-------------------------
+
+
+export const cancelWithDrawBill= (dispatch, info) => {
+    return dispatch => {
+        axios.post('/withdrawClose', qs.stringify({
+            ...info
+        }))
+            .then(function (res) {
+                let params = {
+                    status: 1,//1未完成2完成
+                    start: 1,
+                    size: 10,
+                    screateTimeBegin: getBeforeDate(1),
+                    createTimeEnd: getBeforeDate()
+                }
+                if (res.data.status === 200) {
+                    message.success("撤销成功")
+                    //提现记录
+                    dispatch(WithDrawCNYRecordTable(dispatch, params))
+                    //重新触发人民币的余额
+                    dispatch(getWithDrawCNYBalance())
+                }else{
+                    message.error(res.data.message)
+                }
+            })
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

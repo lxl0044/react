@@ -12,7 +12,14 @@ const initInfo = {
     },
     change: true,
     jyPwdEnabled:false,
-    score: 0
+    score: 0,
+    invite: {
+        count: 0,
+        inviteId: '',
+        ratio: 0,
+        baseImg:'',
+        unameList:[]
+    }
 }
 
 const userInfoDetails = (userInfo = initInfo, action) => {
@@ -46,6 +53,11 @@ const userInfoDetails = (userInfo = initInfo, action) => {
             return {
                 ...userInfo,
                 jyPwdEnabled:action.jyPwdEnabled
+            }
+        case 'USER_INVITE_DETAILS':
+            return {
+                ...userInfo,
+                invite: action.invite
             }
         default:
             return userInfo

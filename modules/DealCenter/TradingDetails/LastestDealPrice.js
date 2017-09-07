@@ -12,7 +12,7 @@ const LastestDealPrice = (props) => {
 				<div className="price-cont-top clearfix">
 					<ul>
 						<li>时间</li>
-						<li>价格(￥)</li>
+						<li>成交价格(￥)</li>
 						<li>数量</li>
 					</ul>
 				</div>

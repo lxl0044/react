@@ -1,147 +1,123 @@
 /* header */
-
 .header {
-	width: 100%;
-	height: 94px;
-	background-color: transparent;
-	border-bottom: 1px solid rgba(255,255,255,.1);
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	color: #fff;
-	z-index: 2;
-	transition: all .3s linear;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    z-index: 2;
+    transition: all .3s linear;
 }
-
 .header .header-box {
-	width: 1200px;
-	height: 94px;
-	margin: 0 auto;
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
 }
-
 .header-box .logo {
-	width: 156px;
-	height: 56px;
-	margin-top: 19px;
-	text-indent: -9999px;
-	background-image: url(../images/logo.png);
+    width: 112px;
+    height: 40px;
+    margin-top: 12px;
+    text-indent: -9999px;
+    background: url(../images/logo.png) no-repeat;
 }
 .header-box>a:nth-of-type(2){
-	font-size: 20px;
-	margin: 32px 50px 0 14px;
-	border-left: 1px solid #ccc;
-	padding-left: 14px;
-	height: 33px;
-	line-height: 33px;
+    font-size: 14px;
+    margin: 0 50px 0 0;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
 }
 .header-box li {
-	float: left;
-	font-size: 18px;
-	margin: 0 20px;
-	line-height: 94px;
-	position: relative;
+    float: left;
+    font-size: 14px;
+    margin: 0 20px;
+    line-height: 60px;
+    position: relative;
 }
-
+.header-box li:nth-of-type(1){
+    margin-left: 100px;
+}
 .header-box .underline {
-	width: 100%;
-	margin-top: 6px;
-	height: 2px;
-	background-color: #fff;
-	display: none;
+    width: 100%;
+    margin-top: 6px;
+    height: 2px;
+    background-color: #fff;
+    display: none;
 }
-
 .header-box li a {
-	font-weight: 200;
-	display: block;
+    font-weight: 200;
+    display: block;
 }
-
 .header-box li span:hover {
-	border-bottom: 2px solid #fff;
-	padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
 }
-
 .header-box li.selected .underline {
-	display: block;
-	position: absolute;
-    bottom: 30px;
+    display: block;
+    position: absolute;
+    bottom: 15px;
 }
-
 .header .user-box {
-	width: 330px;
-	text-align: center;
-	line-height: 94px;
+    width: 330px;
+    text-align: center;
+    line-height: 60px;
 }
-
 .user-box a {
-	width: 56px;
-	height: 26px;
-	border-radius: 4px;
-	border: 1px solid #fff;
-	background-color: transparent;
-	line-height: 26px;
-	text-align: center;
-	display: inline-block;
-	margin: 0 10px;
-	transition: all .3s linear;
+    width: 56px;
+    height: 26px;
+    border-radius: 4px;
+    background-color: #da161a;
+    line-height: 26px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 10px;
+    transition: all .3s linear;
 }
-
-.user-box a:hover {
-	background-color: #da161a;
-	border: 0 none;
-	transition: all .3s linear;
+.user-box a:active{
+    background-color: #c61014;
 }
-
 .user-info > dl {
-	width: 350px;
-	height: 94px;
+    width: 360px;
+    height: 60px;
+    line-height: 40px;
 }
-
 .user-info > dl > dd {
-	text-align: right;
-	padding: 10px 0;
-	font-size: 12px;
+    text-align: right;
+    padding: 10px 0;
+    font-size: 12px;
 }
-
-.user-info > dl > dd:last-child {
-	padding: 0;
-	margin-top: 10px;
+.user-info > dl > dd:first-child {
+    padding: 0;
+    margin-top: 10px;
 }
-
-.user-info dd:first-child a {
-	width: 56px;
-	height: 26px;
-	border-radius: 4px;
-	border: 1px solid #fff;
-	background-color: transparent;
-	line-height: 26px;
-	text-align: center;
-	display: inline-block;
-	transition: all .3s linear;
+.user-info dd:last-child a {
+    width: 56px;
+    height: 26px;
+    border-radius: 4px;
+    background-color: #da161a;
+    line-height: 26px;
+    text-align: center;
+    display: inline-block;
+    transition: all .3s linear;
 }
-
-.user-info dd:first-child a:hover {
-	background-color: #da161a;
-	border: 0 none;
-	transition: all .3s linear;
+.user-info dd:last-child a:active{
+    background-color: #c61014;
 }
 .userUid{
-	cursor: default;
+    cursor: default;
 }
-.user-info dd:last-child > a {
-	margin: 0 14px;
+.user-info dd:first-child > a {
+    margin: 0 14px;
 }
-
 .user-info dd a.username {
-	display: inline-block;
+    display: inline-block;
     width: 80px;
     overflow: hidden;
     vertical-align: middle;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
-
-
-
-

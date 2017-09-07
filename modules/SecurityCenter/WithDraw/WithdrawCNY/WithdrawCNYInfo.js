@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatNumber } from '../../../../tools/utils'
 
 export default class PayInform1 extends React.Component {
     render() {
@@ -14,8 +15,8 @@ export default class PayInform1 extends React.Component {
                         {/*<span>当前每日最高可提现</span>*/}
                         {/*<span className="warn">{this.props.amountHighLimit}元</span>*/}
                     </p>
-                    <p> 提现手续费为：<span className="warn"> {this.props.fee * 100}%</span></p>
-                    <p>到账时间：<span>1. 工作日：09:00-17:00申请的提现会在24小时内到账，具体到账时间会因收款银行略有不同。</span></p>
+                    <p> 提现手续费为：<span className="warn"> {formatNumber(this.props.fee * 100,2)}%</span></p>
+                    <p>到账时间：<span>1. 工作日：09:00-16:00申请的提现会在24小时内到账，具体到账时间会因收款银行略有不同。</span></p>
                     <p>2. 周末或节假日的提现申请会在下一个工作日处理。</p>
                     <p>安全提示：<span>1. 提现请使用本人银行卡账号收款。</span></p>
                     <p>

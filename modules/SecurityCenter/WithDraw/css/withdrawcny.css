@@ -156,9 +156,14 @@
 	height: 40px;
 	cursor: pointer;
 	outline: none;
-	background-color: #fff;
+	background-color: #da161a;
 	border: 1px solid #da161a;
+	color: #fff;
 	border-radius: 4px;
+}
+.WithdrawCNYPay-button button:active{
+	background-color: #c61014;
+	border: 1px solid #c61014;
 }
 .WithdrawCNYPay-add-address-box-mian{
 	margin-top: 10px;
@@ -182,12 +187,17 @@
 	width: 240px;
 	height: 32px;
 	margin: 0 auto;
-	background-color: #fff;
+	background-color: #da161a;
+	color: #fff;
 	border-radius: 4px;
 	outline: none;
 	display: block;
 	border: 1px solid #da161a;
 	cursor: pointer;
+}
+.WithdrawCNYPay-add-address-box-button button:active{
+	background-color: #c61014;
+	border: 1px solid #c61014;
 }
 .pay_record_main_center td:nth-of-type(5){
 	width: 155px;

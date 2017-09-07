@@ -65,19 +65,21 @@
 .MyIntegralTime button {
     width: 19%;
     height: 30px;
-    background-color: #fff;
+    background-color: #da161a;
     border-radius: 4px;
     outline: none;
-    border: 1px solid #da161a !important;
-    border: none;
+    border: 1px solid #da161a;
     position: absolute;
     right: 30px;
     top: 16px;
-    color: #da161a;
+    color: #fff;
     font-size: 16px;
     cursor: pointer;
 }
-
+.MyIntegralTime button:active{
+    border: 1px solid #c61014;
+    background-color: #c61014;
+}
 .MyIntegralTimeList {
     width: 65%;
     position: absolute;

@@ -9,19 +9,8 @@ import SecurityCenterPayBTC from './SecurityCenterPayBTC'
 import SecurityCenterPayCNYTable from './SecurityCenterPayCNYTable'
 import SecurityCenterPayBTCTable from './SecurityCenterPayBTCTable'
 import CNYwithdraw from '../../../images/CNY-withdraw.png'
-import CTwithdraw from '../../../images/12ct-withdraw.png'
 
-const data = [{
-    id: 1,
-    cont: '人民币/CNY',
-    img:CNYwithdraw
-}, {
-    id: 2,
-    cont: '蝶链币/12CT',
-    img:CTwithdraw
-}]
-
-let clkCount = 0;//点击更多次数  
+let clkCount = 0;//点击更多次数
 
 class SecurityCenterPay extends React.Component {
     constructor(props) {
@@ -83,30 +72,10 @@ class SecurityCenterPay extends React.Component {
     render() {
         const { isAuth,isValidatePass } = this.props.userInfo
         const pay = sessionStorage.getItem('pay')
-        let item = data.map((cur,index,arr) => {
-            return  <li key={index.toString()} className="fl" onClick={this.clkFunc.bind(this,cur.id,cur.img,cur.cont)}>
-                <img src={cur.img}/>
-                <span>{cur.cont}</span>
-            </li>
-        })
         return (
             <div className="SecurityCenterPay fr">
                 <div className="SecurityCenterPay-warp">
                     <TopTitle title="充值"/>
-                    {/*<div className="PaySelect">*/}
-                        {/*<div className="withdraw-icon-show clearfix">*/}
-                            {/*<span className="fl">当前选中项：</span>*/}
-                            {/*<div className="fl">*/}
-                                {/*<img src={this.state.img}/><span>{this.state.text}</span>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                        {/*<ul className="clearfix">*/}
-                            {/*{item}*/}
-                            {/*<li className="fr withdraw-button-box" onClick={this.moreFunc.bind(this)}>*/}
-                                {/*<span>更多</span><Icon type={this.state.more ? "down" : "up"} />*/}
-                            {/*</li>*/}
-                        {/*</ul>*/}
-                    {/*</div>*/}
                     {this.state.value ==  1 ? <SecurityCenterPayCNY {...this.props}/> : this.state.value ==  2 ?  <SecurityCenterPayBTC {...this.props}/> : ''}
                     <div
                         className={isAuth == 0 || isValidatePass == 0 || !pay ? "show SecurityCenterPay-alert" : "hide SecurityCenterPay-alert"}>
@@ -131,12 +100,12 @@ class SecurityCenterPay extends React.Component {
                                 {isAuth == 0 || isValidatePass == 0 ? <Link className="warn show text-center"
                                                                             to={isAuth == 0 ? "/personal/certification" : "/personal/settings"}>{isAuth == 0 ? "进行实名认证" : "进行交易密码设置"}</Link>
                                     : <Link style={{margin: "0"}} onClick={this.closePayCoin.bind(this)}
-                                            className="warn show text-center">我了解了</Link>}
+                                            className="warn show text-center">我已了解</Link>}
                             </div> : <div className="SecurityCenterPay-alert-btn" style={{margin: "0 auto"}}>
                                 {isAuth == 0 || isValidatePass == 0 ? <Link className="warn show text-center"
                                                                             to={isAuth == 0 ? "/personal/certification" : "/personal/settings"}>{isAuth == 0 ? "进行实名认证" : "进行交易密码设置"}</Link>
                                     : <Link to='/personal/securitycenterpay' style={{margin: "0"}} onClick={this.closePayCoin.bind(this)}
-                                            className="warn show text-center">我了解了</Link>}
+                                            className="warn show text-center">我已了解</Link>}
                             </div>}
                         </div>
                     </div>

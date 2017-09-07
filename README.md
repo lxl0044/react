@@ -9,7 +9,7 @@
 ### 查看
 1. 下载完整的代码库到本地
 2. 在项目文件中打开 terminal 工具
-3. 执行 npm install
+3. 执行 npm install（GitLab并不包含node_modules模块）
 
 
 ### 启动服务
@@ -21,3 +21,7 @@
 启动：npm start
 停止：npm stop
 重启：npm restart
+
+### 版本信息说明
+项目版本：12lian2.0 beta
+更新时间：2017年08月01日23:47:37

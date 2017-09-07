@@ -55,12 +55,11 @@ export default class WeChatPay extends React.Component {
 
             let payButton = this.refs.payButton
             payButton.setAttribute('disabled', 'disabled')
-            payButton.style.backgroundColor = '#ccc';
-            payButton.style.border = "1px solid #ccc"
+            payButton.style.backgroundColor = '#c61014';
+            payButton.style.border = "1px solid #c61014"
             const { dispatch } = this.props
             dispatch(payForWeiChat(dispatch, sum, money,payButton))
         }
-
     render() {
         const { uname, name } = this.props.userInfo
         const { show } = this.props.payWeiChat

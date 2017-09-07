@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios'
 import qs from 'qs'
-import {Icon, DatePicker, Pagination} from 'antd';
+import {Icon, DatePicker, Pagination,Select} from 'antd';
 import moment from 'moment';
-import {getDate} from '../../../../tools/utils'
+import {getBeforeDate} from '../../../../tools/utils'
+import { WithDrawCNYRecordTable,cancelWithDrawBill } from '../../../Redux/Action/WithDrawAction'
+const Option = Select.Option;
 const dateFormat = 'YYYY-MM-DD';
-import { WithDrawCNYRecordTable } from '../../../Redux/Action/WithDrawAction'
-
 
 // 保存当前时间
 let nowDay1 = null,
@@ -24,53 +24,42 @@ export default class SecurityCenterPayCNYTable extends React.Component {
             data: [],//保存数据
             total: '',//总条数
             isPage: '',//是否显示分页
+            page:1,//默认页数的开始页数
+            current:1//页数
 
         }
     }
 
     // 当查看完成状态
-    // onChangeValue(e) {
-    //     axios.post('/withdrawList', qs.stringify({
-    //         status: e.target.value,
-    //         start: 1,
-    //         size: 10,
-    //         screateTimeBegin: nowDay3 == screateTimeBegin ? nowDay3 : screateTimeBegin,
-    //         createTimeEnd: nowDay4 == screateTimeBegin ? nowDay4 : createTimeEnd
-    //     }))
-    //         .then(function (res) {
-    //             if (res.data.status == 200) {
-    //                 //判断返回的数据的条数
-    //                 if (res.data.attachment.list.length == 0) {
-    //                     this.setState({
-    //                         isPage: res.data.attachment.list.length,
-    //                         data: res.data.attachment.list
-    //                     })
-    //                 } else {
-    //                     //不等于0就进入这里
-    //                     this.setState({
-    //                         data: res.data.attachment.list,
-    //                         total: res.data.attachment.total,
-    //                         isPage: res.data.attachment.list.length
-    //                     })
-    //                 }
-    //             }
-    //
-    //         }.bind(this))
-    //     this.setState({
-    //         value: e.target.value
-    //     })
-    // }
+    onChangeValue(value) {
+        const { dispatch } = this.props
+        let info = {
+            status: value,//1未完成2完成
+            start: this.state.page,
+            size: 10,
+            screateTimeBegin: nowDay3 === screateTimeBegin ? nowDay3 : screateTimeBegin,
+            createTimeEnd: nowDay4 === createTimeEnd ? nowDay4 : createTimeEnd
+        }
+        dispatch(WithDrawCNYRecordTable(dispatch, info))
+        this.setState({
+            value:value,
+            current:1
+        })
+    }
 
     //分页器
     onChangePage(page) {
         const { dispatch } = this.props
         let info = {
-            status: 0,//1未完成2完成
+            status: this.state.value,//1未完成2完成
             start: page,
             size: 10,
             screateTimeBegin: nowDay3 === screateTimeBegin ? nowDay3 : screateTimeBegin,
             createTimeEnd: nowDay4 === createTimeEnd ? nowDay4 : createTimeEnd
         }
+        this.setState({
+            current:page
+        })
         dispatch(WithDrawCNYRecordTable(dispatch, info))
 
     }
@@ -97,7 +86,7 @@ export default class SecurityCenterPayCNYTable extends React.Component {
         screateTimeBegin = startTime + " " + "00" + ":" + "00" + ":" + "00"
         const { dispatch } = this.props
         let info = {
-            status: 0,//1未完成2完成
+            status: this.state.value,//1未完成2完成
             start: 1,
             size: 10,
             screateTimeBegin: screateTimeBegin,
@@ -112,7 +101,7 @@ export default class SecurityCenterPayCNYTable extends React.Component {
         createTimeEnd = endTime + " " + "23" + ":" + "59" + ":" + "59"
         const { dispatch } = this.props
         let info = {
-            status: 0,//1未完成2完成
+            status: this.state.value,//1未完成2完成
             start: 1,
             size: 10,
             screateTimeBegin: nowDay3 == screateTimeBegin ? nowDay3 : screateTimeBegin,
@@ -138,18 +127,25 @@ export default class SecurityCenterPayCNYTable extends React.Component {
     //这里获取当前时间需要注意一下，可能是生命周期的原因，在DidMount的时候不显示，在WillMount时候就能显示，
     componentWillMount() {
         //引入ttils文件，获取时间方法，
-        nowDay1 = getDate("Y/M/D");
-        nowDay2 = getDate("Y/M/D");
-        nowDay3 = getDate("Y-M-D H:M:S:0");
-        nowDay4 = getDate("Y-M-D H:M:S:1");
+        nowDay1 = getBeforeDate(1);
+        nowDay2 = getBeforeDate();
+        nowDay3 = getBeforeDate(1);
+        nowDay4 = getBeforeDate();
         screateTimeBegin = nowDay3
         createTimeEnd = nowDay4
     }
-
+    //取消提现订单
+    cancelBill (refId) {
+        const { dispatch } = this.props
+        let info = {
+            refId:refId
+        }
+        dispatch(cancelWithDrawBill(dispatch, info))
+    }
     componentDidMount() {
         const { dispatch } = this.props
         let info = {
-            status: 0,//1未完成2完成
+            status: 1,//1未完成2完成
             start: 1,
             size: 10,
             screateTimeBegin: nowDay3,
@@ -166,7 +162,9 @@ export default class SecurityCenterPayCNYTable extends React.Component {
                 <td>银行卡</td>
                 <td className="warn">¥{this.formatPrice(cur.amount)}</td>
                 <td className="warn">¥{this.formatPrice(cur.fee)}</td>
+                <td>{cur.status === 2 ? "完成" : "未完成"}</td>
                 {this.state.value === 2 ? <td>--</td> : <td>{cur.note}</td>}
+                {cur.status === 2 ? <td>--</td> : <td><span className="blue" style={{cursor: "pointer"}} onClick={this.cancelBill.bind(this,cur.refId)}>撤销</span></td>}
             </tr>
         })
         return (
@@ -178,10 +176,10 @@ export default class SecurityCenterPayCNYTable extends React.Component {
                         <span className="fr" onClick={this.showFunc.bind(this)}>展开<Icon type="up"/></span>}</span>
                 </div>
                 <div className={this.state.show ? "pay_record_table clearfix show" : "pay_record_table clearfix hide"}>
-                    {/*<select className="fl" name="" id="" onChange={this.onChangeValue.bind(this)}>*/}
-                        {/*<option value="1">未完成</option>*/}
-                        {/*<option value="2">完成</option>*/}
-                    {/*</select>*/}
+                    <Select className="fl" defaultValue="1" style={{width: 124}} onChange={this.onChangeValue.bind(this)}>
+                        <Option value="1">未完成</Option>
+                        <Option value="2">完成</Option>
+                    </Select>
                     <div className="inlineBlock pay_record_table_date fr">
                         <span>起止日期</span><DatePicker onChange={this.startTime.bind(this)} allowClear={false}
                                                      defaultValue={moment(nowDay1, dateFormat)}/><span>至</span><DatePicker
@@ -195,7 +193,9 @@ export default class SecurityCenterPayCNYTable extends React.Component {
                                 <th>提现方式</th>
                                 <th>提现金额</th>
                                 <th>手续费</th>
+                                <th>状态</th>
                                 <th>备注</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -204,7 +204,7 @@ export default class SecurityCenterPayCNYTable extends React.Component {
                         </table>
                         <div
                             className={isPage === 0 ? "hide pay_record_page text-center" : "show pay_record_page text-center"}>
-                            <Pagination defaultCurrent={1} total={parseInt(total)}
+                            <Pagination current={parseInt(this.state.current)} total={parseInt(total)}
                                         onChange={this.onChangePage.bind(this)}/></div>
                         <p className={isPage === 0 ? "show InformPagesText text-center" : "hide InformPagesText text-center"}>
                             你还没有提现记录哦!</p>

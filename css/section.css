@@ -1,10 +1,16 @@
 /* banner */
+.slider-warp>div:nth-of-type(2){
+    height: 60px;
+    background-color: #092148;
+}
 .slider {
     overflow: hidden;
     position: relative;
-    min-height: 900px;
+    width: 100%;
+    height: 600px;
     min-width: 1200px;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: 50%;
 }
 
 .slider .reminder {
@@ -15,7 +21,7 @@
     height: 60px;
     line-height: 60px;
     text-align: center;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .3);
     transition: all .5s linear;
     overflow: hidden;
 }
@@ -46,11 +52,60 @@
     margin-top: 16px;
 }
 
+.slider .home-reminder {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: 9999;
+}
+
+.home-reminder .reminder-cont {
+    position: absolute;
+    width: 600px;
+    height: 350px;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 40px;
+    line-height: 1.8;
+}
+
+.reminder-cont h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.reminder-cont p {
+    text-indent: 2em;
+}
+
+.reminder-cont button {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #da161a;
+    border: 0 none;
+    color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.reminder-cont button:active {
+    background-color: #c61014;
+}
+
 /* slogan */
 .slogan {
     width: 1200px;
-    margin: 0 auto;
-    margin-top: 96px;
+    margin: 96px auto 0;
     border-radius: 8px;
 }
 
@@ -58,14 +113,13 @@
     height: auto;
     line-height: 40px;
     border: 0 none;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     color: #666;
 }
 
 .slogan .top-title h1 {
-    margin: 0;
-    font-size: 50px;
-    margin-bottom: 30px;
+    margin: 0 0 8px 0;
+    font-size: 40px;
     font-weight: 300;
 }
 
@@ -76,12 +130,10 @@
 
 .slogan .slogan-item {
     width: 580px;
-    height: 180px;
+    height: 120px;
     float: left;
     box-sizing: border-box;
-    cursor: pointer;
-    padding: 40px 0;
-    border: 1px solid #e8e8e8;
+    padding: 10px 0;
     margin-bottom: 40px;
     border-radius: 4px;
 }
@@ -91,57 +143,32 @@
 }
 
 .slogan-item .icon-box {
-    width: 100px;
-    height: 100px;
-    margin: 0 30px;
-    border: 1px solid #da161a;
-    border-radius: 50%;
     text-align: center;
-    line-height: 110px;
-    transition: all .5s linear;
+    margin-right: 30px;
     float: left;
 }
-
-.slogan-item:hover .icon-box {
-    border: 0 none;
-    background-color: #da161a;
-    transition: all .5s linear;
+.slogan-item:nth-of-type(1) .icon-box{
+    margin-top: 6px;
 }
-
-.slogan-item:hover i {
-    color: #fff;
+.slogan-item:nth-of-type(3) .icon-box{
+    margin-top: 4px;
 }
-
-.slogan-item:hover .slogan-title {
-    color: #da161a;
-    transition: all .5 linear;
-}
-
-.slogan-item:hover {
-    box-shadow: 0 -1px 14px rgba(0, 0, 0, .1);
-    transition: all .5s linear;
-}
-
-.slogan-item .icon {
-    font-size: 30px;
-    color: #da161a;
-    transition: all .5s linear;
+.slogan-item:nth-of-type(4) .icon-box{
+    margin-top: 4px;
 }
 
 .slogan-item .slogan-title {
-    font-size: 30px;
+    font-size: 22px;
     width: 60px;
-    color: #da161a;
     transition: all .5s linear;
     display: inline-block;
-    border-bottom: 2px solid #da161a;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .slogan-item .slogan-info p {
-    font-size: 18px;
+    font-weight: 300;
+    font-size: 16px;
+    color: #666;
 }
 
 .OurService {
@@ -167,12 +194,10 @@
 
 .partner {
     width: 100%;
-    height: 810px;
-    padding-bottom: 30px;
-    margin-top: 30px;
-    padding-top: 90px;
+    height: 460px;
+    padding-top: 50px;
     box-sizing: border-box;
-    background-repeat: no-repeat;
+    background: url("../images/partnerBgcImg.png") no-repeat;
     background-size: 100% 100%;
 }
 
@@ -182,14 +207,15 @@
     border: 0 none;
     background-color: transparent;
     padding: 0;
-    color: #666;
+    color: #fff;
+    margin-bottom: 50px;
 }
 
 .partner .top-title h1 {
-    margin: 0;
-    font-size: 50px;
-    margin-bottom: 30px;
+    font-size: 40px;
+    margin:0 0 8px 0;
     font-weight: 300;
+    color: #fff;
 }
 
 .partner .top-title p {
@@ -200,7 +226,6 @@
 .partner-list {
     width: 1200px;
     margin: 0 auto;
-    margin-top: 70px;
 }
 
 .partnerTitle {
@@ -208,19 +233,19 @@
 }
 
 .partner-list li {
-    width: 336px;
-    height: 127px;
+    width: 170px;
+    height: 70px;
     box-sizing: border-box;
     float: left;
     overflow: hidden;
-    margin-left: 50px;
-    margin-bottom: 40px;
+    margin-left: 30px;
+    margin-bottom: 30px;
 }
 
 .partner-list li img {
     width: 100%;
     height: 100%;
-    border: 0 none
+    border: 0 none;
 }
 
 .partner-list li a {

@@ -47,7 +47,7 @@
 }
 
 .input-area .checkbox label {
-	width: 500px;
+	width: 600px;
 	font-size: 12px;
 	text-align: left;
 }
@@ -64,7 +64,6 @@
 	line-height: 40px;
 	border-radius: 4px;
 	background-color: #fff;
-	border: none;
 	outline: none;
 	border: 1px solid #da161a;
 	cursor: pointer;

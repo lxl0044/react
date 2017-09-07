@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import MessageMain from './MessageMain';
+import { Icon } from 'antd'
 import '../../css/message.css'
 
 export default class Message extends React.Component {
@@ -27,6 +28,10 @@ export default class Message extends React.Component {
 	render() {
 		return (
 			<div className="Message">
+				<a href="javascript:;" onClick={() => { window.history.back() }}>
+					<Icon type="arrow-left" />
+					返回上一页
+				</a>
 				<MessageMain data={this.state.data}/>
 			</div>
 		)

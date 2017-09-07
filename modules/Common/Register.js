@@ -207,7 +207,7 @@ export default class Register extends React.Component {
         let signIn = this.refs.signIn;
         if (checkboxBtn.checked == true) {
             signIn.removeAttribute('disabled', 'disabled')
-            signIn.style.backgroundColor = '#c40000'
+            signIn.style.backgroundColor = '#da161a'
         } else {
             signIn.setAttribute('disabled', 'disabled')
             signIn.style.backgroundColor = '#ccc'
@@ -233,7 +233,8 @@ export default class Register extends React.Component {
             validPwd = this.state.validPwd,
             twicePwd = this.state.twicePwd,
             validTel = this.state.validTel,
-            validCaptcha = this.state.validCaptcha
+            validCaptcha = this.state.validCaptcha,
+            inviteCode = this.refs.inviteCode.value.trim() || ''
         if (validName && validPwd && twicePwd && validTel && validCaptcha && picCode) {
             if (!uname) return message.error("请确认用户名是否正确")
             if (!pwd) return message.error("请确认密码是否正确")
@@ -244,7 +245,8 @@ export default class Register extends React.Component {
                 uname: uname,
                 pwd: pwd,
                 phone: phone,
-                vercode: vercode
+                vercode: vercode,
+                inviteId: inviteCode
             })).then(function (res) {
                 switch (res.data.status) {
                     case 200:
@@ -282,10 +284,15 @@ export default class Register extends React.Component {
     //组件加载完的时候注册按钮不能点击
     componentDidMount() {
         let signIn = this.refs.signIn;
+        let inviteCode = this.refs.inviteCode
         signIn.setAttribute('disabled', 'disabled')
         signIn.style.backgroundColor = '#ccc'
         //组件加载完调用图片验证码
         this.getPicCaptcha()
+        if(window.location.pathname.split('/').length === 3) {
+            let path = window.location.pathname.split('/')
+            inviteCode.value = path[2]
+        }
     }
 
     // enter键提交注册
@@ -363,29 +370,6 @@ export default class Register extends React.Component {
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                              <div className="form-box" style={{marginBottom: '10px'}}>
                                 <div className="input-box">
                                     <label htmlFor="">图片验证码</label>
@@ -400,38 +384,7 @@ export default class Register extends React.Component {
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div className="form-box" style={{marginBottom: '10px'}}>
+                            <div className="form-box">
                                 <div className="input-box">
                                     <label htmlFor="">手机验证码</label>
                                     <div className="input-cont yz-box">
@@ -444,6 +397,15 @@ export default class Register extends React.Component {
                                     </div>
                                     <div className="yzcode" style={{width: '120px'}}>
                                         <button onClick={this.getCaptcha.bind(this)} ref="captcha">验证码</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="form-box" style={{marginBottom: '10px'}}>
+                                <div className="input-box">
+                                    <label htmlFor="">邀请码</label>
+                                    <div className="input-cont yz-box">
+                                        <input type="text" ref="inviteCode" placeholder="请输入邀请码"/>
                                     </div>
                                 </div>
                             </div>
@@ -476,7 +438,6 @@ export default class Register extends React.Component {
         )
     }
 }
-
 
 Register.contextTypes = {
     router: React.PropTypes.object

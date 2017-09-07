@@ -1,43 +1,25 @@
-.home-announcement {
-    /**/
-}
-
-.home-announcement-title {
-    height: auto;
-    line-height: 40px;
-    border: 0 none;
-    margin: 90px 0;
-}
-
-.home-announcement-title h1 {
-    margin: 0;
-    font-size: 50px;
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
-.home-announcement-title p {
-    font-size: 20px;
-    font-weight: 200;
-    color: #666;
-}
-
-.home-announcement-cont {
+.home-announcement-and-introduction{
     width: 1200px;
     margin: 0 auto;
-    min-height: 200px;
+    padding-top: 80px;
 }
-
-.home-announcement-cont > div:last-child {
-    border-left: 1px solid #e5e5e5;
-    padding-left: 64px;
+.home-announcement {
+    width: 600px;
+    padding-right: 65px;
+    border-right: 1px solid #e5e5e5;
 }
-
+.home-announcement-fl-title>span:nth-of-type(1){
+    font-size: 30px;
+}
+.home-announcement-fl-title>span:nth-of-type(2){
+    line-height: 40px;
+}
+.home-announcement-cont {
+    min-height: 114px;
+}
 .home-announcement-details {
-    width: 50%;
-    float: left;
+    margin-top: 31px;
 }
-
 .home-announcement-details > div:first-child {
     margin-top: 8px;
 }
@@ -49,38 +31,71 @@
 
 .home-announcement-details dl dt {
     line-height: 34px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 12px;
 }
 
 .home-announcement-details .announcement-title {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
+    width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .home-announcement-details .announcement-time {
     color: #999;
 }
-
-.home-announcement-details .announcement-underline {
-    width: 80px;
-    height: 2px;
-    background-color: #da161a;
-    margin: 10px 0 20px;
-}
-
 .home-announcement-details a {
     color: #666 !important;
 }
 
-.announcement-more a {
-    display: block;
-    width: 280px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 20px;
-    background-color: #da161a;
-    padding: 14px 110px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    box-shadow: 0 5px 20px #da161a;
+.home-announcement-details dd a {
+    display: -webkit-box;
+    width: 350px;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
+
+.announcement-pages{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+}
+.announcement-cont-list p{
+    font-size: 20px;
+    color: #cac9c9;
+    margin-top: 150px;
+}
+.home-coin-introduction-fr-title{
+    font-size: 30px;
+}
+.home-coin-introduction-center{
+    width: 532px;
+    height: 360px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

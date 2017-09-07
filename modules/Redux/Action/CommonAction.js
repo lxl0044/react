@@ -3,6 +3,19 @@ import qs from 'qs'
 import {message} from 'antd'
 import {push} from 'react-router-redux'
 
+import voteList0 from '../../../images/voteCoin1.png'
+import voteList1 from '../../../images/voteCoin2.png'
+import voteList2 from '../../../images/voteCoin3.png'
+import voteList3 from '../../../images/voteCoin4.png'
+import voteList4 from '../../../images/voteCoin5.png'
+import voteList5 from '../../../images/voteCoin6.png'
+import voteList6 from '../../../images/voteCoin7.png'
+import voteList7 from '../../../images/voteCoin8.png'
+import voteList8 from '../../../images/voteCoin9.png'
+import voteList9 from '../../../images/voteCoin10.png'
+
+
+/*---------------------------*/
 function receiveCaptcha(data) {
     return {
         type: 'GET_IMG_CAPTCHA',
@@ -43,7 +56,7 @@ export const userLogin = (dispatch, info) => {
             if (res.data.status === 200) {
                 localStorage.setItem('token', data.token)
                 localStorage.setItem('uid', data.uid)
-                dispatch(push('/home'))
+                history.back()
                 dispatch(requestUserInfo())
                 dispatch(customerCoinAccount())
             } else {
@@ -130,28 +143,6 @@ export const getTotalUser = (dispatch) => {
     }
 }
 
-
-function receiveRealTimeMarketCates(cates) {
-    return {
-        type: 'REAL_TIME_CATES',
-        cates: cates
-    }
-}
-
-
-// 获取首页行情图类别
-
-export const realTimeMarketCates = (dispatch) => {
-    return dispatch => {
-        axios.post('/coin/coins')
-            .then(function (res) {
-                if (res.data.status === 200) {
-                    return dispatch(receiveRealTimeMarketCates(res.data.attachment))
-                }
-            })
-    }
-}
-
 function receiveAnnouncement (data) {
     return {
         type: 'SYSTEM_ANNOUNCEMENT',
@@ -165,6 +156,68 @@ export const getAnnouncement = (num) => {
             .then(function (res) {
                 if(res.data.status === 200) {
                     dispatch(receiveAnnouncement(res.data.attachment))
+                }
+            })
+    }
+}
+//----------------------首页投票列表----------------------
+const voteList = [{
+    url:voteList9,
+},{
+    url:voteList8,
+},{
+    url:voteList7,
+},{
+    url:voteList6,
+},{
+    url:voteList5,
+},{
+    url:voteList4,
+},{
+    url:voteList3,
+},{
+    url:voteList2,
+},{
+    url:voteList1,
+},{
+    url:voteList0,
+}]
+
+function CoinVoteLists (data) {
+    return {
+        type: 'COIN_VOTE_LIST',
+        CoinVoteList: data
+    }
+}
+
+export const CoinVoteList = (dispatch) => {
+    return dispatch => {
+        axios.post('/vote/list')
+            .then(function (res) {
+                if(res.data.status === 200) {
+                    let data = res.data.attachment
+                    data.list.forEach(function (item,index) {
+                        item.url = voteList[index].url
+                    })
+                    dispatch(CoinVoteLists(data))
+                }
+            })
+    }
+}
+//----------------------首页投票----------------------
+
+export const SupportCoinVote = (dispatch,info,btn) => {
+    return dispatch => {
+        axios.post('/vote/vote',qs.stringify({
+            ...info
+        }))
+            .then(function (res) {
+                if(res.data.status === 200) {
+                    btn.style.backgroundColor = "#ccc"
+                    btn.setAttribute('disabled', 'disabled')
+                    dispatch(CoinVoteList(dispatch))
+                }else{
+                    message.error(res.data.message)
                 }
             })
     }

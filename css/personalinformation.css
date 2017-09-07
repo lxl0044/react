@@ -273,7 +273,7 @@
 .AccountDetailTitle{
 	width: 100%;
 	height: 60px;
-	line-height: 70px;
+	line-height: 60px;
 	font-size: 18px;
 	color: #da161a;
 }
@@ -293,25 +293,40 @@
 .AccountDetailMain{
 	width: 840px;
 	margin: 0 auto;
+	padding-top: 15px;
 	border-top: 1px solid #da161a;
 }
 .AccountDetailMainButton{
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 .AccountDetailMainButton button{
-	width: 84px;
+	width: 76px;
     height: 28px;
     border: 1px solid #0397f7;
-    color: #0397f7;
+    color: #fff;
+	background-color: #0397f7;
     outline: none;
     cursor: pointer;
     border-radius: 4px;
-    background-color: #fff;
+}
+.AccountDetailMain>div:nth-of-type(1){
+	margin: 10px 0 0 0;
+}
+.AccountDetailMain>div:nth-of-type(2){
+	margin: 10px 0 0 10px;
+}
+.AccountDetailMain>div:nth-of-type(1) select,
+.AccountDetailMain>div:nth-of-type(2) select{
+	margin-left: 10px;
+}
+
+.AccountDetailMainButton button:active{
+	border: 1px solid #017fd1;
+	background-color: #017fd1;
 }
 .AccountDetailMainBtn{
 	width: 100%;
-	margin-top: 20px;
 }
 .AccountDetailMainBtn>span:nth-of-type(1){
 	margin-right: 10px;
@@ -324,6 +339,9 @@
 }
 .AccountDetailMainSelect label{
 	margin-right: 10px;
+}
+.AccountDetailMainSelect select{
+	border: 1px solid #ccc;
 }
 .AccountDetailMainSelect>div:nth-of-type(2){
 	margin-left: 20px;
@@ -352,6 +370,229 @@
 	width: 100%;
 	position: absolute;
 	bottom: 10px;
+}
+.invite-code-box{
+	width: 100%;
+	margin-top: 30px;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: #fff;
+	box-shadow: 0 -1px 20px rgba(0,0,0,.1);
+	padding-bottom: 42px;
+}
+.invite-code-person{
+	margin: 30px 0 0 20px;
+}
+.invite-code-person span:nth-of-type(1){
+	font-weight: bold;
+}
+.invite-award{
+	margin: 20px 0 0 40px;
+	position: relative;
+}
+.invite-award:after{
+	content: '';
+	display: block;
+	width: 8px;
+	height: 8px;
+	position: absolute;
+	top: 8px;
+	left: -18px;
+	background-color: #da161a;
+	border-radius: 50%;
+}
+.invite-award-box{
+	width: 830px;
+	height: 160px;
+	margin: 20px auto 0;
+	border: 1px solid #fde4a1;
+	border-radius: 4px;
+	background-color: #fefaef;
+}
+.invite-award-box>p:nth-of-type(1){
+	margin: 18px 0 0 18px;
+	font-weight: bold;
+}
+.invite-award-box>span:nth-of-type(1){
+	margin: 34px 0 0 18px;
+	font-weight: bold;
+	font-size: 16px;
+}
+.invite-award-box-main {
+	margin: 10px 0 0 18px;
+}
+.invite-award-box-main>div:nth-of-type(2){
+	margin: 0 0 0 50px;
+}
+.invite-way-box{
+	width: 830px;
+	margin: 20px auto 0;
+	border: 1px solid #fde4a1;
+	border-radius: 4px;
+	background-color: #fefaef;
+	padding-bottom: 20px;
+}
+.invite-way-box-one,
+.invite-way-box-two,
+.invite-way-box-three{
+	font-weight: bold;
+}
+.invite-way-box-one{
+	margin: 20px 0 0 20px;
+}
+.invite-way-box-two{
+	margin: 36px 0 0 20px;
+}
+.invite-way-box-three{
+	margin: 26px 0 0 20px
+}
+.invite-way-box div{
+	margin: 14px 0 0 20px;
+}
+.invite-way-box div span{
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+	font-weight: 500;
+}
+.invite-award-code{
+	width: 160px;
+	height: 160px;
+}
+.invite-award-code img{
+	width: 160px;
+	height: 160px;
+}
+.invite-way-box div input{
+	width: 366px;
+	height: 30px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	outline: none;
+	margin: 0 24px;
+	padding-left: 10px;
+}
+.invite-way-box div button{
+	width: 90px;
+	height: 30px;
+	background-color: #da161a;
+	color: #fff;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+.invite-way-box div button:active{
+	background-color: #c61014;
+}
+.invite-award-box-main-right>div:nth-of-type(1),
+.invite-award-box-main-right>div:nth-of-type(3){
+	width: 100px;
+	height: 40px;
+	background-color: #ffde84;
+	border-radius: 4px;
+	padding: 5px;
+}
+.invite-award-box-main-right div span{
+	width: 90px;
+	height: 30px;
+	text-align: center;
+	background-color: #ffc21a;
+	line-height: 30px;
+	border-radius: 4px;
+	display: block;
+}
+.invite-award-arrows{
+	width: 120px;
+	height: 40px;
+	margin: 0 0 0 10px;
+	position: relative;
+}
+.invite-award-arrows-line{
+	width: 100px;
+	height: 2px;
+	background: #80807f;
+	position: absolute;
+	left: 0;
+	top: 20px;
+}
+.invite-award-arrows-line-right{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 72px;
+	top: -10px;
+}
+
+.right-arrow1,
+.right-arrow2 {
+	width: 0;
+	height: 0;
+	display: block;
+	position: absolute;
+	left: 26px;
+	top: 0;
+	border-top: 10px transparent dashed;
+	border-right: 10px transparent dashed;
+	border-bottom: 10px transparent dashed;
+	border-left: 10px #fefaef solid;
+	overflow: hidden;
+}
+.right-arrow1 {
+	left: 28px;
+	border-left: 10px solid #80807f;
+}
+.invite-award-arrows p{
+	padding-left: 35px;
+	font-weight: bold;
+}
+.invite-code-person-list{
+	width: 96%;
+	margin: 25px auto 0;
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+	position: relative;
+}
+.invite-code-person-list-square{
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #e8e8e8;
+	border-left: 10px solid transparent;
+	position: absolute;
+	top: -20px;
+	left: 72px;
+}
+.invite-code-person-list-transparent{
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+	border-left: 10px solid transparent;
+	position: absolute;
+	top: -19px;
+	left: 72px;
+}
+.invite-code-person-list>ul:nth-of-type(1) li{
+	float: left;
+	width: 100px;
+	height: 34px;
+	border: 1px solid #e8e8e8;
+	padding: 5px;
+	overflow: hidden;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	border-radius: 4px;
+	margin: 20px 10px 0 10px;
+}
+.invite-code-person-list>ul:nth-of-type(1) li:nth-child(7n+1){
+	margin-left: 16px;
+}
+.invite-code-person-list-pages{
+	margin: 20px 0 10px;
 }
 
 

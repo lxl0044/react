@@ -1,0 +1,937 @@
+.new-dealcenter, .new-dealcenter-bar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    min-width: 1440px;
+}
+
+.new-dealcenter .warn, .new-dealcenter-bar .warn {
+    color: #ff0066 !important;
+}
+
+.new-dealcenter-menu {
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    position: relative;
+}
+
+.new-dealcenter-menu .logo {
+    height: 40px;
+    line-height: 40px;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    margin: 7px 0 7px 16px;
+}
+
+.new-dealcenter-menu .logo img {
+    vertical-align: -10px;
+    margin-right: 14px;
+}
+
+.new-dealcenter-menu .logo span {
+    font-size: 14px;
+}
+
+.new-dealcenter-menu ul.clearfix {
+    width: 574px;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.new-dealcenter-menu > ul li {
+    float: left;
+    margin: 0 25px;
+    font-size: 14px;
+}
+
+.new-dealcenter-menu > ul li:nth-child(2) a {
+    border-bottom: 2px solid #fff;
+}
+
+.new-dealcenter-menu .switch-box {
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+}
+
+.new-dealcenter-menu .switch-box label {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.new-dealcenter-menu > ul a {
+    display: inline-block;
+    height: 45px;
+}
+
+.new-dealcenter-user-box {
+    margin-right: 300px;
+}
+
+.new-dealcenter-user-box a {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-left: 20px;
+    background-color: #da161a;
+}
+
+.new-dealcenter-user-info ul li {
+    float: left;
+    margin: 0 15px;
+    font-size: 12px;
+}
+
+.new-dealcenter-user-info {
+    margin-right: 100px;
+}
+
+.new-dealcenter-user-info .logo-out {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 4px 10px;
+    background-color: #da161a;
+}
+
+/* right side */
+.new-dealcenter-right-side {
+    width: 160px;
+    position: absolute;
+    top: 0;
+    bottom: -15px;
+    min-height: 792px;
+}
+
+/* container */
+.new-dealcenter-content {
+    width: 100%;
+    position: absolute;
+    margin-top: 10px;
+    top: 54px;
+    bottom: 30px;
+}
+
+.new-dealcenter-container {
+    /*width: 100%;*/
+    position: absolute;
+    padding: 0 10px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 160px;
+}
+
+.new-dealcenter-top-part {
+    margin-left: 10px;
+    height: 100%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.new-dealcenter-top-part h3 {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.new-dealcenter-coin-lists {
+    width: 150px;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.new-dealcenter-coin-lists > li {
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 15px 0 15px 5px;
+}
+
+.new-dealcenter-coin-lists dt {
+    margin-top: 12px;
+    margin-right: 10px;
+}
+
+.new-dealcenter-coin-item.selected {
+    position: relative;
+    border: 1px solid #b00248;
+}
+
+.new-dealcenter-coin-item li.green, .dealcenter-coin-item li.warn {
+    font-size: 12px;
+}
+
+.new-dealcenter-coin-item.selected:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #ff0066;
+    border-bottom: 10px solid #ff0066;
+    border-left: 10px solid transparent;
+    right: 0;
+    bottom: 0;
+}
+
+.new-dealcenter-current-coin {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.new-dealcenter-current-coin img {
+    vertical-align: -10px;
+    margin-right: 14px;
+}
+
+.new-dealcenter-current-coin li {
+    float: left;
+}
+
+.new-dealcenter-current-coin li + li {
+    margin-left: 30px;
+}
+
+.new-dealcenter-current-coin li.fr a {
+    color: #0397f7;
+    margin-right: 10px;
+}
+
+.new-dealcenter-current-coin li.fr i {
+    margin-right: 4px;
+}
+
+.new-dealcenter-container .new-dealcenter-online-box {
+    position: absolute;
+    top: 60px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.new-dealcenter-online-data {
+    width: 100%;
+    height: 60%;
+    min-height: 390px;
+}
+
+.new-dealcenter-online-data .new-dealcenter-online {
+    width: 65%;
+    height: 100%;
+    padding-right: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.new-dealcenter-trading-details {
+    width: 35%;
+    height: 100%;
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists dl {
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists dl dt {
+    /*width: 100%;*/
+    height: 100%;
+    position: absolute;
+    right: 0;
+    min-width: 1%;
+    max-width: 100%;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists dl dd {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0 10px;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists dd ul {
+    font-size: 12px;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists ul li {
+    float: left;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists ul li:first-child {
+    width: 20%;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists ul li:nth-child(2) {
+    width: 35%;
+    text-align: right;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists ul li:last-child {
+    width: 45%;
+    text-align: right;
+}
+
+.new-dealcenter-trading-details .trading-buy-stack {
+    width: 100%;
+    height: 48%;
+    position: absolute;
+}
+
+.new-dealcenter-trading-details .buy-stack-cont {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    overflow: auto;
+}
+
+.new-dealcenter-trading-details .trading-buy-stack dl dt {
+    background-color: rgba(255, 0, 102, .3);
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists .vertical {
+    width: 100%;
+    height: 4%;
+    min-height: 16px;
+    position: absolute;
+    top: 48%;
+}
+
+.new-dealcenter-trading-details .trading-waiting-lists .vertical p {
+    height: 16px;
+    line-height: 16px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.new-dealcenter-trading-details .trading-sell-stack {
+    width: 100%;
+    height: 48%;
+    position: absolute;
+    overflow-y: auto;
+    top: 52%;
+}
+
+.new-dealcenter-trading-details .trading-sell-stack dl dt {
+    background-color: rgba(146, 231, 42, .3);
+}
+
+.new-dealcenter-trading-details .trading-success-records {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.new-dealcenter-trading-details .trading-success-records > ul {
+    color: #64666a;
+}
+
+.new-dealcenter-trading-details .trading-success-records ul {
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.new-dealcenter-trading-details .trading-success-records ul li {
+    float: left;
+}
+
+.new-dealcenter-trading-details .trading-success-records ul li:first-child {
+    width: 30%;
+    color: #64666a;
+}
+
+.new-dealcenter-trading-details .trading-success-records ul li:nth-child(2) {
+    width: 30%;
+    text-align: center;
+}
+
+.new-dealcenter-trading-details .trading-success-records ul li:last-child {
+    width: 40%;
+    text-align: right;
+}
+
+.new-dealcenter-trading-details .success-records-cont {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 21px;
+    overflow-y: auto;
+}
+
+/* trading coin */
+.new-dealcenter-trading-coin {
+    width: 100%;
+    height: 40%;
+    margin: 10px 0;
+    min-height: 345px;
+    position: relative;
+}
+
+.new-dealcenter-trading-coin .trading-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 320px;
+}
+
+.new-dealcenter-trading-coin .trading-wrapper a {
+    padding: 30px 60px;
+    border-radius: 8px;
+    font-size: 24px;
+    background-color: #ffc02c;
+}
+
+.new-dealcenter-trading-container {
+    float: left;
+    width: 65%;
+    height: 100%;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.new-dealcenter-trading-cont {
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.new-dealcenter-trading-cont .trading-buy-sell {
+    height: 90%;
+}
+
+.new-dealcenter-trading-cont .trading-tips {
+    height: 10%;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding-top: 12px;
+}
+
+.new-dealcenter-trading-cont .trading-tips p {
+    font-size: 12px;
+}
+
+.new-dealcenter-trading-cont .trading-sell {
+    border-left: 1px solid #414141;
+}
+
+.new-dealcenter-trading-cont .trading-item {
+    width: 50%;
+    height: 100%;
+    padding: 10px 10px 0 20px;
+    font-size: 12px;
+}
+
+.new-dealcenter-trading-cont .trading-item p {
+    font-size: 12px;
+}
+
+.new-dealcenter-trading-cont .trading-item > p {
+    margin: 10px 0;
+}
+
+.new-dealcenter-trading-cont .trading-item .approximate {
+    font-size: 20px;
+    margin-right: 9px;
+}
+
+.new-dealcenter-trading-cont .trading-item .limit-price label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.new-dealcenter-trading-cont .trading-item .limit-price input {
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-indent: 10px;
+    border: 1px solid #414141;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 12px;
+}
+
+.new-dealcenter-trading-cont .input-item-box input.invalid {
+    border-color: #da161a !important;
+}
+
+.new-dealcenter-trading-cont .trading-item .limit-price input:focus {
+    border-color: #999 !important;
+}
+
+.new-dealcenter-trading-cont .trading-item .limit-price input:disabled {
+    background-color: #999;
+}
+
+.new-dealcenter-trading-cont .trading-item .input-item-box > span {
+    font-size: 16px;
+    margin: 34px 10px 0 10px;
+}
+
+.new-dealcenter-trading-cont .trading-item .slider-cont {
+    width: 80%;
+}
+
+.new-dealcenter-trading-cont .slider-cont .ant-slider {
+    margin: 13px 0;
+    height: 4px;
+    border: 0 none;
+}
+
+.new-dealcenter-trading-cont .ant-slider .ant-slider-track {
+    background-color: #00ba04;
+}
+
+.new-dealcenter-trading-cont .ant-slider .ant-slider-handle:hover {
+    background-color: #00ba04;
+}
+
+.new-dealcenter-trading-cont .ant-slider .ant-slider-handle:active {
+    box-shadow: 0 0 0 2px rgba(0, 186, 4, .2);
+}
+
+.new-dealcenter-trading-cont .trading-sell .ant-slider-track {
+    background-color: #ed005f;
+}
+
+.new-dealcenter-trading-cont .slider-cont .ant-slider-rail {
+    background-color: #e9e9e9;
+}
+
+.new-dealcenter-trading-cont .slider-cont .ant-slider-handle {
+    border-color: #00ba04;
+}
+
+.new-dealcenter-trading-cont .trading-sell .ant-slider-handle {
+    border-color: #ed005f;
+}
+
+.new-dealcenter-trading-cont .trading-sell .ant-slider-handle:hover {
+    background-color: #ed005f;
+}
+
+.new-dealcenter-trading-cont .trading-sell .ant-slider-handle:active {
+    box-shadow: 0 0 0 2px rgba(218, 22, 26, .2);
+}
+
+.new-dealcenter-trading-cont .trading-item .slider-num {
+    width: 20%;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.new-dealcenter-trading-cont .slider-cont .tick-mark {
+    width: 100%;
+    height: 2px;
+    background-color: #e5e5e5;
+    display: inline-block;
+    position: relative;
+}
+
+.new-dealcenter-trading-cont .slider-cont .tick-mark li {
+    position: absolute;
+    width: 2px;
+    height: 5px;
+    bottom: 2px;
+    background-color: #e5e5e5;
+}
+
+.new-dealcenter-trading-cont .tick-mark li:first-child {
+    left: 0;
+}
+
+.new-dealcenter-trading-cont .tick-mark li:nth-child(2) {
+    left: 20%;
+}
+
+.new-dealcenter-trading-cont .tick-mark li:nth-child(3) {
+    left: 40%;
+}
+
+.new-dealcenter-trading-cont .tick-mark li:nth-child(4) {
+    left: 60%;
+}
+
+.new-dealcenter-trading-cont .tick-mark li:nth-child(5) {
+    left: 80%;
+}
+
+.new-dealcenter-trading-cont .tick-mark li:last-child {
+    right: 0;
+}
+
+.new-dealcenter-trading-cont .trading-item .slider-box {
+    margin: 10px 0;
+    max-width: 430px;
+}
+
+.new-dealcenter-trading-cont .trading-item .input-item-pwd {
+    max-width: 430px;
+}
+
+.new-dealcenter-trading-cont .input-item-pwd input {
+    width: 40%;
+    height: 28px;
+    outline: none;
+    line-height: 32px;
+    text-indent: 10px;
+    border: 1px solid #414141;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.new-dealcenter-trading-cont .trading-item input:focus {
+    border-color: #999 !important;
+}
+
+.new-dealcenter-trading-cont .trading-item .btn-box {
+    max-width: 430px;
+    margin-top: 10px;
+}
+
+.new-dealcenter-trading-cont .btn-box button {
+    width: 40%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #00ba04;
+    border: 0 none;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.new-dealcenter-trading-cont .btn-box button:active {
+    background-color: #019e05;
+}
+
+.new-dealcenter-trading-cont .trading-item .btn-box a {
+    color: #108ee9;
+}
+
+.new-dealcenter-trading-cont .trading-sell .btn-box button {
+    background-color: #ed005f;
+}
+
+.new-dealcenter-trading-cont .trading-sell .btn-box button:active {
+    background-color: #e0045c;
+}
+
+.new-personal-delegation {
+    width: 35%;
+    height: 100%;
+    float: right;
+    padding-bottom: 10px;
+}
+
+.new-personal-delegation-cont {
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.new-delegation-cont-title {
+    height: 15%;
+    max-height: 40px;
+}
+
+.new-delegation-cont-title ul {
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+}
+
+.new-delegation-cont-title ul li:first-child {
+    width: 40%;
+}
+
+.new-delegation-cont-title ul li:nth-child(2) {
+    width: 40%;
+}
+
+.new-delegation-cont-title ul li:last-child {
+    width: 20%;
+    padding: 8px 24px;
+}
+
+.new-delegation-cont-title li {
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    height: 100%;
+}
+
+.new-delegation-cont-title li.selected {
+    background-color: #ed005f !important;
+    color: #fff !important;
+}
+
+.new-delegation-cont-title li a {
+    display: block;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    background-color: #0397f7;
+}
+
+.new-delegation-cont-box {
+    width: 100%;
+    height: 85%;
+}
+
+.new-delegation-waiting-body, .new-delegation-finish-body {
+    height: 85%;
+    overflow: auto;
+}
+
+.new-delegation-waiting, .new-delegation-finish {
+    height: 100%;
+}
+
+.new-delegation-waiting-head, .new-delegation-finish-head {
+    height: 15%;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.new-delegation-waiting-body ul li, .new-delegation-finish-body ul li {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    font-size: 12px;
+}
+
+.new-delegation-waiting-head ul li, .new-delegation-finish-head ul li {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #64666a;
+}
+
+/* 成交记录 */
+.new-delegation-finish-head ul li:first-child {
+    width: 20%;
+}
+
+.new-delegation-finish-head ul li:nth-child(2) {
+    width: 10%;
+}
+
+.new-delegation-finish-head ul li:nth-child(3) {
+    width: 20%;
+}
+
+.new-delegation-finish-head ul li:nth-child(4) {
+    width: 20%;
+}
+
+.new-delegation-finish-head ul li:last-child {
+    width: 30%;
+}
+
+.new-delegation-finish-body ul li:first-child {
+    width: 20%;
+    text-align: center;
+}
+
+.new-delegation-finish-body ul li:nth-child(2) {
+    width: 10%;
+    text-align: center;
+}
+
+.new-delegation-finish-body ul li:nth-child(3) {
+    width: 20%;
+    text-align: right;
+    padding-right: 5%;
+}
+
+.new-delegation-finish-body ul li:nth-child(4) {
+    width: 20%;
+    text-align: right;
+    padding-right: 8%;
+}
+
+.new-delegation-finish-body ul li:last-child {
+    width: 30%;
+    text-align: right;
+    padding-right: 12%;
+}
+
+/* 未成交记录 */
+
+.new-delegation-waiting-head ul li:first-child,
+.new-delegation-waiting-head ul li:last-child {
+    width: 10%;
+}
+
+.new-delegation-waiting-head ul li:nth-child(2) {
+    width: 20%;
+}
+
+.new-delegation-waiting-head ul li:nth-child(3) {
+    width: 40%;
+}
+
+.new-delegation-waiting-head ul li:nth-child(4) {
+    width: 20%;
+}
+
+.new-delegation-waiting-body ul li:first-child,
+.new-delegation-waiting-body ul li:last-child {
+    width: 10%;
+    text-align: center;
+}
+
+.new-delegation-waiting-body ul li:nth-child(2) {
+    width: 20%;
+    text-align: right;
+    padding-right: 7%;
+}
+
+.new-delegation-waiting-body ul li:nth-child(3) {
+    width: 40%;
+    text-align: right;
+    padding-right: 16%;
+}
+
+.new-delegation-waiting-body ul li:nth-child(4) {
+    width: 20%;
+    text-align: center;
+}
+
+.new-delegation-waiting-body li a {
+    color: #0397f7 !important;
+}
+
+/* footer */
+.dealcenter-footer {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    bottom: 0;
+    background-color: #282b30;
+    padding-right: 20px;
+}
+
+.dealcenter-footer ul li {
+    float: left;
+    color: #949598;
+}
+
+.dealcenter-footer ul a {
+    margin: 0 20px;
+    color: #666666 !important;
+    font-size: 12px;
+}
+
+.dealcenter-footer p {
+    width: 224px;
+    color: #ff006a;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.dealcenter-footer div.fr {
+    color: #666;
+    font-size: 12px;
+}
+
+.dealcenter-footer div.fr a {
+    color: #666 !important;
+}
+
+/* width,height,background,border */
+.new-dealcenter-dark ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    /*background-color: red;*/
+}
+
+/*滚动条两端按钮*/
+.new-dealcenter-dark ::-webkit-scrollbar-button {
+    /*display: none;*/
+    /*background-color: red;*/
+}
+
+/*滚动条外轨*/
+.new-dealcenter-dark ::-webkit-scrollbar-track {
+    /*display: block;*/
+    /*background-color: #FF66D5;*/
+}
+
+/*滚动条内轨*/
+.new-dealcenter-dark ::-webkit-scrollbar-track-piece {
+    display: none;
+    /*background-color: rgba(0, 0, 0, .1);*/
+}
+
+/*滚动条滑块*/
+.new-dealcenter-dark ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #3c4045;
+}
+
+
+

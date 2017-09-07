@@ -55,7 +55,7 @@ export default class InformationBox extends React.Component {
                 key={article.newsid.toString()}
                 index={article.newsid.toString()}
                 title={article.title}
-                src={img + article.author}
+                src={img + article.author.trim()}
                 time={article.time}
                 watched={article.count}
                 info={article.dec}

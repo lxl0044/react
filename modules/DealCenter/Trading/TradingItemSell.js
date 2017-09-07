@@ -2,7 +2,9 @@ import React from 'react';
 import {Link} from 'react-router'
 import {push} from 'react-router-redux'
 import {Radio, Slider, Icon, message} from 'antd'
-import {createTradingOrderLimit, createTradingOrderNotlimit} from '../../Redux/Action/DealCenterAction'
+import {createTradingOrderLimit, createTradingOrderNotlimit,getDealWaitingPrice} from '../../Redux/Action/DealCenterAction'
+import { getCurrentCionInfo } from '../../Redux/Action/PayAction'
+import { PayCoinList } from '../../Redux/Action/PayCoinAction'
 import {formatNumber} from '../../../tools/utils'
 //交易密码的加盐
 const dealSalt = "dig?F*ckDa2g5PaSsWOrd&%(13lian0160630).";
@@ -29,7 +31,6 @@ export default class TradingItemSell extends React.Component {
         validAmount: true,
         validNumber: true,
         totalPrice: 0,
-        fee: 0,
         validNumberNot: true
     }
 
@@ -48,17 +49,18 @@ export default class TradingItemSell extends React.Component {
     // 进度条滑动
     sliderChange = (num) => {
         const {coinBalance} = this.props.personalAccount
+        const {pointPrice, pointNum} = this.props.cates.current
 
         // if(value === 1) { // 限价
         let number = this.refs.number
         let amount = this.refs.amount.value || 0
 
-        number.value = formatNumber(num * coinBalance / 100, 4)
+        number.value = formatNumber(num * coinBalance / 100, pointNum)
 
         this.setState({
             sliderValue: num,
-            totalPrice: formatNumber(amount * number.value, 2),
-            number: formatNumber(num * coinBalance / 100, 4)
+            totalPrice: formatNumber(amount * number.value, pointPrice),
+            number: formatNumber(num * coinBalance / 100, pointNum)
         })
         // } else {// 市价
         //     let notLimit = this.refs.notLimit
@@ -73,68 +75,81 @@ export default class TradingItemSell extends React.Component {
 
     }
 
-    // changeAmount
-    changeAmount = () => {
-        let value = this.refs.amount.value
-        this.setState({
-            amount: formatNumber(value, 2)
-        })
-    }
-
-    // 检查价格输入是否合法
-    checkAmount = () => {
+    // changeAmount -> change
+    changeAmount = (e) => {
+        const {pointPrice} = this.props.cates.current
         let amount = this.refs.amount.value
         let number = this.refs.number.value || 0
+        this.setState({
+            amount: formatNumber(amount, pointPrice),
+            totalPrice: formatNumber(amount * number, pointPrice)
+        })
+        const { dispatch } = this.props
+        //每次改变的价格
+        let info = {
+            type:1,
+            price:e.target.value
+        }
+        dispatch(getDealWaitingPrice(dispatch,info))
+    }
+
+    // 检查价格输入是否合法 -> blur
+    checkAmount = (e) => {
+        let amount = this.refs.amount.value
         if (!amount) return
-        const {entrustPriceMax, entrustPriceMin, coinFee} = this.props.cates.current
+        const {entrustPriceMax, entrustPriceMin, coinFee, pointPrice, pointNum} = this.props.cates.current
         const amountValue = this.state.amount
         if (amount < entrustPriceMin || amount > entrustPriceMax) {
             message.error(`价格输入必须在${entrustPriceMin}~${entrustPriceMax}之间`)
             this.setState({
                 validAmount: false,
                 totalPrice: 0,
-                fee: 0
             })
         } else {
             this.refs.amount.value = amountValue
             this.setState({
-                validAmount: true,
-                totalPrice: formatNumber(amount * number, 2),
-                fee: formatNumber(amount * number * coinFee, 4)
+                validAmount: true
             })
         }
+        //离焦的时候在调用一下,为了加精度
+        const { dispatch } = this.props
+        //每次改变的价格
+        let info = {
+            type:1,
+            price:formatNumber(e.target.value, pointPrice)
+        }
+        dispatch(getDealWaitingPrice(dispatch,info))
     }
 
-    // changeNumber
+    // changeNumber -> change
     changeNumber = () => {
-        let value = this.refs.number.value
+        const {pointNum, pointPrice} = this.props.cates.current
+        const {coinBalance} = this.props.personalAccount
+        let number = this.refs.number.value || 0
+        let amount = this.refs.amount.value || 0
         this.setState({
-            number: formatNumber(value, 4)
+            number: formatNumber(number, pointNum),
+            totalPrice: formatNumber(amount * number, pointPrice),
+            sliderValue: parseInt(number) / formatNumber(coinBalance, pointNum) * 100 === Infinity ? 0 :  parseInt(number) / formatNumber(coinBalance, pointNum) * 100  > 100 ? 100 : parseInt(number) / formatNumber(coinBalance, pointNum) * 100
         })
     }
 
-    // 检查数量输入是否合法
+    // 检查数量输入是否合法 -> blur
     checkNumber = () => {
         let number = this.refs.number.value
-        let amount = this.refs.amount.value || 0
         if (!number) return
-        const {amountHighLimit, amountLowLimit, coinFee} = this.props.cates.current
-        const {coinBalance} = this.props.personalAccount
+        const {amountHighLimit, amountLowLimit} = this.props.cates.current
         const numberValue = this.state.number
         if (number < amountLowLimit || number > amountHighLimit) { // 大于最大，小于最小
             message.error('委托数量过低或超限')
             this.setState({
                 validNumber: false,
-                totalPrice: 0,
-                fee: 0
+                totalPrice: 0
             })
         } else {
             this.refs.number.value = numberValue
             this.setState({
-                validNumber: true,
-                totalPrice: formatNumber(amount * number, 2),
-                fee: formatNumber(amount * number * coinFee, 4),
-                sliderValue: parseInt(number) / coinBalance * 100
+                validNumber: true
             })
         }
     }
@@ -186,10 +201,12 @@ export default class TradingItemSell extends React.Component {
         if (!validAmount) return message.error('价格输入错误')
         if (!validNumber) return message.error('数量输入错误')
 
+        let sellButton = this.refs.sell
         if (pwdStatus === "1") { // 每次卖出都需要交易密码
             let dealPwd = md5(this.refs.dealPwd.value.trim() + dealSalt + uid)
             let dealPassword = this.refs.dealPwd
             if (!dealPassword.value) return message.error('请输入交易密码')
+            sellButton.setAttribute("disabled", "disabled")
 
             // 需要输入交易密码的限价委托单
             let info = {
@@ -202,7 +219,7 @@ export default class TradingItemSell extends React.Component {
                 type: 1
             }
 
-            return dispatch(createTradingOrderLimit(dispatch, info, this.refs.number, this.refs.amount, currencyId,dealPassword))
+            return dispatch(createTradingOrderLimit(dispatch, info, this.refs.number, this.refs.amount, currencyId,sellButton,dealPassword))
         }
 
         let info = {
@@ -214,8 +231,9 @@ export default class TradingItemSell extends React.Component {
             source: 1,
             type: 1
         }
+        sellButton.setAttribute("disabled", "disabled")
         // 卖出不需要交易密码
-        return dispatch(createTradingOrderLimit(dispatch, info, this.refs.number, this.refs.amount, currencyId))
+        return dispatch(createTradingOrderLimit(dispatch, info, this.refs.number, this.refs.amount, currencyId,sellButton))
         // }
         //
         //
@@ -256,14 +274,22 @@ export default class TradingItemSell extends React.Component {
         // dispatch(createTradingOrderNotlimit(dispatch, info, this.refs.notLimit))
     }
 
+    // 跳转到充币页
+    goPayCoin = () => {
+        const { dispatch } = this.props
+        const currencyId = sessionStorage.getItem('currencyId') || '2'
+        dispatch(getCurrentCionInfo(dispatch, { currentyId: currencyId }))
+        dispatch(PayCoinList(dispatch, currencyId))
+        dispatch({type: 'CHANGE_CURRENCYID_IN_PROPERTY', currencyId: currencyId})
+    }
 
 
     render() {
         let {sliderValue, limit, value, validAmount, validNumber, totalPrice, validNumberNot, fee} = this.state
         const {coinBalance} = this.props.personalAccount
-        const {currentAmount, coinFee, currencyNameEn} = this.props.cates.current
-        const {validDealPwd, pwdStatus} = this.props
-
+        const {currentAmount, coinFee,sellFee,currencyNameEn, pointPrice, pointNum} = this.props.cates.current
+        const {validDealPwd, pwdStatus, sellPrice} = this.props
+        const { price } = this.props.dealSellPrice
         return (
             <div className="trading-item trading-sell fl">
                 {/*<div className="radio-box">*/}
@@ -273,8 +299,9 @@ export default class TradingItemSell extends React.Component {
                 {/*</RadioGroup>*/}
                 {/*</div>*/}
                 <div className="clearfix">
-                    <p>可用：<span className="warn">{coinBalance}</span>（{currencyNameEn}）</p>
-                    <p>约合：<span>{coinBalance * currentAmount}</span>（CNY）</p>
+                    <p>最佳卖价：<span className="warn">{sellPrice ? formatNumber(sellPrice, pointPrice) : formatNumber(currentAmount, pointPrice)}</span>（CNY）</p>
+                    <p>可用：<span>{formatNumber(coinBalance, pointNum)}</span>（{currencyNameEn}）</p>
+                    <p>约合：<span>{ !(coinBalance * currentAmount) ? formatNumber(0, pointPrice) : formatNumber(coinBalance * currentAmount, pointPrice)}</span>（CNY）</p>
                 </div>
                 {limit ? <div className="input-item-box clearfix">
                         <div className="limte-price fl">
@@ -283,6 +310,7 @@ export default class TradingItemSell extends React.Component {
                                    type="number" ref="amount"
                                    onBlur={this.checkAmount} min="0"
                                    onChange={this.changeAmount}
+                                   value={ price }
                             />
                         </div>
                         <span className="fl">X</span>
@@ -324,7 +352,7 @@ export default class TradingItemSell extends React.Component {
                     </div>
                     <div className="slider-num fl"><span>{formatNumber(sliderValue, 1)}</span><span>%</span></div>
                 </div>
-                <p>手续费：{coinFee * 100}%（CNY）</p>
+                <p>手续费：{sellFee * 100}%（CNY）</p>
                 {pwdStatus === '2' ? "" : <div className="input-item-box">
                     <div className="input-item-pwd">
                         <input type="password" placeholder="请输入交易密码"
@@ -335,8 +363,8 @@ export default class TradingItemSell extends React.Component {
                     {validDealPwd ? "" : <Icon type="close"/>}
                 </div>}
                 <div className="btn-box">
-                    <button onClick={this.sellCoin}>卖出</button>
-                    <Link to="/personal/securitycenterpay" className="success">充值</Link>
+                    <button onClick={this.sellCoin} ref="sell">卖出</button>
+                    <Link to="/personal/paycoin" className="success" onClick={this.goPayCoin}>充币</Link>
                 </div>
             </div>
         )

@@ -74,6 +74,7 @@ export default class Withdraw12CTAlert extends React.Component {
 	//确定添加
 	sureFunc () {
 		const uid = localStorage.getItem('uid')
+		const { currencyId } = this.props
 		let address = this.refs.address.value.trim()
 		let remark = this.refs.remark.value.trim()
         let pwd = md5(this.refs.pwd.value.trim() + dealSalt + uid)
@@ -100,12 +101,11 @@ export default class Withdraw12CTAlert extends React.Component {
             address: address,
 			note: remark,
 			fdPwd: pwd,
-			currencyId: 2
+			currencyId: currencyId
 		}
 		dispatch(addCoinAddress(dispatch,info))
 	}
     render() {
-
         return (
             <div className={this.props.alert ? "hide Withdraw12CTAlert" : "show Withdraw12CTAlert"}>
                 <div className="withdraw-address-alert">
@@ -127,7 +127,7 @@ export default class Withdraw12CTAlert extends React.Component {
                          	{this.state.pwd ? <span className="hide warn withdraw-address-alert-hint">*资金密码填写错误</span> : <span className="show warn withdraw-address-alert-hint">*资金密码填写错误</span>}
                          </div>
                          <div className="withdraw-address-alert-button">
-                         	<button className="warn" onClick={this.sureFunc.bind(this)}>确定</button>
+                         	<button onClick={this.sureFunc.bind(this)}>确定</button>
                          </div>
 					</div>
                 </div>

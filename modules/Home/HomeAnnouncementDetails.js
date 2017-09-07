@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import news from '../../images/news.png'
-import { formatDate } from "../../tools/utils"
 
 
 const HomeAnnouncementDetails = (props) => {
@@ -15,11 +14,11 @@ const HomeAnnouncementDetails = (props) => {
                     <dt className="clearfix">
                         <Link to={`/announce/preview/${props.announceId}`}>
                             <div className="announcement-title fl">{props.title}</div>
-                            <div className="announcement-time fr">{formatDate(props.publishTime, 'YYYY-MM-DD')}</div>
+                            <div className="announcement-time fr">{props.publishTime.split(' ')[0]}</div>
                         </Link>
                     </dt>
                     <dd className="announcement-underline"></dd>
-                    <Link to={`/announce/preview/${props.announceId}`}>{props.desc}</Link>
+                    {/*<dd><Link to={`/announce/preview/${props.announceId}`}>{props.desc}</Link></dd>*/}
                 </dl>
             </div>
         </div>

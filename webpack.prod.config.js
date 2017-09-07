@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
+        filename: '[name].[chunkhash:5].js',
         publicPath: '/dist/'
     },
     module: {
@@ -76,7 +76,7 @@ module.exports = {
         // 分割require的css文件，重命名为style.css 并引入(只能分割一个css文件)
         new ExtractTextPlugin({
             allChunks: true,
-            filename: "[name].css"
+            filename: "[name].[chunkhash:5].css"
         })
     ]
 }

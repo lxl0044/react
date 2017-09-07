@@ -4,6 +4,7 @@ import Slogan from './Slogan'
 import Partner from './Partner'
 import RealTimeMarket from './RealTimeMarket'
 import HomeAnnouncement from './HomeAnnouncement'
+import HandDeal from './HandDeal'
 
 export default class Index extends React.Component {
     render() {
@@ -11,8 +12,9 @@ export default class Index extends React.Component {
             <div>
                 <Banner/>
                 <div className="IndexBox" style={{backgroundColor: "#fff", overflow: 'hidden'}}>
-                    <HomeAnnouncement />
                     <RealTimeMarket/>
+                    <HomeAnnouncement />
+                    <HandDeal/>
                     <Slogan/>
                     <Partner/>
                 </div>

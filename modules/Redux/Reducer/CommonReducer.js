@@ -16,9 +16,12 @@ const init = {
     },
     lists: [],
     total: 0,
-    spread: true,
     errorInfo:'',
-    announcementList: []
+    announcementList: [],
+    CoinVoteList:{
+        list:[],
+        votedCount:0
+    }
 }
 
 
@@ -44,17 +47,6 @@ const homePage = (common = init, action) => {
                 ...common,
                 coinAccount: action.coinAccount
             }
-        case 'REAL_TIME_CATES':
-            return {
-                ...common,
-                lists: action.cates
-            }
-        // ------- k线图右侧spread------//
-        case 'CHANGE_CATES_SPREAD':
-            return {
-                ...common,
-                spread: !common.spread
-            }
         //登陆的时候返回错误信息，不要弹框提示
         case 'LOGIN_ERROR_INFO':
             return {
@@ -65,6 +57,12 @@ const homePage = (common = init, action) => {
             return {
                 ...common,
                 announcementList: action.announcementList
+            }
+        //币种投票
+        case 'COIN_VOTE_LIST':
+            return {
+                ...common,
+                CoinVoteList: action.CoinVoteList
             }
         default:
             return common

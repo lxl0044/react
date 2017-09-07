@@ -1,12 +1,13 @@
 import React from 'react';
-import { Pagination,DatePicker,Radio } from 'antd';
+import { Pagination,DatePicker,Radio,Select } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-import { getDate,getBeforeDate } from '../../../../tools/utils'
+import { getDate,getBeforeDate,formatNumber } from '../../../../tools/utils'
 moment.locale('zh-cn');
 import axios from 'axios'
 import qs from 'qs'
 
+const Option = Select.Option;
 const RadioGroup = Radio.Group;
 const dateFormat = 'YYYY-MM-DD';
 // 保存当前时间
@@ -18,14 +19,18 @@ export default class PersonalInformationPageInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value : "0",
-            currency:'',//币种
-            handle:'',//操作类型
+            value : "7",
+            currency:"1",//币种
+            handle:"",//操作类型
             nowDay1:nowDay1,//当前时间
             nowDay2:nowDay2,//结束时间
             total: '',//总条数
             isPage: '',//是否显示分页
-            data:[]//保存数据
+            data:[],//保存数据
+            showTimeInput:false,
+            payOrWithDraw:"充值",
+            payCoinOrWithDrawCoin:"提现",
+            handleTpye:1//需要传送给后台的参数
         }
     }
     //分页器
@@ -63,44 +68,48 @@ export default class PersonalInformationPageInfo extends React.Component {
     onChangeRadio = (e) => {
         let day = e.target.value;
         let getBeforeDay = getBeforeDate(day)
-        if (day == 0) {
+        if (day == 7){
             this.setState({
                 value: day,
                 nowDay1:getBeforeDay,
-                nowDay2:nowDay4
+                nowDay2:nowDay4,
+                showTimeInput:false
             });
-        } else if (day == 7){
+        } else if (day == 0) {
             this.setState({
                 value: day,
-                nowDay1:getBeforeDay,
-                nowDay2:nowDay4
-            });
-        } else if (day == 15) {
-            this.setState({
-                value: day,
-                nowDay1:getBeforeDay,
-                nowDay2:nowDay4
-            });
-        } else if (day == 30) {
-            this.setState({
-                value: day,
-                nowDay1:getBeforeDay,
-                nowDay2:nowDay4
+                showTimeInput:true
             });
         }
 
     }
     //当操作类型下拉框的时候
-    onChangePay (e) {
+    onChangePay (value) {
         this.setState({
-            handle:e.target.value
+            handle:value,
+            handleTpye:value
         })
     }
     //当币种选择下拉框的时候
-    onChangeMoney (e) {
-        this.setState({
-            currency:e.target.value
-        })
+    onChangeMoney (value) {
+        if (value === "1") {
+            this.setState({
+                payOrWithDraw:"充值",
+                payCoinOrWithDrawCoin:"提现",
+                currency:value,
+                handle:"充值",
+                handleTpye:1
+            })
+        }else{
+            this.setState({
+                payOrWithDraw:"充币",
+                payCoinOrWithDrawCoin:"提币",
+                currency:value,
+                handle:"充币",
+                handleTpye:1
+            })
+        }
+
     }
 
     //开始时间
@@ -120,7 +129,7 @@ export default class PersonalInformationPageInfo extends React.Component {
         let day1 = this.state.nowDay1//开始时间
         let day2 = this.state.nowDay2//结束时间
         let currency = this.state.currency//币种
-        let handle = this.state.handle//操作类型
+        let handle = this.state.handleTpye//操作类型
         axios.post('/coin/allMoneyList',qs.stringify({
             start:1,
             size:10,
@@ -150,10 +159,10 @@ export default class PersonalInformationPageInfo extends React.Component {
     //这里获取当前时间需要注意一下，可能是生命周期的原因，在DidMount的时候不显示，在WillMount时候就能显示，
     componentWillMount () {
         //获取utils里面的方法
-        nowDay1 = getDate("Y/M/D");
-        nowDay2 = getDate("Y/M/D");
-        nowDay3 = getDate("Y-M-D");
-        nowDay4 = getDate("Y-M-D");
+        nowDay1 = getBeforeDate(7);
+        nowDay2 = getBeforeDate();
+        nowDay3 = getBeforeDate(7);
+        nowDay4 = getBeforeDate();
         //默认币种是人民币
         this.setState({
             currency:1,
@@ -192,16 +201,19 @@ export default class PersonalInformationPageInfo extends React.Component {
             }.bind(this))
     }
     render() {
+        const { sureCoinCoinsList } = this.props
         let item = this.state.data.map((cur,index,arr) => {
             return <tr key={index.toString()}>
                 <td>{cur.createTime}</td>
-                <td>{ cur.type === 1 ? "充值" : "提现" }</td>
-                <td>{ cur.currencyId === 1 ? "CNY" : "12ct" }</td>
-                <td>{cur.initAmount}</td>
-                <td>{cur.fee}</td>
+                <td>{ cur.type === 1 ? "充值" : cur.type === 2 ? "提现" : cur.type === 3 ? "充币" : cur.type === 4 ? "提币" : ""}</td>
+                <td>{ cur.currencyNameEn }</td>
+                <td className="text-right" style={{width:"191px",paddingRight:"64px"}}>{formatNumber(cur.initAmount,4)}</td>
+                <td>{formatNumber(cur.fee,2)}</td>
             </tr>
         })
-
+        let options = sureCoinCoinsList.map((cur) => {
+            return <Option value={`${cur.currencyId}`}>{`${cur.currencyNameEn}`}</Option>
+        })
         return (
 
             <div className="AccountDetail">
@@ -214,33 +226,33 @@ export default class PersonalInformationPageInfo extends React.Component {
                     </div>*/}
                 </div>
                 <div className="AccountDetailMain">
-                    <div className="AccountDetailMainBtn">
-                        <span>起止日期</span><DatePicker allowClear={false} value={moment(this.state.nowDay1, dateFormat)} onChange={this.timeChange.bind(this)}/><span>至</span><DatePicker allowClear={false} onChange={this.timeChange1.bind(this)} value={moment(this.state.nowDay2, dateFormat)}/>
+                    <div className="inlineBlock">
+                        <label htmlFor="" style={{fontSize:"12px"}}>操作类型</label>
+                        <Select style={{width: 70}} value={this.state.handle == "1" ? "充值" : this.state.handle} onChange={this.onChangePay.bind(this)}>
+                            <Option value="1">{this.state.payOrWithDraw}</Option>
+                            <Option value="2">{this.state.payCoinOrWithDrawCoin}</Option>
+                        </Select>
+                    </div>
+                    <div className="inlineBlock">
+                        <label htmlFor="" style={{fontSize:"12px"}}>币种选择</label>
+                        <Select style={{width: 70}} defaultValue="1" onChange={this.onChangeMoney.bind(this)}>
+                            <Option value="1">CNY</Option>
+                            {options}
+                        </Select>
+                    </div>
+                    <div className="AccountDetailMainBtn" style={{display:"inline"}}>
                         <RadioGroup onChange={this.onChangeRadio.bind(this)} value={this.state.value}>
-                            <Radio value="0">今天</Radio>
-                            <Radio value="7">7天</Radio>
-                            <Radio value="15">15天</Radio>
-                            <Radio value="30">30天</Radio>
+                            <Radio value="7">最近7天</Radio>
+                            <Radio value="0">全部</Radio>
                         </RadioGroup>
                     </div>
+                    <div style={{display:"inline"}} className={this.state.showTimeInput ? "show" : "hide"}>
+                        <span style={{fontSize:"12px",marginRight:"5px"}}>日期</span><DatePicker allowClear={false}  onChange={this.timeChange.bind(this)}/><span style={{fontSize:"12px",margin:"0 5px"}}>至</span><DatePicker allowClear={false} onChange={this.timeChange1.bind(this)}/>
+                    </div>
+                    <div className="AccountDetailMainButton">
+                        <button onClick={this.clkFunc.bind(this)}>确定</button>
+                    </div>
                     <div className="AccountDetailMainSelect">
-                        <div className="inlineBlock">
-                            <label htmlFor="">操作类型</label>
-                            <select name="" id="" onChange={this.onChangePay.bind(this)}>
-                                <option value="1">充值</option>
-                                <option value="2">提现</option>
-                            </select>
-                        </div>
-                        <div className="inlineBlock">
-                            <label htmlFor="">币种选择</label>
-                            <select name="" id="" onChange={this.onChangeMoney.bind(this)}>
-                                <option value="1">CNY</option>
-                                <option value="2">12ct</option>
-                            </select>
-                        </div>
-                        <div className="AccountDetailMainButton">
-                            <button onClick={this.clkFunc.bind(this)}>确定</button>
-                        </div>
                         <div className="AccountDetailTable">
                              <table cellSpacing="0" cellPadding="0" className="DetailTable text-center">
                                 <thead>

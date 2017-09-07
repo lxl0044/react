@@ -19,10 +19,6 @@
 	background-color: #fff;
 }
 
-.delegation-details .ant-tabs-ink-bar {
-	width: 184px !important;
-}
-
 .delegation-details {
 	width: 1200px;
     margin: 50px auto 100px;
@@ -32,6 +28,10 @@
     border-radius: 4px;
     min-height: 740px;
 	position: relative;
+}
+
+.delegation-details .ant-tabs-ink-bar {
+	width: 120px !important;
 }
 
 .delegation-details .ant-tabs-nav-container {
@@ -68,10 +68,13 @@
 	text-align: center;
 	float: right;
 	border: 1px solid #0397f7;
-	color: #0397f7 !important;
+	background-color: #0397f7;
 	border-radius: 4px;
 }
-
+.delegation-info-top > a:active{
+	border: 1px solid #017fd1;
+	background-color: #017fd1;
+}
 .delegation-info-top > a i {
 	margin-right: 6px;
 }
@@ -107,9 +110,6 @@
 .delegation-info-table {
 	margin-top: 40px;
 }
-.delegation-info-table td:nth-of-type(5) span{
-	padding-right: 42px;
-}
 
 .delegation-info-table table {
 	width: 100%;
@@ -131,6 +131,10 @@
 .delegation-info-table tbody tr {
 	height: 80px;
 	border-bottom: 1px solid #e5e5e5;
+}
+
+.ant-tabs-nav .ant-tabs-tab {
+	min-width: 110px;
 }
 
 

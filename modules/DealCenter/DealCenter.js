@@ -10,7 +10,7 @@ export default class DealCenter extends React.Component {
     render() {
         return (
             <div className="dealcenter">
-                <Tips/>
+                {/*<Tips/>*/}
                 <DealCenterOnline {...this.props}/>
                 <TradingCoin {...this.props}/>
                 <TradingDetails {...this.props}/>

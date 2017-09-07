@@ -53,8 +53,8 @@ export default class BankCardPayAlert extends React.Component {
             })
         }
         getBtn.setAttribute('disabled', 'disabled')
-        getBtn.style.backgroundColor = '#ccc';
-        getBtn.style.border = "1px solid #ccc"
+        getBtn.style.backgroundColor = '#c61014';
+        getBtn.style.border = "1px solid #c61014"
         // 这里发送请求成功让弹框消失
         axios.post('/cardSave', qs.stringify({
             token: token,
@@ -64,7 +64,7 @@ export default class BankCardPayAlert extends React.Component {
             bankCustomerName: bankName
         }))
             .then(function (res) {
-                getBtn.style.backgroundColor = '#fff';
+                getBtn.style.backgroundColor = '#da161a';
                 getBtn.style.border = "1px solid #da161a"
                 getBtn.removeAttribute('disabled', 'disabled')
                 if (res.data.status == 200) {
@@ -140,7 +140,7 @@ export default class BankCardPayAlert extends React.Component {
                                 <span>{this.props.phone}</span>
                             </div>
                             <div className="AddInfoBoxCenterMainButton">
-                                <button className="warn" ref="getBtn" onClick={this.sureCardFunc.bind(this)}>确定</button>
+                                <button ref="getBtn" onClick={this.sureCardFunc.bind(this)}>确定</button>
                             </div>
                         </div>
                     </div>

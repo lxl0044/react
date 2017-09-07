@@ -9,8 +9,6 @@ import { formatNumber } from '../../../tools/utils'
 const dealSalt = "dig?F*ckDa2g5PaSsWOrd&%(13lian0160630).";
 var md5 = require('../../../tools/MD5.js')
 
-const operations = <Link to="/delegation">更多</Link>
-
 let orderNo
 export default class Delegate extends React.Component {
 
@@ -60,15 +58,22 @@ export default class Delegate extends React.Component {
 		dispatch(cancelTradingOrder(dispatch, info, this.refs.dealpwd))
 	}
 
+    goDelegation = () => {
+        const { dispatch } = this.props
+        const { currencyId } = this.props.cates.current
+        dispatch({type: 'CHOOSE_ACTIVE_TAB', id: currencyId})
+    }
+
 	render () {
 		const { tradeFail } = this.props.delegateRecord
 		const { visible } = this.props
+        const { pointPrice, pointNum } = this.props.cates.current
 
 		const items = tradeFail.map((item, index) => {
 			return <ul key={`delegate${index}`}>
 				<li className={item.buyOrSell === 1 ? 'green' : 'warn'}>{item.buyOrSell === 1 ? '买入' : '卖出'}</li>
-				<li>{formatNumber(item.price, 2)}</li>
-				<li>{formatNumber(item.num, 4)}</li>
+				<li>{formatNumber(item.price, pointPrice)}</li>
+				<li>{formatNumber(item.num, pointNum)}</li>
 				<li>{item.status === 2 ?
 					<span>已完成</span> : item.status === 1 ?
 						<span>部分成交</span> : <span>未成交</span>
@@ -78,7 +83,7 @@ export default class Delegate extends React.Component {
 		})
 
 		return (
-			<Tabs tabBarExtraContent={operations}>
+			<Tabs tabBarExtraContent={<Link to="/delegation" onClick={this.goDelegation}>更多</Link>}>
 			    <TabPane tab="未成交委托" key="1">
 			    	<div className="delegate-items-will">
 						<div className="delegate-items-will-title">
@@ -113,7 +118,7 @@ export default class Delegate extends React.Component {
 						</div>
 					</Modal>
 			    </TabPane>
-			    <TabPane tab="成交记录" key="2">
+			    <TabPane tab="当日成交记录" key="2">
 					<DelegateFinish { ...this.props }/>
 			    </TabPane>
 		  	</Tabs>

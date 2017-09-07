@@ -106,10 +106,10 @@ export default class CertficationAideo extends React.Component {
                 </div>
                 <div className="AideoIconDownLoad clearfix">
                     <div className="fl text-center" onClick={this.iosFunc.bind(this)}>
-                        <Icon type="apple"/><span> IOS</span>
+                        <Icon type="apple" style={{color:"#2ec4f7"}}/><span> IOS</span>
                     </div>
                     <div className="fr text-center" onClick={this.androidFunc.bind(this)}>
-                        <Icon type="android"/><span> Android</span>
+                        <Icon type="android" style={{color:"#7cba59"}}/><span> Android</span>
                     </div>
                 </div>
                 <div className="clearfix AideoAlertBox-warp">

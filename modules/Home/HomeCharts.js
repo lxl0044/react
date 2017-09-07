@@ -1,8 +1,7 @@
 import React from 'react'
 import echarts from 'echarts'
-import { requestRealTimeDetails } from '../Redux/Action/DealCenterAction'
 import { HomeChartsOptions } from '../../tools/chartsConfig'
-import {formatNumber} from '../../tools/utils'
+import {initNumber} from '../../tools/utils'
 
 
 
@@ -21,35 +20,37 @@ let myCharts
 export default class HomeCharts extends React.Component {
 	
 	componentDidMount() {
-		const { dispatch } = this.props
         let { chart } = this.props.chart
         let charts = this.refs.charts
         myCharts = echarts.init(charts)
 
-		dispatch(requestRealTimeDetails())
-
 		// 初始化行情图
         myCharts.setOption(HomeChartsOptions(formatData(chart)));
-
 	}
 
-	componentWillReceiveProps (nextProps) {
-        myCharts.setOption(HomeChartsOptions(formatData(nextProps.chart)));
+	componentDidUpdate () {
+		const { chart } = this.props
+        myCharts.setOption(HomeChartsOptions(formatData(chart)));
 	}
+
 
 	render () {
-		const { currentAmount, changeRate, highPrice, lowPrice, volume, amount } = this.props.info
+		const { currentAmount, changeRate, highPrice, lowPrice, volume, amount,positionCount,positionSum,avgPosition, pointPrice, pointNum } = this.props.info
 
 		return (
 			<div className="homecharts-data">
 				<div className="homecharts-data-details">
 					<ul className="clearfix">
-						<li>最新价格: <span className={ changeRate >= 0 ? "green" : "warn"}>¥{formatNumber(currentAmount, 4)}</span></li>
-						<li>今日涨跌幅: <span className={ changeRate >= 0 ? "green" : "warn"}>{formatNumber(changeRate, 2)}%</span></li>
-						<li>最高境：¥{formatNumber(highPrice, 4)}</li>
-						<li>最低价：¥{formatNumber(lowPrice, 4)}</li>
-						<li>24H成交量：¥{formatNumber(volume, 4)}</li>
-						<li>平均成交价：¥{ !!(amount / volume) ? `${amount / volume}`.slice(0,4) : '0.00' }</li>
+						<li>最新价格: <span className={ changeRate >= 0 ? "green" : "warn"}>¥{initNumber(currentAmount, pointPrice)}</span></li>
+						<li>今日涨跌幅: <span className={ changeRate >= 0 ? "green" : "warn"}>{changeRate >= 0 ? `+${initNumber(changeRate, 2)}` : `${initNumber(changeRate, 2)}`}%</span></li>
+						<li>最高价：¥{initNumber(highPrice, pointPrice)}</li>
+						<li>最低价：¥{initNumber(lowPrice, pointPrice)}</li>
+						<li>平均成交价：¥{ !!(amount / volume) && parseInt(volume) !== 0 ? `${initNumber(amount / volume, pointPrice)}` : '0.00' }</li>
+						<li>24H成交量：{initNumber(volume, pointNum)}</li>
+						<li>{`24H成交金额：￥${initNumber(amount, pointPrice)}`}</li>
+						<li>{`持仓账号数：${positionCount}`}</li>
+						<li>{`人均持币数：${initNumber(avgPosition, pointNum)}`}</li>
+						<li>{`持仓总币数：${initNumber(positionSum, pointNum)}`}</li>
 					</ul>
 				</div>
 				<div className="homecharts-charts" ref="charts"></div>

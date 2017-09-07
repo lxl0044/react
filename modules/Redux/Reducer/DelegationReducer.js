@@ -12,7 +12,10 @@ const init = {
     startTime: moment(getBeforeDate(1), dataFormat),
     endTime: moment(getBeforeDate(), dataFormat),
     pwdStatus:'1',
-    visible:false
+    visible:false,
+    currencyId: 2,
+    pointPrice: 2,
+    pointNum: 4
 }
 
 const delegation = (state = init, action) => {
@@ -25,7 +28,7 @@ const delegation = (state = init, action) => {
         case 'DELEGATION_DETAILS':
             return {
                 ...state,
-                details: action.details
+                ...action.details
             }
         case 'DELEGATION_SHOW_MODAL':
             return {
@@ -42,6 +45,32 @@ const delegation = (state = init, action) => {
                 ...state,
                 pwdStatus: action.pwdStatus
             }
+        case 'CHOOSE_ACTIVE_TAB':
+            return {
+                ...state,
+                currencyId: action.id
+            }
+        case 'SWITCH_CURRENT_COIN_ID':
+            return {
+                ...state,
+                currencyId: action.currencyId
+            }
+        case 'CHANGE_DELEGATION_STARTTIME':
+            return {
+                ...state,
+                startTime: action.startTime
+            }
+        case 'CHANGE_DELEGATION_ENDTIME':
+            return {
+                ...state,
+                endTime: action.endTime
+            }
+        case 'RECEIVE_DELEGATION_PRECISION':
+            return {
+                ...state,
+                ...action.precision
+            }
+
         default:
             return state
     }

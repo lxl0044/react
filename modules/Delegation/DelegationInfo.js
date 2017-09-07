@@ -2,19 +2,15 @@ import React from 'react'
 import {Select, DatePicker, Pagination,Modal} from 'antd'
 import {delegationDetails,repealBillOne} from '../Redux/Action/DelegationAction'
 import { getDate ,getBeforeDate } from './../../tools/utils'
-import moment from 'moment';
-const dateFormat = 'YYYY-MM-DD';
+import moment from 'moment'
+const dataFormat = 'YYYY-MM-DD'
 const Option = Select.Option;
 var md5 = require('./../../tools/MD5.js')
 import { formatNumber } from './../../tools/utils'
 //交易密码的加盐
 const dealSalt = "dig?F*ckDa2g5PaSsWOrd&%(13lian0160630).";
 // 保存当前时间
-let nowDay1 = null,
-    nowDay2 = null,//保存当前时间
-    nowDay3 = null,
-    nowDay4 = null,
-    orderNo = null;//订单单号
+let orderNo = null;//订单单号
 export default class DelegationInfo extends React.Component {
     constructor(props) {
         super(props);
@@ -28,29 +24,35 @@ export default class DelegationInfo extends React.Component {
     }
     //开始时间
     startTime = (date, startTime) => {
-        nowDay3 = startTime == nowDay1 ? nowDay1 : startTime
-
+        const { dispatch } = this.props
+        dispatch({type: 'CHANGE_DELEGATION_STARTTIME', startTime: moment(startTime, dataFormat)})
     }
     //结束时间
     endTime = (date, endTime) => {
-        nowDay4 = endTime == nowDay2 ? nowDay2 : endTime
+        const { dispatch } = this.props
+        dispatch({type: 'CHANGE_DELEGATION_ENDTIME', endTime: moment(endTime, dataFormat)})
     }
 
+    // 分页
     onChange(key) {
         const { dispatch } = this.props
+        const { currencyId } = this.props
+        const { startTime, endTime } = this.props
         this.setState({
             key:key
         })
         let info = {
-            beginTime:nowDay3,
-            endTime:nowDay4,
+            beginTime:startTime._i,
+            endTime:endTime._i,
             start:key,
             size:10,
             buyOrSell:this.state.value2,//不限0买入1卖出2
-            currencyId:2,//币种
+            currencyId:currencyId,//币种
             status:this.state.value3,//10全部,0未成交,1部分成交,2全部成交,3委托失败,4全部撤单,5部分成交后撤单,
             type:this.state.value1//限价1市价2
         }
+        //传给父组件的页数
+        this.props.nextModules(key)
         dispatch(delegationDetails(dispatch,info))
     }
 
@@ -72,38 +74,34 @@ export default class DelegationInfo extends React.Component {
             value3:value
         })
     }
-    //这里获取当前时间需要注意一下，可能是生命周期的原因，在DidMount的时候不显示，在WillMount时候就能显示，
-    componentWillMount() {
-        //引入ttils文件，获取时间方法，
-        nowDay1 = getBeforeDate(1);
-        nowDay2 = getBeforeDate();
-        //一开始获取开始时间结束时间
-        nowDay3 = nowDay1;
-        nowDay4 = nowDay2;
-    }
+
     //点击确定的时候
     subFunc() {
         const { dispatch } = this.props
+        const { currencyId } = this.props
+        const { startTime, endTime } = this.props
 
         let info = {
-            beginTime:nowDay3,
-            endTime:nowDay4,
+            beginTime:startTime._i,
+            endTime: endTime._i,
             start:1,
             size:10,
             buyOrSell:this.state.value2,//不限0买入1卖出2
-            currencyId:2,//币种
+            currencyId:currencyId,//币种
             status:this.state.value3,//10全部,0未成交,1部分成交,2全部成交,3委托失败,4全部撤单,5部分成交后撤单,
             type:this.state.value1//限价1市价2
         }
         dispatch(delegationDetails(dispatch,info))
     }
+
     //点击撤单的时候
     repealBill (orderNoNum) {
         const { dispatch,pwdStatus } = this.props
+        const { currencyId } = this.props
+        const { startTime, endTime } = this.props
         orderNo = orderNoNum
         //调用列表的传参
         let page = this.state.key
-        let currencyId = 2
         let size = 10
         let buyOrSell = this.state.value2//不限0买入1卖出2
         let status = this.state.value3  //10全部,0未成交,1部分成交,2全部成交,3委托失败,4全部撤单,5部分成交后撤单
@@ -112,23 +110,24 @@ export default class DelegationInfo extends React.Component {
         if (pwdStatus == "2") {
             //撤销订单要的参数
             let info = {
-                currencyId:2,
+                currencyId:currencyId,
                 fdPassword:'',
                 orderNo:orderNo,
                 source:1
             }
             //关闭状态，可以直接发撤单
-            return dispatch(repealBillOne(dispatch,info,nowDay3,nowDay4,page,currencyId,size,buyOrSell,status,type))
+            return dispatch(repealBillOne(dispatch,info,startTime._i,endTime._i,page,currencyId,size,buyOrSell,status,type))
         }
         dispatch({type: 'DELEGATION_SHOW_MODAL'})
 
     }
+
     handleCancel (){
         const { dispatch } = this.props
         let jyCode = this.refs.jyCode
         jyCode.value = ''
 
-        dispatch({type: 'CLOSE_PWD_ALERT_BOX'})
+        dispatch({type: 'DELEGATION_CLOSE_MODAL'})
     }
 
     //确定输入交易密码
@@ -136,31 +135,36 @@ export default class DelegationInfo extends React.Component {
         let uid = localStorage.getItem("uid")
         let jyCode = md5(this.refs.jyCode.value.trim() + dealSalt + uid)
         const { dispatch,jyPwd} = this.props
+        const { currencyId } = this.props
+        const { startTime, endTime } = this.props
         let page = this.state.key
-        let currencyId = 2
         let size = 10
         let buyOrSell = this.state.value2//不限0买入1卖出2
         let status = this.state.value3  //10全部,0未成交,1部分成交,2全部成交,3委托失败,4全部撤单,5部分成交后撤单
         let type = this.state.value1//限价1市价2
         let info = {
-            currencyId:2,
+            currencyId:currencyId,
             fdPassword:jyCode,
             orderNo:orderNo,
             source:1
         }
-        dispatch(repealBillOne(dispatch,info,nowDay3,nowDay4,page,currencyId,size,buyOrSell,status,type))
+        dispatch(repealBillOne(dispatch,info,startTime._i,endTime._i,page,currencyId,size,buyOrSell,status,type))
     }
     render() {
         const { pwdStatus, visible } = this.props
         const {data, isPage, total} = this.props.details
+        const { startTime, endTime } = this.props
+        const { pointPrice, pointNum } = this.props
+
         let item = data.map((cur, index, arr) => {
             return <tr key={index.toString()}>
                 <td>{cur.orderTime}</td>
-                <td><span>{formatNumber(cur.num,4)}</span>/<span>{formatNumber(cur.tradeNum,4)}</span></td>
-                <td>{formatNumber(cur.remainNum,4)}</td>
-                <td><span>{formatNumber(cur.price,2)}</span>/<span>{formatNumber(cur.averagePrice,2)}</span></td>
-                <td className="green text-right"><span>{formatNumber(cur.dealAmount,2)}</span></td>
-                <td className="warn">{formatNumber(cur.fee,2)}</td>
+                {cur.buyOrSell == 1 ? <td className="green">买入</td> : <td className="warn">卖出</td>}
+                <td><span>{formatNumber(cur.num,pointNum)}</span><br/><span>/{formatNumber(cur.tradeNum,pointNum)}</span></td>
+                <td>{formatNumber(cur.remainNum,pointNum)}</td>
+                <td><span>{formatNumber(cur.price,pointPrice)}</span>/<span>{formatNumber(cur.averagePrice,pointPrice)}</span></td>
+                <td className="text-right"style={{paddingRight:"30px"}}>{formatNumber(cur.dealAmount,2)}</td>
+                <td>{formatNumber(cur.fee,2)}</td>
                 <td>
                     <span>{cur.status == 10 ? "全部成交" :
                         cur.status == 0 ? "未成交" :
@@ -185,10 +189,10 @@ export default class DelegationInfo extends React.Component {
                     </div>
                     <div className="delegation-time fl">
                         <label htmlFor="">委托时间</label>
-                        <DatePicker onChange={this.startTime} allowClear={false} defaultValue={moment(nowDay1, dateFormat)}
+                        <DatePicker onChange={this.startTime} allowClear={false} value={startTime}
                                     format={'YYYY-MM-DD'}/>
                         <span className="split">到</span>
-                        <DatePicker onChange={this.endTime} allowClear={false} defaultValue={moment(nowDay2, dateFormat)}/>
+                        <DatePicker onChange={this.endTime} allowClear={false} value={endTime}/>
                     </div>
                     <div className="deal-type fl">
                         <label htmlFor="">交易类型</label>
@@ -213,14 +217,15 @@ export default class DelegationInfo extends React.Component {
                     </a>
                 </div>
                 <div className="delegation-info-table">
-                    <table>
+                    <table style={{fontSize:"14px"}}>
                         <thead>
                         <tr>
-                            <th>委托时间</th>
+                            <th>时间</th>
+                            <th>类型</th>
                             <th>委托数量／已成交</th>
                             <th>尚未成交</th>
-                            <th>委托价格／平均成交价</th>
-                            <th>成交金额</th>
+                            <th style={{width:"249px"}}>委托价格／平均成交价</th>
+                            <th style={{width:"100px"}} className="text-center">成交金额</th>
                             <th>手续费</th>
                             <th>状态</th>
                             <th>操作</th>
@@ -232,7 +237,7 @@ export default class DelegationInfo extends React.Component {
                     </table>
                     <div
                         className={isPage == 0 ? "hide pay_record_page text-center" : "show pay_record_page text-center"}>
-                        <Pagination defaultCurrent={1} total={parseInt(total)}
+                        <Pagination current={parseInt(this.props.current)} total={parseInt(total)}
                                     onChange={this.onChange.bind(this)}/></div>
                     <p className={isPage == 0 ? "show InformPagesText text-center" : "hide InformPagesText text-center"}>
                         暂无记录!</p>

@@ -76,7 +76,6 @@
 	width: 690px;
 	height: 280px;
 	margin-bottom: 20px;
-	border-radius: 8px;
 	overflow: hidden;
 }
 
@@ -194,6 +193,8 @@
 	border-bottom-right-radius: 4px;
 	background-color: #fff;
 	box-shadow: rgba(0,0,0,.1);
+	position: relative;
+	min-height: 400px;
 }
 .announcement-list a {
 	width: 100%;
@@ -230,19 +231,19 @@
 	color: #fff;
 }
 
-.announcement-cont-list li {
+.announcement-cont-list>ul li {
 	line-height: 60px;
 }
 
-.announcement-cont-list li + li{
+.announcement-cont-list>ul li + li{
 	border-top: 1px solid #dbdbdb;
 }
 
-.announcement-list li {
+.announcement-list>ul li {
 	padding: 15px 0;
 }
 
-.announcement-list li + li{
+.announcement-list>ul li + li{
 	border-top: 1px solid #dbdbdb;
 }
 
@@ -269,6 +270,7 @@
 	border-radius: 4px;
 	background-color: #fff;
 	border: 1px solid #e5e5e5;
+	padding-bottom: 30px;
 }
 
 .announcement-preivew-details .preview-title {
@@ -290,10 +292,15 @@
 }
 
 .announcement-preivew-details .pewview-cont {
-	padding: 70px 80px 150px;
+	width: 800px;
+	margin: 30px auto 0;
 	min-height: 646px;
 	font-size: 16px;
 	line-height: 2;
+	background-color: #f8f8f8;
+	border-radius: 4px;
+	padding: 75px;
+	border: 1px solid #e5e5e5;
 }
 
 .announcement-preivew-details .pewview-cont img {

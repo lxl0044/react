@@ -13,6 +13,20 @@ const TabPane = Tabs.TabPane;
 
 
 export default class SecurityCenterFaq extends React.Component {
+
+    //回调函数
+    callBack ( ) {
+        const dealCenter = sessionStorage.getItem('dealCenter')
+        if (dealCenter) {
+            sessionStorage.removeItem("dealCenter")
+        }
+    }
+    componentDidMount () {
+        const dealCenter = sessionStorage.getItem('dealCenter')
+        if (dealCenter) {
+            sessionStorage.removeItem("dealCenter")
+        }
+    }
     componentWillUnmount () {
         sessionStorage.removeItem("dealCenter")
     }
@@ -22,7 +36,7 @@ export default class SecurityCenterFaq extends React.Component {
             <div className="SecurityCenterFaq fr">
                 <div className="FaqTaps">
                     <TopTitle title="FAQ"/>
-                    <Tabs defaultActiveKey={!dealCenter ? "1" : dealCenter}>
+                    <Tabs defaultActiveKey={!dealCenter ? "1" : dealCenter} onChange={this.callBack.bind(this)}>
                         <TabPane tab="常见问题" key="1">
                             <Problem />
                         </TabPane>

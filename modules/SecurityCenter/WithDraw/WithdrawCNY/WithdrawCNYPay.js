@@ -5,6 +5,7 @@ import { message,Icon } from 'antd';
 import WithdrawCNYAlert from "./WithdrawCNYAlert"
 import WithdrawCNYInfo from './WithdrawCNYInfo'
 import { submitWithDrawOrderCNY,getWithDrawCNYBalance } from '../../../Redux/Action/WithDrawAction'
+import { formatNumber } from '../../../../tools/utils'
 //交易密码的加盐
 const dealSalt = "dig?F*ckDa2g5PaSsWOrd&%(13lian0160630).";
 const base = 'data:image/png;base64,'
@@ -154,16 +155,16 @@ export default class WithdrawCNYPay extends React.Component {
         //点击按钮变灰色
         let getWithdraw = this.refs.getWithdraw
         getWithdraw.setAttribute('disabled', 'disabled')
-        getWithdraw.style.backgroundColor = '#ccc';
-        getWithdraw.style.border = "1px solid #ccc"
+        getWithdraw.style.backgroundColor = '#c61014';
+        getWithdraw.style.border = "1px solid #c61014"
         const { dispatch,sum} = this.props
         let info = {
-            amount:money,
-            cardId:cardId,
-            actionId:2,
+            amount:money, // 输入金额
+            cardId:cardId, // 选择的银行卡
+            actionId:2, //
             currencyId:1,
-            tradePassword:dealPwd,
-            smsMessage:phoneCode
+            tradePassword:dealPwd, // 交易密码，加盐 + md5转码
+            smsMessage:phoneCode // 短信验证码
         }
         this.setState({
             sum:sum,
@@ -377,7 +378,7 @@ export default class WithdrawCNYPay extends React.Component {
                             {/*{this.state.isIconShow == 0 ? <Icon className="green hide" type="check-circle" /> : <Icon className="green show" type="check-circle" />}*/}
                         </div>
                         <div className="WithdrawCNYPay-add-address-box-button">
-                            <button className="warn" onClick={this.addAddress.bind(this)}>添加银行卡</button>
+                            <button onClick={this.addAddress.bind(this)}>添加银行卡</button>
                         </div>
                     </div>
                     <div className="WithdrawCNYPay-num">
@@ -388,7 +389,7 @@ export default class WithdrawCNYPay extends React.Component {
                         <span className="WithdrawCNYPay-low-high"><span>最低提现金额</span><span className="warn">{this.state.amountLowLimit}</span><span>，最高提现金额</span><span className="warn">{this.state.amountHighLimit}</span></span>
                         <p className="warn">{this.state.alertMsg}</p>
                         <p className="WithdrawCNYPay-p-gray"><span className="WithdrawCNYPay-gray">预计到账：</span><span className="WithdrawCNYPay-gray warn">¥{this.state.sum}</span>
-                            <span  className="WithdrawCNYPay-gray">(手续费</span><span className="WithdrawCNYPay-gray" ref="poundage">{this.state.fee * 100}</span><span className="WithdrawCNYPay-gray">%)</span>
+                            <span  className="WithdrawCNYPay-gray">(手续费</span><span className="WithdrawCNYPay-gray" ref="poundage">{formatNumber(this.state.fee * 100,2)}</span><span className="WithdrawCNYPay-gray">%)</span>
                         </p>
                     </div>
                     {/*<div className="WithdrawCNYPay-fee">
@@ -412,7 +413,7 @@ export default class WithdrawCNYPay extends React.Component {
                         <span ref="sendBtn" onClick={this.sendFunc.bind(this)}>获取验证码</span>
                     </div>
                     <div className="WithdrawCNYPay-button">
-                        <button className="warn" ref="getWithdraw" onClick={this.submitFunc.bind(this)}>提交提现订单</button>
+                        <button ref="getWithdraw" onClick={this.submitFunc.bind(this)}>提交提现订单</button>
                     </div>
                     {this.state.alert ? "" : <WithdrawCNYAlert name={name} uname={this.props.uname} phone={phone} show={this.state.alert} onChildAlert={this.sendChild.bind(this)}/>}
                 </div>

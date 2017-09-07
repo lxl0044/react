@@ -1,0 +1,150 @@
+.currency-introduce{
+    width: 1200px;
+    margin: 0 auto 50px;
+}
+.currency-introduce-center{
+    width: 100%;
+    margin: 50px 0 0 0;
+
+}
+.currency-introduce-return {
+    padding-left: 170px;
+    margin-bottom: 10px;
+}
+.currency-introduce-return a span{
+    color: #000 !important;
+    line-height: 25px;
+}
+.currency-introduce-return .anticon{
+    background-color: #da161a;
+    font-size: 25px;
+    color: #fff;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: top;
+}
+.currency-introduce-main{
+    width: 100%;
+}
+.currency-introduce-slider{
+    width: 140px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    height: 840px;
+    overflow-x: auto;
+}
+.currency-introduce-box{
+    width: 1030px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+.currency-introduce-slider ul li{
+    width: 138px;
+    height: 140px;
+    border-top: 1px solid #e5e5e5;
+    cursor: pointer;
+    padding-top: 20px;
+}
+.currency-introduce-slider ul li:nth-of-type(1){
+    border-top: none;
+}
+.currency-introduce-slider ul li:hover{
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.currency-introduce-slider ul li img{
+    width: 76px;
+    height: 76px;
+    margin: 0 auto;
+    display: block;
+}
+.currency-introduce-slider ul li:nth-of-type(1) p{
+    margin-top: 10px;
+}
+.currency-introduce-slider ul li:nth-of-type(3) p{
+    margin-top: 10px;
+}
+.currency-introduce-slider ul li:nth-of-type(4) p{
+    margin-top: 10px;
+}
+.lsk-info-title,
+.ct-info-title,
+.tlc-info-title,
+.rts-info-title{
+    font-size: 36px;
+    margin-top: 36px;
+}
+.lsk-info-main,
+.ct-info-main,
+.tlc-info-main,
+.rts-info-main{
+    width: 860px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+.lsk-info-main  p{
+    text-indent: 2em;
+    font-size: 16px;
+}
+.lsk-info-main p:nth-of-type(2),
+.lsk-info-main p:nth-of-type(3),
+.lsk-info-main p:nth-of-type(4){
+    margin-top: 20px;
+}
+.coin-info-bgc-Image{
+    width: 860px;
+    height: 1px;
+    margin: 0 auto;
+    background: url("../images/coin_bgc_img.png");
+}
+.ct-info-main ,
+.tlc-info-main,
+.rts-info-main{
+    height: 582px;
+    overflow-y: auto;
+}
+.ct-info-main p,
+.tlc-info-main p,
+.rts-info-main p{
+    text-indent: 2em;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.ct-info-main h5,
+.tlc-info-main h5,
+.rts-info-main h5{
+    font-size: 16px;
+}
+.ct-info-main h5:nth-of-type(2) {
+    margin-top: 20px;
+}
+.ct-info-main h5:nth-of-type(3),
+.ct-info-main h5:nth-of-type(4),
+.ct-info-main h5:nth-of-type(5),
+.ct-info-main h5:nth-of-type(6){
+    text-indent: 2em;
+    margin-top: 10px;
+}
+.tlc-info-main h5:nth-of-type(2),
+.tlc-info-main h5:nth-of-type(3),
+.tlc-info-main h5:nth-of-type(4),
+.tlc-info-main h5:nth-of-type(5),
+.tlc-info-main h5:nth-of-type(6){
+    margin-top: 20px;
+}
+.rts-info-main h5{
+    margin-top: 20px;
+}
+.rts-info-main h5:nth-of-type(1){
+    margin-top: 0;
+}
+.ct-info-point:before{
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 10px;
+    background-color: #000;
+    border-radius: 50%;
+}

@@ -15,7 +15,8 @@ import InformationMain from './Information/InformationMain'
 import Announcement from './Information/AnnouncementList'
 import AnnouncementPreview from './Information/AnnouncementPreview'
 import Message from './Information/Message'
-import DealCenter from './DealCenter/DealCenter'
+// import DealCenter from './DealCenter/DealCenter'
+import NewDealCenter from './NewDealCenter/DealCenter'
 import SecurityCenter from './SecurityCenter/SecurityCenter'
 import SecurityCenterMain from './SecurityCenter/SecurityCenterMain/SecurityCenterMain';
 import SecurityCenterCertification from './SecurityCenter/Certification/SecurityCenterCertification';
@@ -30,6 +31,7 @@ import Integral from './SecurityCenter/Integral/MyIntegral';
 import SecurityCenterWithdraw from './SecurityCenter/WithDraw/SecurityCenterWithdraw';
 import SecurityCenterPay from './SecurityCenter/Pay/SecurityCenterPay';
 import FeedbackLook from './SecurityCenter/FeedBack/FeedbackLook';
+import InstationTrunCoin from './SecurityCenter/InstationTrunCoin/InstationTrunCoin'
 import ResetPwd1 from './ResetPwd/ResetPwd1';
 import ResetPwd2 from './ResetPwd/ResetPwd2';
 import ResetPwd3 from './ResetPwd/ResetPwd3';
@@ -38,9 +40,10 @@ import Login from './Common/Login';
 import AboutUs from './Common/AboutUs';
 import Agreement from './Common/Agreement';
 import ContactUs from './Common/ContactUs';
-import RateExplain from './Common/RateExplain';
 import LegalNotice from './Common/LegalNotice';
 import Delegation from './Delegation/Delegation';
+import CurrencyIntroduce from './Common/CurrencyIntroduce'
+// import CoinIntroduce from './CoinIntroduction/CoinIntroduction'
 import axios from 'axios';
 import qs from 'qs'
 import {Host} from './host';
@@ -120,47 +123,60 @@ const enterCheck = () => {
     }
 }
 
+const loginCheck = () => {
+    const token = localStorage.getItem('token')
+    const uid = localStorage.getItem('uid')
+    if(token && uid) {
+        store.dispatch(push('/home'))
+    }
+}
 
 const route = (
     <Router history={history}>
-        <Route path="/" component={Home}>
+        <Route path="/">
             <IndexRedirect from='/' to='home'/>
-            <Route path="home" component={Index} onEnter={enterHome} onLeave={leaveHome}/>
-            <Route path="login" component={Login}/>
-            <Route path="register" component={Register}/>
-            <Route path="resetpwd1" component={ResetPwd1}/>
-            <Route path="resetpwd2" component={ResetPwd2}/>
-            <Route path="resetpwd3" component={ResetPwd3}/>
-            <Route path="resetpwd4" component={ResetPwd4}/>
-            <Route path="information" component={Information}>
-                <IndexRoute component={InformationMain}/>
-                <Route path="/information/preview/:newsid" component={Message}/>
-                <Route path="/information/announcement" component={Announcement}/>
-                <Route path="/announce/preview/:announceId" component={AnnouncementPreview}/>
+            <Route path="/" component={Home}>
+                <Route path="home" component={Index} onEnter={enterHome} onLeave={leaveHome}/>
+                <Route path="login" component={Login}/>
+                <Route path="register" component={Register} onEnter={loginCheck}/>
+                <Route path="register/:invitationNum" component={Register} onEnter={loginCheck}/>
+                <Route path="resetpwd1" component={ResetPwd1} onEnter={loginCheck}/>
+                <Route path="resetpwd2" component={ResetPwd2} onEnter={loginCheck}/>
+                <Route path="resetpwd3" component={ResetPwd3} onEnter={loginCheck}/>
+                <Route path="resetpwd4" component={ResetPwd4} onEnter={loginCheck}/>
+                <Route path="information" component={Information}>
+                    <IndexRoute component={InformationMain}/>
+                    <Route path="/information/preview/:newsid" component={Message}/>
+                    <Route path="/information/announcement" component={Announcement}/>
+                    <Route path="/announce/preview/:announceId" component={AnnouncementPreview}/>
+                </Route>
+                {/*<Route path="dealcenter" component={DealCenter}/>*/}
+                <Route path="personal" component={SecurityCenter} onEnter={enterCheck}>
+                    <IndexRoute component={PropertyDetails}/>
+                    <Route path="/personal/personalinformation" component={PersonalInformation}/>
+                    <Route path="/personal/settings" component={SecurityCenterMain}/>
+                    <Route path="/personal/certification" component={SecurityCenterCertification}/>
+                    <Route path="/personal/faq" component={SecurityCenterFaq}/>
+                    <Route path="/personal/propertydetails" component={PropertyDetails}/>
+                    <Route path="/personal/paycoin" component={PayCoin}/>
+                    <Route path="/personal/withdrawcoin" component={WithDrawCoin}/>
+                    <Route path="/personal/feedback" component={SecurityCenterFeedback}/>
+                    <Route path="/personal/securitycenterwithdraw" component={SecurityCenterWithdraw}/>
+                    <Route path="/personal/securitycenterpay" component={SecurityCenterPay}/>
+                    <Route path="/personal/feedback/preview/:id" component={FeedbackLook}/>
+                    <Route path="/personal/notification" component={SecurityCenterInform}/>
+                    <Route path="/personal/instationtruncoin" component={InstationTrunCoin}/>
+                    <Route path="/personal/integral" component={Integral}/>
+                </Route>
+                <Route path="delegation" component={Delegation} onEnter={enterCheck}/>
+                <Route path="aboutus" component={AboutUs}/>
+                <Route path="contactus" component={ContactUs}/>
+                <Route path="legalnotice" component={LegalNotice}/>
+                <Route path="agreement" component={Agreement}/>
+                <Route path="currencyintroduce" component={CurrencyIntroduce}/>
+                {/*<Route path="coinIntroduce" component={CoinIntroduce}/>*/}
             </Route>
-            <Route path="dealcenter" component={DealCenter}/>
-            <Route path="personal" component={SecurityCenter} onEnter={enterCheck}>
-                <IndexRoute component={PersonalInformation}/>
-                <Route path="/personal/personalinformation" component={PersonalInformation}/>
-                <Route path="/personal/settings" component={SecurityCenterMain}/>
-                <Route path="/personal/certification" component={SecurityCenterCertification}/>
-                <Route path="/personal/faq" component={SecurityCenterFaq}/>
-                <Route path="/personal/propertydetails" component={PropertyDetails}/>
-                <Route path="/personal/paycoin" component={PayCoin}/>
-                <Route path="/personal/withdrawcoin" component={WithDrawCoin}/>
-                <Route path="/personal/feedback" component={SecurityCenterFeedback}/>
-                <Route path="/personal/securitycenterwithdraw" component={SecurityCenterWithdraw}/>
-                <Route path="/personal/securitycenterpay" component={SecurityCenterPay}/>
-                <Route path="/personal/feedback/preview/:id" component={FeedbackLook}/>
-                <Route path="/personal/notification" component={SecurityCenterInform}/>
-                <Route path="/personal/integral" component={Integral}/>
-            </Route>
-            <Route path="delegation" component={Delegation} onEnter={enterCheck}/>
-            <Route path="aboutus" component={AboutUs}/>
-            <Route path="contactus" component={ContactUs}/>
-            <Route path="legalnotice" component={LegalNotice}/>
-            <Route path="agreement" component={Agreement}/>
-            <Route path="rateexplain" component={RateExplain}/>
+            <Route path="dealcenter" component={NewDealCenter}/>
             <Route path="*" component={NotFound}/>
         </Route>
     </Router>

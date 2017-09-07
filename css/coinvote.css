@@ -1,0 +1,78 @@
+.coin-vote{
+    width: 1200px;
+    margin: 50px auto;
+    border-radius: 4px;
+    background-color: #fcfcfc;
+    border: 1px solid #e8e8e8;
+}
+.coin-vote-title{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    font-size: 36px;
+}
+.coin-vote-text{
+    width: 1100px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.coin-vote-coins{
+    width: 100%;
+    padding: 50px 0 0;
+}
+.coin-vote-coins li{
+    width: 100%;
+    height: 318px;
+    border-top: 1px solid #e8e8e8;
+}
+.coin-vote-coins li div:nth-of-type(1){
+    width: 210px;
+    height: 318px;
+}
+.coin-vote-coins li div:nth-of-type(1) img{
+    margin: 30px 0 0 50px;
+}
+.coin-vote-coins li div:nth-of-type(1) p{
+    margin-top: 20px;
+}
+.coin-vote-coins li div:nth-of-type(2){
+    width: 988px;
+    height: 318px;
+}
+.coin-vote-coins li div:nth-of-type(2) img{
+    margin-top: 20px;
+}
+.coin-vote-coins li button {
+    width: 100px;
+    height: 32px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin: 20px auto 0;
+    background-color: #da161a;
+}
+
+.coin-vote-coins li button:active {
+    background-color: #c61014;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

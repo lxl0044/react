@@ -1,3 +1,6 @@
+import moment from 'moment'
+import { getBeforeDate } from '../../../tools/utils'
+const dateFormat = 'YYYY-MM-DD';
 
 const init = {
     userInfo: {
@@ -11,7 +14,12 @@ const init = {
                 address: ''
             }],
             cashAmount: '',
-            fee: 0
+            fee: 0,
+            defaultAddress:{
+                address:'',
+                id:'',
+                note:''
+            }
         },
         detail: {
             amountLowLimit: 0
@@ -28,7 +36,10 @@ const init = {
     CTRecordTable:{
         data:[],
         isPage:0,
-        total:0
+        total:0,
+        startTime: moment(getBeforeDate(1), dateFormat),
+        endTime: moment(getBeforeDate(), dateFormat),
+        status:1
     },
     money:0
 }

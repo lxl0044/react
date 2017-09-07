@@ -58,7 +58,20 @@ export default class BankCardPayAlert extends React.Component {
             imgShow: false
         })
     }
-
+    //复制银行账号
+    copyBankCard () {
+        let bankCard = this.refs.bankCard
+        bankCard.focus();
+        bankCard.setSelectionRange(0, bankCard.value.length);
+        document.execCommand("Copy", true)
+    }
+    //复制户名
+    copyBankName () {
+        let bankName = this.refs.bankName
+        bankName.focus();
+        bankName.setSelectionRange(0, bankName.value.length);
+        document.execCommand("Copy", true)
+    }
     //当划出手机银行转账教学的时候
     onMouseOut2() {
         this.setState({
@@ -81,10 +94,10 @@ export default class BankCardPayAlert extends React.Component {
                             </div>
                             <div
                                 className={this.state.imgShow ? "bankCardPayInfoWarp show" : "bankCardPayInfoWarp hide"}>
-                                <p>请将充值金额转账至以下账户</p>
-                                <p><span>银行账户：</span><span className="font-weight">{companyBankCardNo}</span></p>
+                                <p>请将充值金额转账至以下账户 <span className="warn">（暂不支持支付宝及其他三方支付，否则将导致无法入账）</span></p>
+                                <p><span>银行账户：</span><input className="font-weight" style={{width:"200px"}} value={companyBankCardNo} ref="bankCard"></input><button onClick={this.copyBankCard.bind(this)}>复制</button></p>
                                 <p><span>开户行：</span><span className="font-weight">{companyBank}</span></p>
-                                <p><span>户名：</span><span className="font-weight">{companyName}</span></p>
+                                <p><span>户名：</span><input className="font-weight" style={{width:"250px"}} value={companyName} ref="bankName"></input><button onClick={this.copyBankName.bind(this)}>复制</button></p>
                             </div>
                             <div className={this.state.imgShow ? "bankCardPayInfoBag show" : "bankCardPayInfoBag hide"}>
                                 <p className="font-weight">汇款信息</p>
